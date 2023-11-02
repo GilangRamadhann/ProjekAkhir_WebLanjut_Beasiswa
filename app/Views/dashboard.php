@@ -46,99 +46,55 @@
 						<div id="st-trigger-effects" class="">
 							<button data-effect="st-effect-1" style="position:fixed;top:1vh;left:1vw;"><i class="fa-solid fa-bars"></i></button>
 					</div>
-					<div class="container-fluid">
-      					<div class="row">
-						<div class="col">
-						<div class="card">
-						<div class="card-body p-3">
-						<div class="row">
-						<div class="col-8">
-						<div class="numbers">
-							<p class="text-sm mb-0 text-capitalize font-weight-bold">Today's Money</p>
-								<h5 class="font-weight-bolder mb-0">
-								$53,000
-								<span class="text-success text-sm font-weight-bolder">+55%</span>
-								</h5>
-						</div>
-					</div>
-					<div class="col-4 text-end">
-						<div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
-							<i class="ni ni-money-coins text-lg opacity-10" aria-hidden="true"></i>
-						</div>
-						</div>
-					</div>
-					</div>
-				</div>
-				</div>
-					<div class="col">
-					<div class="card">
-						<div class="card-body p-3">
-						<div class="row">
-							<div class="col-8">
-							<div class="numbers">
-								<p class="text-sm mb-0 text-capitalize font-weight-bold">Today's Users</p>
-								<h5 class="font-weight-bolder mb-0">
-								2,300
-								<span class="text-success text-sm font-weight-bolder">+3%</span>
-								</h5>
-							</div>
-							</div>
-							<div class="col-4 text-end">
-							<div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
-								<i class="ni ni-world text-lg opacity-10" aria-hidden="true"></i>
-							</div>
-							</div>
-						</div>
-						</div>
-					</div>
 					
-					</div>
-					<div class="col">
-					<div class="card">
-						<div class="card-body p-3">
-						<div class="row">
-							<div class="col-8">
-							<div class="numbers">
-								<p class="text-sm mb-0 text-capitalize font-weight-bold">Today's Users</p>
-								<h5 class="font-weight-bolder mb-0">
-								2,300
-								<span class="text-success text-sm font-weight-bolder">+3%</span>
-								</h5>
-							</div>
-							</div>
-							<div class="col-4 text-end">
-							<div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
-								<i class="ni ni-world text-lg opacity-10" aria-hidden="true"></i>
-							</div>
-							</div>
-						</div>
-						</div>
-					</div>
-					</div>
-					<div class="col">
-					<div class="card">
-						<div class="card-body p-3">
-						<div class="row">
-							<div class="col-8">
-							<div class="numbers">
-								<p class="text-sm mb-0 text-capitalize font-weight-bold">Today's Users</p>
-								<h5 class="font-weight-bolder mb-0">
-								2,300
-								<span class="text-success text-sm font-weight-bolder">+3%</span>
-								</h5>
-							</div>
-							</div>
-							<div class="col-4 text-end">
-							<div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
-								<i class="ni ni-world text-lg opacity-10" aria-hidden="true"></i>
-							</div>
-							</div>
-						</div>
-						</div>
-					</div>
-					</div>		
-		</div>
-		</div>
+	<!-- Basic DataTable -->
+    <div class="row">
+      <div class="col-12">
+        <h4 id="basic-datatable" class="anchor-heading mb-4 fw-bold">Data Penerima Beasiswa</h4>
+		<button type="button" class="btn btn-dark mb-3" id="addDataButton">
+      		<i class="fas fa-plus"></i> Add Data
+    	</button>
+        <div class="doc-example">
+          <ul class="nav nav-tabs-example justify-content-end" role="tablist"></ul>
+          <div class="tab-content doc-example-content" id="tab-tabContent" data-label="Example">
+            <div class="tab-pane fade show active" id="basic-datatable-preview" role="tabpanel" aria-labelledby="basic-datatable-preview-tab">
+              <div class="card">
+                <div class="card-datatable table-responsive pt-0">
+                	<table class="datatables-basic table border-top">
+                    <thead>
+                      <tr>
+                        <th>id</th>
+                        <th>Nama</th>
+                        <th>NPM</th>
+                        <th>Nama Beasiswa</th>
+						<th>Aksi</th>
+                      </tr>
+                    </thead>
+					<tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>Gilang Ramadhan</td>
+                    <td>2117051082</td>
+                    <td>Beasiswa BI</td>
+                    <td>
+					<button class="btn btn-primary btn-sm">
+                    	<i class="fas fa-info-circle"></i> Detail
+                    </button>
+                    <button class="btn btn-warning btn-sm">
+                        <i class="fas fa-edit"></i> Edit
+                    </button>
+                    <button class="btn btn-danger btn-sm">
+                        <i class="fas fa-trash"></i> Hapus
+                    </button>
+                    </td>
+                  </tr>
+                  
+                </tbody>
+                	</table>
+            	</div>
+            </div>
+        </div>
+    <!--/ Basic DataTable -->
 			
 		<script src="assets/js/classie.js"></script>
 		<script src="assets/js/sidebarEffects.js"></script>
