@@ -8,4 +8,4 @@ use App\Controllers\LoginController;
  */
 $routes->get('/', 'Home::index');
 $routes->get('/login', [LoginController::class, 'index']);
-
+$routes->get('/landing', 'Home::index2');
