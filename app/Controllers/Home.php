@@ -8,4 +8,12 @@ class Home extends BaseController
     {
         return view('welcome_message');
     }
+    public function regist()
+    {
+        return view('regist');
+    }
+    public function regist_donatur()
+    {
+        return view('regist_donatur');
+    }
 }
