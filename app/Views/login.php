@@ -7,9 +7,8 @@
       <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
        
           <div class="card-body p-4 p-sm-5">
-          <i class="fa-solid fa-graduation-cap"></i>
-            <h5 class="card-title text-center mb-5 fw-light fs-5">BesWan Login</h5>
-            <form>
+            <h5 class="text-center text-bold">BesWan Login</h5><br>
+            <form action="/checkLogin" method="post">
               <div class="form-floating mb-3">
                 <input type="email" class="form-control" id="floatingInput" name="email" placeholder="name@example.com">
                 <label for="floatingInput">Email</label>
@@ -35,10 +34,13 @@
               <a href="#forgot">Lupa Kata Sandi?</a>
               </div>
               <!-- Register buttons -->
-      <br><br><div class="text-center">
-        <p>Tidak punya akun? <a href="#!">Buat Akun</a></p>
-        
-      </div>
+              
+              <br><br><div class="text-center">
+              <div class="underline"></div>
+               <br> <p>Tidak punya akun? <a href="#!">Buat Akun</a></p>
+
+              </div>
+              <br><br>
             </form>
           </div>
         </div>
@@ -48,3 +50,5 @@
     
 </body>
 <?= $this->endsection() ?>
+
+
