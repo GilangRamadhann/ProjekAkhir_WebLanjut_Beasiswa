@@ -15,3 +15,4 @@ $routes->get('/login', [LoginController::class, 'index']);
 $routes->post('/checkLogin', [LoginController::class, 'checkLogin']);
 
 $routes->get('/landing', 'Home::index2');
+$routes->get('/beswan', 'Home::beswan');
