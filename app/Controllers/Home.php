@@ -21,4 +21,8 @@ class Home extends BaseController
     {
         return view('regist_donatur');
     }
+    public function beswan()
+    {
+        return view('beswan');
+    }
 }
