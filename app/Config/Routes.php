@@ -19,3 +19,7 @@ $routes->get('/login', [LoginController::class, 'index']);
 $routes->post('/login/checkLogin', [LoginController::class, 'checkLogin']);
 
 $routes->get('/dashboard', 'Home::dashboard');
+
+$routes->get('/landing', 'Home::index2');
+$routes->get('/beswan', 'Home::beswan');
+
