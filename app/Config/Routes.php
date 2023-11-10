@@ -6,12 +6,16 @@ use App\Controllers\LoginController;
 /**
  * @var RouteCollection $routes
  */
+
+// Landing Page
 $routes->get('/', 'Home::index');
-$routes->get('/regist', 'Home::regist');
-$routes->get('/regist/donatur', 'Home::regist_donatur');
+
+// Register
+$routes->get('/register', 'Home::regist');
+$routes->post('/register/store', [LoginController::class, 'store']);
 
 // Login untuk semua user
 $routes->get('/login', [LoginController::class, 'index']);
-$routes->post('/checkLogin', [LoginController::class, 'checkLogin']);
+$routes->post('/login/checkLogin', [LoginController::class, 'checkLogin']);
 
-$routes->get('/landing', 'Home::index2');
+$routes->get('/dashboard', 'Home::dashboard');
