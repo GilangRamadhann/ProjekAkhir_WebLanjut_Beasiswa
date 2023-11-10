@@ -46,7 +46,7 @@ https://templatemo.com/tm-590-topic-listing
                     </a>
 
                     <div class="d-none d-lg-block">
-                        <a href="#top" class="navbar-icon bi-person smoothscroll"></a>
+                        <a href="<?= base_url('/register') ?>" class="navbar-icon bi-person smoothscroll"></a>
                     </div>
                 </div>
             </nav>

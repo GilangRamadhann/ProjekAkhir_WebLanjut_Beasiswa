@@ -16,7 +16,16 @@ class User extends Model
         'username',
         'password',
         'email',
-        'nama',
+        'name',
         'role',
     ];
+
+    public function saveUser($data){
+        $this->insert($data); 
+    }
+
+    public function get_data($email, $password){
+        return $this->db->table('users')->where(array('email' => $email, 'password' => $password))->get()->getRowArray();
+	}
+    
 }
