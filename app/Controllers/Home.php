@@ -18,4 +18,8 @@ class Home extends BaseController
     {
         return view('dashboard');
     }
+    public function beswan()
+    {
+        return view('beswan');
+    }
 }
