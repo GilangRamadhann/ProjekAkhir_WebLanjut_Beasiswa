@@ -21,4 +21,9 @@ class Home extends BaseController
     {
         return view('regist_donatur');
     }
+
+    public function dashboard_donatur()
+    {
+        return view('dashboard_donatur');
+    }
 }
