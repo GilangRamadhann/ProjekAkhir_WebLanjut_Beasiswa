@@ -22,4 +22,9 @@ class Home extends BaseController
     {
         return view('beswan');
     }
+
+    public function dashboard_donatur()
+    {
+        return view('dashboard_donatur');
+    }
 }

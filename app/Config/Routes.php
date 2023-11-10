@@ -14,6 +14,9 @@ $routes->get('/', 'Home::index');
 $routes->get('/register', 'Home::regist');
 $routes->post('/register/store', [LoginController::class, 'store']);
 
+//donatur
+$routes->get('/donatur', 'Home::dashboard_donatur');
+
 // Login untuk semua user
 $routes->get('/login', [LoginController::class, 'index']);
 $routes->post('/login/checkLogin', [LoginController::class, 'checkLogin']);
