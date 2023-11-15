@@ -1,11 +1,7 @@
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<link
-    href="<?= base_url('assets/css/register.css')?>" rel="stylesheet" />
-<!------ Include the above in your HEAD tag ---------->
-
-<div class="container register">
+<?= $this->extend('layouts/app') ?>
+<?= $this->section('content') ?>
+<center>
+    <div class="container register">
                 <div class="row">
                     <div class="col-md-3 register-left">
                         <img src="<?= base_url('assets/img/cap.png')?>" alt=""/>
@@ -14,13 +10,14 @@
                         <input type="submit" name="" value="Masuk"/><br/>
                     </div>
                     <div class="col-md-9 register-right">
-                        <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
+                        <!-- <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
                             <li class="nav-item">
                                 <a class="nav-link active" data-toggle="tab"  role="tab" id="toggle-mahasiswa" aria-controls="home" aria-selected="true">Mahasiswa</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link"  data-toggle="tab"  role="tab" id="toggle-donatur" aria-controls="profile" aria-selected="false">Donatur</a>
                             </li>
+
                         </ul>
                         
                         <div class="tab-content" id="myTabContent">
@@ -90,15 +87,13 @@
                                         
                                        
                                         <input type="submit" class="btnRegister"  value="Daftar"/>
-                                    </div>
-                                    
+                                    </div>           
                                 </div>
                                 </form>
                             </div>
                         </div>
                     </div>
                 </div>
-
             </div>
             <script>
     // Get the toggle buttons
@@ -138,3 +133,4 @@
         toggleDonatur.classList.remove('active');
     });
 </script>
+
