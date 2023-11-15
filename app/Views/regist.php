@@ -16,107 +16,125 @@
                     <div class="col-md-9 register-right">
                         <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
                             <li class="nav-item">
-                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Mahasiswa</a>
+                                <a class="nav-link active" data-toggle="tab"  role="tab" id="toggle-mahasiswa" aria-controls="home" aria-selected="true">Mahasiswa</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Donatur</a>
+                                <a class="nav-link"  data-toggle="tab"  role="tab" id="toggle-donatur" aria-controls="profile" aria-selected="false">Donatur</a>
                             </li>
                         </ul>
+                        
                         <div class="tab-content" id="myTabContent">
-                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                                <h3 class="register-heading">SELAMAT DATANG</h3>
+                            <div class="tab-pane" id="home" style="display:block;">
+                                <h3 class="register-heading">BESWAN </h3>
+                                
+                                <form action="<?= url_to('register') ?>" method="post">
+                        <?= csrf_field() ?>
                                 <div class="row register-form">
+                                    <input type="hidden" name="role" value="beswan" />
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Nama Depan *" value="" />
+                                            <input name="username" type="text" class="form-control" placeholder="Username" value="" />
                                         </div>
+                                       
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Nama Belakang *" value="" />
+                                            <input type="email" name="email" class="form-control" placeholder="Email Anda *" value="" />
                                         </div>
-                                        <div class="form-group">
-                                            <input type="password" class="form-control" placeholder="Kata Sandi *" value="" />
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="password" class="form-control"  placeholder="Konfirmasi Sandi *" value="" />
-                                        </div>
-                                        <div class="form-group">
-                                            <div class="maxl">
-                                                <label class="radio inline"> 
-                                                    <input type="radio" name="gender" value="Pria" checked>
-                                                    <span> Pria </span> 
-                                                </label>
-                                                <label class="radio inline"> 
-                                                    <input type="radio" name="gender" value="Wanita">
-                                                    <span>Wanita </span> 
-                                                </label>
-                                            </div>
-                                        </div>
+
+                                        
                                     </div>
                                     <div class="col-md-6">
-                                        <div class="form-group">
-                                            <input type="email" class="form-control" placeholder="Email Anda *" value="" />
+                                    <div class="form-group">
+                                    
+                                            <input type="password" name="password" class="form-control" placeholder="Kata Sandi *" value="" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" minlength="10" maxlength="10" name="txtEmpPhone" class="form-control" placeholder="Nomor Telepon *" value="" />
+                                            <input type="password" name="pass_confirm" class="form-control"  placeholder="Konfirmasi Sandi *" value="" />
                                         </div>
-                                        <div class="form-group">
-                                            <select class="form-control">
-                                                <option class="hidden"  selected disabled>Silakan pilih Pertanyaan Keamanan</option>
-                                                <option>Berapa tanggal lahir Anda?</option>
-                                                <option>Berapa Nomor Telepon lama Anda?</option>
-                                                <option>Apa Nama Hewan Peliharaan Anda?</option>
-                                            </select>
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Masukan Jawaban Anda *" value="" />
-                                        </div>
+                                      
+                                        
+                                        
+                                       
                                         <input type="submit" class="btnRegister"  value="Daftar"/>
                                     </div>
+                                    
                                 </div>
+</form>
                             </div>
-                            <div class="tab-pane fade show" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                                <h3  class="register-heading">STUDENT</h3>
-                                <div class="row register-form">
+                            <div class="tab-pane" id="profile" style="display:none;">
+                                <h3  class="register-heading">DONATUR</h3>
+                                <form action="<?= url_to('register') ?>" method="post">
+                        <?= csrf_field() ?>
+                        <div class="row register-form">
+                                    <input type="hidden" name="role" value="donatur" />
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Nama Depan *" value="" />
+                                            <input name="username" type="text" class="form-control" placeholder="Username" value="" />
                                         </div>
+                                       
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Nama Belakang *" value="" />
-                                        </div> 
-                                        <div class="form-group">
-                                            <input type="email" class="form-control" placeholder="Email *" value="" />
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="text" maxlength="10" minlength="10" class="form-control" placeholder="Phone *" value="" />
+                                            <input type="email" name="email" class="form-control" placeholder="Email Anda *" value="" />
                                         </div>
 
-
+                                        
                                     </div>
                                     <div class="col-md-6">
-                                        <div class="form-group">
-                                            <input type="password" class="form-control" placeholder="Kata Sandi *" value="" />
+                                    <div class="form-group">
+                                    
+                                            <input type="password" name="password" class="form-control" placeholder="Kata Sandi *" value="" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" class="form-control" placeholder="Konfirmasi Sandi *" value="" />
+                                            <input type="password" name="pass_confirm" class="form-control"  placeholder="Konfirmasi Sandi *" value="" />
                                         </div>
-                                        <div class="form-group">
-                                            <select class="form-control">
-                                                <option class="hidden"  selected disabled>Silakan pilih Pertanyaan Keamanan</option>
-                                                <option>Berapa tanggal lahir Anda?</option>
-                                                <option>Berapa Nomor Telepon lama Anda?</option>
-                                                <option>Apa Nama Hewan Peliharaan Anda?</option>
-                                            </select>
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="`Answer *" value="" />
-                                        </div>
+                                      
+                                        
+                                        
+                                       
                                         <input type="submit" class="btnRegister"  value="Daftar"/>
                                     </div>
+                                    
                                 </div>
+                                </form>
                             </div>
                         </div>
                     </div>
                 </div>
 
             </div>
+            <script>
+    // Get the toggle buttons
+    var toggleDonatur = document.getElementById('toggle-donatur');
+    var toggleMahasiswa = document.getElementById('toggle-mahasiswa');
+
+    // Get the content elements
+    var profileContent = document.getElementById('profile');
+    var homeContent = document.getElementById('home');
+
+    // Add click event listeners to the toggle buttons
+    toggleDonatur.addEventListener('click', function () {
+        console.log('toggle-donatur clicked');
+        // Hide mahasiswa content
+        homeContent.style.display = 'none';
+        // Show donatur content
+        profileContent.style.display = 'block';
+
+        // Add 'active' class to the clicked toggle button
+        toggleDonatur.classList.add('active');
+
+        // Remove 'active' class from other toggle button
+        toggleMahasiswa.classList.remove('active');
+    });
+
+    toggleMahasiswa.addEventListener('click', function () {
+        console.log('toggle-mahasiswa clicked');
+        // Hide donatur content
+        profileContent.style.display = 'none';
+        // Show mahasiswa content
+        homeContent.style.display = 'block';
+
+        // Add 'active' class to the clicked toggle button
+        toggleMahasiswa.classList.add('active');
+
+        // Remove 'active' class from other toggle button
+        toggleDonatur.classList.remove('active');
+    });
+</script>

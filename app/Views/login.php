@@ -8,10 +8,11 @@
        
           <div class="card-body p-4 p-sm-5">
             <h5 class="text-center text-bold">BesWan Login</h5><br>
-            <form action="/checkLogin" method="post">
+            <form action="<?= url_to('login') ?>" method="post">
+						<?= csrf_field() ?>
               <div class="form-floating mb-3">
-                <input type="email" class="form-control" id="floatingInput" name="email" placeholder="name@example.com">
-                <label for="floatingInput">Email</label>
+                <input type="text" class="form-control" id="floatingInput" name="login" placeholder="name@example.com">
+                <label for="floatingInput">Email or Username</label>
               </div>
               <div class="form-floating mb-3">
                 <input type="password" class="form-control" id="floatingPassword" name="password"
@@ -37,7 +38,7 @@
               
               <br><br><div class="text-center">
               <div class="underline"></div>
-               <br> <p>Tidak punya akun? <a href="#!">Buat Akun</a></p>
+               <br> <p>Tidak punya akun? <a href="regist">Buat Akun</a></p>
 
               </div>
               <br><br>
