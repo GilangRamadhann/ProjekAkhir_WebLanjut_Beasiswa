@@ -9,6 +9,13 @@ use App\Controllers\LoginController;
 
 // Landing Page
 $routes->get('/', 'Home::index');
+$routes->get('/regist', 'Home::regist');
+
+
+// Login untuk semua user
+ $routes->get('/loginpage', [LoginController::class, 'index']);
+// $routes->post('/checkLogin', [LoginController::class, 'checkLogin']);
+
 
 // Register
 $routes->get('/register', 'Home::regist');
@@ -17,12 +24,7 @@ $routes->post('/register/store', [LoginController::class, 'store']);
 //donatur
 $routes->get('/donatur', 'Home::dashboard_donatur');
 
-// Login untuk semua user
-$routes->get('/login', [LoginController::class, 'index']);
-$routes->post('/login/checkLogin', [LoginController::class, 'checkLogin']);
-
 $routes->get('/dashboard', 'Home::dashboard');
-
 $routes->get('/landing', 'Home::index2');
 $routes->get('/beswan', 'Home::beswan');
 
