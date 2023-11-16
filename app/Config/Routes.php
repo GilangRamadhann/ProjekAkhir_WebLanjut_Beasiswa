@@ -24,7 +24,13 @@ $routes->post('/register/store', [LoginController::class, 'store']);
 //donatur
 $routes->get('/donatur', 'Home::dashboard_donatur');
 
+//admin
 $routes->get('/dashboard', 'Home::dashboard');
+$routes->get('/programbeasiswa', 'Home::programbeasiswa');
+$routes->get('/penerimabeasiswa', 'Home::penerimabeasiswa');
+$routes->get('/dataakademik', 'Home::dataakademik');
+$routes->get('/pengeluaran', 'Home::pengeluaran');
+
 $routes->get('/landing', 'Home::index2');
 $routes->get('/beswan', 'Home::beswan');
 
