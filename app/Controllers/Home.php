@@ -18,6 +18,27 @@ class Home extends BaseController
     {
         return view('dashboard');
     }
+
+    public function programbeasiswa()
+    {
+        return view('admin_programbeas');
+    }
+
+    public function penerimabeasiswa()
+    {
+        return view('admin_penerimabeas');
+    }
+
+    public function dataakademik()
+    {
+        return view('admin_dataakademik');
+    }
+
+    public function pengeluaran()
+    {
+        return view('admin_pengeluaran');
+    }
+
     public function beswan()
     {
         return view('beswan');

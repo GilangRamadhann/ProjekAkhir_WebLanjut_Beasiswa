@@ -157,10 +157,24 @@ h4, .h4 {
 
 h5, .h5 {
   font-size: 1.25rem;
+
+.btn {
+  font-family: 'Poppins';
+  padding: 0.5rem 2rem;
+  outline: none;
+  border: none;
+  font-size: 1rem;
+  color: var(--extra-light);
+  background-color: var(--primary-color);
+  border-radius: 5rem;
+  cursor: pointer;
+  transition: 0.3s;
+
 }
 
 h6, .h6 {
   font-size: 1rem;
+
 }
 
 p {
@@ -242,6 +256,24 @@ sub {
 
 sup {
   top: -0.5em;
+
+  color: var(--primary-color);
+  background-color: var(--extra-light);
+  border-radius: 5rem;
+  cursor: pointer;
+  transition: 0.3s;
+  border: 1px solid var(--primary-color);
+}
+
+.btn:hover {
+  background-color: var(--primary-color-dark);
+}
+
+.btn-daftar:hover {
+  background-color: var(--primary-color-dark);
+  color: var(--extra-light);
+  border: none;
+
 }
 
 a {
