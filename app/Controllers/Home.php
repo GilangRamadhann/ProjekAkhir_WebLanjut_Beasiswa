@@ -48,4 +48,14 @@ class Home extends BaseController
     {
         return view('dashboard_donatur');
     }
+
+    public function profiledon()
+    {
+        return view('profile_donatur');
+    }
+
+    public function beadonatur()
+    {
+        return view('bea_donatur');
+    }
 }
