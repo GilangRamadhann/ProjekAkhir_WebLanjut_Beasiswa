@@ -27,4 +27,5 @@ $routes->get('/donatur', 'Home::dashboard_donatur');
 $routes->get('/dashboard', 'Home::dashboard');
 $routes->get('/landing', 'Home::index2');
 $routes->get('/beswan', 'Home::beswan');
-
+$routes->get('/profiledon', 'Home::profiledon');
+$routes->get('/beadonatur', 'Home::beadonatur');
