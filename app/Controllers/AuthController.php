@@ -187,8 +187,10 @@ class AuthController extends Controller
         $users->save($user);
     
         // Ensure default group gets assigned if set
-        if (! empty($this->config->defaultUserGroup)) {
+        if (!empty($this->config->defaultUserGroup)) {
             $users = $users->withGroup($this->config->defaultUserGroup);
+        }else{
+
         }
         $user->activate();
 
