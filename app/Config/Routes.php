@@ -32,17 +32,7 @@ $routes->get('/dataakademik', 'Home::dataakademik');
 $routes->get('/pengeluaran', 'Home::pengeluaran');
 
 $routes->get('/landing', 'Home::index2');
-
 $routes->get('/beswan', 'Home::beswan');
 $routes->get('/profiledon', 'Home::profiledon');
-$routes->get('/beadonatur', 'Home::beadonatur');
 
-
-$routes->get('/beswan', 'Home::beswan');
-$routes->get('/profiledon', 'Home::profiledon');
-$routes->get('/beadonatur', 'Home::beadonatur');
-
-
-$routes->get('/beswan', 'Home::beswan');
-$routes->get('/profiledon', 'Home::profiledon');
 $routes->get('/beadonatur', 'Home::beadonatur');
