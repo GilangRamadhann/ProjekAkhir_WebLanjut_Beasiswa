@@ -11,7 +11,7 @@
                         <img src="<?= base_url('assets/img/cap.png')?>" alt=""/>
                         <h3>BesCamp</h3>
                         <p></p>
-                        <input type="submit" name="" value="Masuk"/><br/>
+                        <a href="loginpage"><input type="submit" name="" value="Masuk"/><br/></a>
                     </div>
                     <div class="col-md-9 register-right">
                         <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
