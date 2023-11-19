@@ -1,3 +1,4 @@
+
 <?php
 
 namespace App\Controllers;
@@ -432,3 +433,4 @@ class AuthController extends Controller
         return view($view, $data);
     }
 }
+
