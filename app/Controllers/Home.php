@@ -4,8 +4,16 @@ namespace App\Controllers;
 
 class Home extends BaseController
 {
-    public function index(): string
-    {
+    public function index()
+    {   
+       
+       // $path = "pengurus";
+        if (in_groups("Beswan")){
+            return redirect()->route("beswan"); 
+        }else if(in_groups("Donatur")){
+            return redirect()->route("donatur"); 
+        }
+            
         return view('index');
     }
     
