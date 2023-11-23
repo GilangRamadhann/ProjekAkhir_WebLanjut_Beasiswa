@@ -6,14 +6,13 @@ class Home extends BaseController
 {
     public function index()
     {   
-       
-       // $path = "pengurus";
-        if (in_groups("Beswan")){
-            return redirect()->route("beswan"); 
+        if (in_groups("Admin")){
+            return redirect()->route("dashboard"); 
         }else if(in_groups("Donatur")){
             return redirect()->route("donatur"); 
-        }
-            
+        }else if(in_groups("Beswan")){
+            return redirect()->route("beswan"); 
+        }   
         return view('index');
     }
     
