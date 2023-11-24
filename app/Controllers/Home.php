@@ -73,7 +73,7 @@ class Home extends BaseController
 
     public function beswan()
     {
-        return view('beswan');
+        return view('beswan/beswan');
     }
 
     public function dashboard_donatur()
@@ -114,6 +114,22 @@ class Home extends BaseController
 
     public function editprogbes(){
         return view('donatur/donatur_editprogbes');
+    }
+
+    public function profil(){
+        return view('beswan/profil');
+    }
+
+    public function listbea(){
+        return view('beswan/listbea');
+    }
+
+    public function donbes(){
+        return view('beswan/donbes');
+    }
+
+    public function penglu(){
+        return view('beswan/penglu');
     }
 
 }
