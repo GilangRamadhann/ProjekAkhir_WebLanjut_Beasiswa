@@ -26,10 +26,15 @@ $routes->get('/donatur', 'Home::dashboard_donatur');
 
 //admin
 $routes->get('/dashboard', 'Home::dashboard');
+$routes->get('/daftardonatur', 'Home::daftardonatur');
+$routes->get('/daftardonatur/detail', 'Home::detail_daftardonatur');
 $routes->get('/programbeasiswa', 'Home::programbeasiswa');
+$routes->get('/programbeasiswa/detail', 'Home::detail_programbeasiswa');
 $routes->get('/penerimabeasiswa', 'Home::penerimabeasiswa');
+$routes->get('/penerimabeasiswa/detail', 'Home::detail_penerimabeasiswa');
 $routes->get('/dataakademik', 'Home::dataakademik');
 $routes->get('/pengeluaran', 'Home::pengeluaran');
+$routes->get('/pengeluaran/detail', 'Home::detail_pengeluaran');
 
 $routes->get('/landing', 'Home::index2');
 $routes->get('/beswan', 'Home::beswan');

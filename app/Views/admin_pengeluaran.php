@@ -65,6 +65,12 @@
 					<span>Program Beasiswa</span></a>
 			</li>
 
+			<li class="nav-item">
+				<a class="nav-link" href="<?= base_url('/daftardonatur') ?>">
+					<i class="fas fa-fw fa-table"></i>
+					<span>Daftar Donatur</span></a>
+			</li>
+
 			<!-- Divider -->
 			<hr class="sidebar-divider">
 
@@ -162,7 +168,9 @@
                                             <td>1.000.000</td>
 											<td>700.000</td>
                                             <td>
-												<button type="button" class="btn btn-warning">Detail</button>
+												<a href="<?= base_url('/pengeluaran/detail') ?>" type="button" class="btn btn-warning btn-sm">
+                                                    Detail
+                                                </a>
                                             </td>
                                         </tr>
                                         <tr>
@@ -172,7 +180,9 @@
                                             <td>750.000</td>
 											<td>600.000</td>
                                             <td>
-												<button type="button" class="btn btn-warning">Detail</button>
+												<a href="<?= base_url('/pengeluaran/detail') ?>" type="button" class="btn btn-warning btn-sm">
+                                                    Detail
+                                                </a>
                                             </td>
                                         </tr>
                                     </tbody>
