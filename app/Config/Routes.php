@@ -47,4 +47,9 @@ $routes->get('/pengeluaran', 'Home::pengeluaran');
 $routes->get('/pengeluaran/detail', 'Home::detail_pengeluaran');
 
 $routes->get('/landing', 'Home::index2');
+//beswan
 $routes->get('/beswan', 'Home::beswan');
+$routes->get('/profil', 'Home::profil');
+$routes->get('/listbea', 'Home::listbea');
+$routes->get('/donbes', 'Home::donbes');
+$routes->get('/penglu', 'Home::penglu');
