@@ -6,8 +6,8 @@
                 <h2 class=""><i class="fas fa-graduation-cap"></i>
 				    <strong>BesCamp</strong></h2>
 				<ul>
-                    <li><a href="profile_donatur.php"><i class="fa-solid fa-user"></i> Data Diri</a></li>
-                    <li><a href="#"><i class="fas fa-award"></i> Program Beasiswa</a></li>
+                    <li><a href="/profiledon"><i class="fa-solid fa-user"></i> Data Diri</a></li>
+                    <li><a href="/beadonatur"><i class="fas fa-award"></i> Program Beasiswa</a></li>
                     <li><a href="#" class="dropdown"><i class="fas fa-user-graduate"></i> Beswan <i class="fas fa-angle-down arrow" ></i></a>
                     <div class="sub-menu">
                     <a href="#"><i class="fa-solid fa-users" style="color: #ffffff;"></i> Pendaftar Beasiswa</a>
@@ -64,7 +64,7 @@
                                 <div class="card bg-success text-white mb-4">
                                     <div class="card-body">Beasiswa</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#">Lihat Selengkapnya</a>
+                                        <a class="small text-white stretched-link" href="/beadonatur">Lihat Selengkapnya</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
@@ -183,5 +183,6 @@
         <script src="assets/js/demo/chart-bar-demo.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
         <script src="assets/js/datatables-simple-demo.js"></script>
+        </div>
 	</body>
 	<?= $this->endsection() ?>

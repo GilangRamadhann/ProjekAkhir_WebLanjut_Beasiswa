@@ -11279,3 +11279,41 @@ footer.sticky-footer .copyright {
 body.sidebar-toggled footer.sticky-footer {
   width: 100%;
 }
+
+.arrow {
+  margin-left: 49px;
+}
+
+.underline{
+  background: #C0C0C0;
+  height: 1px;
+  margin: 1.5rem auto 0 auto;
+  margin-right: 3%;
+  width: 105%;
+}
+
+.card-box{
+  background: -webkit-linear-gradient(right, #3CB371, #66CDAA);
+}
+.card-box .card-header{
+  background: -webkit-linear-gradient(right, #a6f77b, #2ec06f);
+}
+
+.page-link{
+ color: #169b6b;
+
+}
+
+.page-item{
+ 
+  border-color: #169b6b;
+}
+
+.page-item.active .page-link{
+  background-color: #169b6b;
+}
+
+.text-left .stretched-link{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #000;
+}

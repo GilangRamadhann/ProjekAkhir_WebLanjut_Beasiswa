@@ -2,6 +2,30 @@
 <?= $this->section('content') ?>
 
     <body class="sb-nav-fixed">
+    <nav class="st-menu st-effect-1" id="menu-1">
+                <h2 class=""><i class="fas fa-graduation-cap"></i>
+				    <strong>BesCamp</strong></h2>
+				<ul>
+                    <li><a href="/profiledon"><i class="fa-solid fa-user"></i> Data Diri</a></li>
+                    <li><a href="/beadonatur"><i class="fas fa-award"></i> Program Beasiswa</a></li>
+                    <li><a href="#" class="dropdown"><i class="fas fa-user-graduate"></i> Beswan <i class="fas fa-angle-down arrow" ></i></a>
+                    <div class="sub-menu">
+                    <a href="#"><i class="fa-solid fa-users" style="color: #ffffff;"></i> Pendaftar Beasiswa</a>
+                    <a href="#"> <i class="fa-regular fa-id-card" style="color: #ffffff;"></i>  Penerima Beswan</a>
+                    </div>
+                  </li>
+                 
+                    <li><a href="#"><i class="fas fa-book"></i> Aktivitas <i class="fas fa-angle-down arroww" ></i></a>
+                    <div class="sub-menuuu">
+                    <a href="#"><i class="fa-solid fa-money-bill-transfer" style="color: #ffffff;"></i> Daftar Pengeluaran</a>
+                    <a href="#"><i class="fas fa-dollar-sign"></i> Pengiriman Dana</a>
+                    </div>
+                    </li>
+
+                    <li><a href="#" id="logoutButton"><i class="fas fa-sign-out-alt"></i> Keluar</a></li>
+				</ul>
+			</nav>
+            
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">

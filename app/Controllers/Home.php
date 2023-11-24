@@ -78,16 +78,42 @@ class Home extends BaseController
 
     public function dashboard_donatur()
     {
-        return view('dashboard_donatur');
+        return view('donatur/dashboard_donatur');
     }
 
     public function profiledon()
     {
-        return view('profile_donatur');
+        return view('donatur/profile_donatur');
     }
 
     public function beadonatur()
     {
-        return view('bea_donatur');
+        return view('donatur/bea_donatur');
     }
+
+    public function pendaftarbeasiswa(){
+        return view('donatur/donatur_pendaftarbeasiswa');
+    
+        }
+
+    public function penerima(){
+        return view('donatur/donatur_penerimabeasiswa');
+    }
+
+    public function daftarpengeluaran(){
+        return view('donatur/donatur_daftarpengeluaran');
+    }
+
+    public function editprofile(){
+        return view('donatur/donatur_editprofile');
+    }
+
+    public function tambahdata(){
+        return view('donatur/donatur_tambahdatadonatur');
+    }
+
+    public function editprogbes(){
+        return view('donatur/donatur_editprogbes');
+    }
+
 }

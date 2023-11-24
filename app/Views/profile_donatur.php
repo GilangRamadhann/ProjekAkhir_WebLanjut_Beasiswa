@@ -2,7 +2,30 @@
 <?= $this->section('content') ?>
     <body id="page-top">
         <!-- Navigation-->
-       
+        <div id="st-container" class="st-container">
+        <nav class="st-menu st-effect-1" id="menu-1">
+                <h2 class=""><i class="fas fa-graduation-cap"></i>
+				    <strong>BesCamp</strong></h2>
+				<ul>
+                    <li><a href="/profiledon"><i class="fa-solid fa-user"></i> Data Diri</a></li>
+                    <li><a href="/beadonatur"><i class="fas fa-award"></i> Program Beasiswa</a></li>
+                    <li><a href="#" class="dropdown"><i class="fas fa-user-graduate"></i> Beswan <i class="fas fa-angle-down arrow" ></i></a>
+                    <div class="sub-menu">
+                    <a href="#"><i class="fa-solid fa-users" style="color: #ffffff;"></i> Pendaftar Beasiswa</a>
+                    <a href="#"> <i class="fa-regular fa-id-card" style="color: #ffffff;"></i>  Penerima Beswan</a>
+                    </div>
+                  </li>
+                 
+                    <li><a href="#"><i class="fas fa-book"></i> Aktivitas <i class="fas fa-angle-down arroww" ></i></a>
+                    <div class="sub-menuuu">
+                    <a href="#"><i class="fa-solid fa-money-bill-transfer" style="color: #ffffff;"></i> Daftar Pengeluaran</a>
+                    <a href="#"><i class="fas fa-dollar-sign"></i> Pengiriman Dana</a>
+                    </div>
+                    </li>
+
+                    <li><a href="/loginpage" id="logoutButton"><i class="fas fa-sign-out-alt"></i> Keluar</a></li>
+				</ul>
+			</nav>
         <!-- Page Content-->
         <div class="container-fluid p-0">
             <!-- About-->
@@ -176,6 +199,16 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="assets/js/scripts.js"></script>
-    </body>
+        <script src="assets/js/classie.js"></script>
+        <script src="assets/js/sidebarEffects.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="assets/js/scripts.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+        <script src="assets/js/demo/chart-area-demo.js"></script>
+        <script src="assets/js/demo/chart-bar-demo.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
+        <script src="assets/js/datatables-simple-demo.js"></script>
+     </div>
+</body>
 
-	<?= $this->endsection() ?>
+<?= $this->endsection() ?>
