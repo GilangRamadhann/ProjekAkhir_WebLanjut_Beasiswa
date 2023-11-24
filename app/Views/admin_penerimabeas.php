@@ -65,6 +65,12 @@
 					<span>Program Beasiswa</span></a>
 			</li>
 
+			<li class="nav-item">
+				<a class="nav-link" href="<?= base_url('/daftardonatur') ?>">
+					<i class="fas fa-fw fa-table"></i>
+					<span>Daftar Donatur</span></a>
+			</li>
+
 			<!-- Divider -->
 			<hr class="sidebar-divider">
 
@@ -160,7 +166,9 @@
                                             <td>Djarum Foundation</td>
                                             <td>Universitas Lampung</td>
                                             <td>
-                                                <button type="button" class="btn btn-warning">Detail</button>
+												<a href="<?= base_url('/penerimabeasiswa/detail') ?>" type="button" class="btn btn-warning btn-sm">
+                                                    Detail
+                                                </a>
                                             </td>
                                         </tr>
                                         <tr>
@@ -169,7 +177,9 @@
                                             <td>Yayasan KSE</td>
                                             <td>Universitas Lampung</td>
                                             <td>
-                                                <button type="button" class="btn btn-warning">Detail</button>
+												<a href="<?= base_url('/penerimabeasiswa/detail') ?>" type="button" class="btn btn-warning btn-sm">
+                                                    Detail
+                                                </a>
                                             </td>
                                         </tr>
                                     </tbody>
