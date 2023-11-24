@@ -23,6 +23,16 @@ $routes->post('/register/store', [LoginController::class, 'store']);
 
 //donatur
 $routes->get('/donatur', 'Home::dashboard_donatur');
+$routes->get('/profiledon', 'Home::profiledon');
+$routes->get('/beadonatur', 'Home::beadonatur');
+$routes->get('/pendaftar', 'Home::pendaftarbeasiswa');
+$routes->get('/penerima', 'Home::penerima');
+$routes->get('/daftarpengeluaran', 'Home::daftarpengeluaran');
+$routes->get('/editprofile', 'Home::editprofile');
+$routes->get('/tambahdata', 'Home::tambahdata');
+$routes->get('/editprogbes', 'Home::editprogbes');
+
+
 
 //admin
 $routes->get('/dashboard', 'Home::dashboard');
@@ -33,6 +43,3 @@ $routes->get('/pengeluaran', 'Home::pengeluaran');
 
 $routes->get('/landing', 'Home::index2');
 $routes->get('/beswan', 'Home::beswan');
-$routes->get('/profiledon', 'Home::profiledon');
-
-$routes->get('/beadonatur', 'Home::beadonatur');
