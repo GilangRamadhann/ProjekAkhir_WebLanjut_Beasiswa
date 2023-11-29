@@ -143,7 +143,7 @@ body {
   
  }
 
-=======
+
 
 .register{
   background: -webkit-linear-gradient(left, #228B22, #68e468);
@@ -239,4 +239,44 @@ body {
   margin-top: 8%;
   margin-bottom: -15%;
   color: #495057;
+}
+
+.arrow{
+  margin-left: 150px;
+}
+
+.arroww{
+  margin-left: 135px;
+}
+
+.sub-menu{
+  font-size: 80%;
+  margin-left: 25px;
+  
+}
+
+.sub-menuuu{
+  font-size: 80%;
+  margin-left: 25px;
+  
+}
+
+.resume-section-content{
+  background-color: #FFFAF0;
+}
+
+.text{
+  color: #228B22;
+}
+
+.mb-5 a{
+  color: #228B22 ;
+}
+
+.mt-4{
+  color: #228B22;
+}
+
+.sb-nav-fixed{
+  background-color: #FFFAF0;
 }
