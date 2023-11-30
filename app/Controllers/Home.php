@@ -122,6 +122,10 @@ class Home extends BaseController
             $data=[
                 "nama" => $this->request->getVar("nama"),
                 "id_user" => session("id"),
+                "deskripsi" => $this->request->getVar("deskripsi"),
+                "ketentuan" => $this->request->getVar("ketentuan"),
+                "syarat" => $this->request->getVar("syarat"),
+                "no_telp" => $this->request->getVar("no_telp"),
                 "tgl_buka" => $this->request->getVar("tgl_buka"),
                 "tgl_tutup" => $this->request->getVar("tgl_tutup"),
             ];

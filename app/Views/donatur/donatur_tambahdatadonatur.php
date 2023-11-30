@@ -156,10 +156,22 @@
                             <label class="small mb-1" for="inputUsername">Nama Beasiswa</label>
                             <input class="form-control" id="inputUsername" type="text" placeholder="Masukan Nama Beasiswa" value="" name="nama">
                         </div>
-                        <!-- Form Row-->
-                            <!-- Form Group (first name)-->
-
-
+						<div class="mb-3">
+                            <label class="small mb-1" for="inputUsername">Deskripsi</label>
+                            <input class="form-control" id="inputUsername" type="text" placeholder="Masukan Deskripsi Beasiswa" value="" name="deskripsi">
+                        </div>
+						<div class="mb-3">
+                            <label class="small mb-1" for="inputUsername">Ketentuan</label>
+                            <input class="form-control" id="inputUsername" type="text" placeholder="Masukan Ketentuan Beasiswa" value="" name="ketentuan">
+                        </div>
+						<div class="mb-3">
+                            <label class="small mb-1" for="inputUsername">Syarat</label>
+                            <input class="form-control" id="inputUsername" type="text" placeholder="Masukan Syarat Beasiswa" value="" name="syarat">
+                        </div>
+						<div class="mb-3">
+                            <label class="small mb-1" for="inputUsername">No Telp</label>
+                            <input class="form-control" id="inputUsername" type="text" placeholder="Masukan No Telp" value="" name="no_telp">
+                        </div>
                              <!-- Form Group (first name)-->
                             <div class="mb-3">
                                 <label class="small mb-1" for="inputDate">Pembukaan Pendaftaran</label>

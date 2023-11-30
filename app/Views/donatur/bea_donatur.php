@@ -151,6 +151,10 @@
                                         <tr>
                                             <th>Nama Beasiswa</th>
 											<th>Nama Donatur</th>
+											<th>Deskripsi</th>
+											<th>Ketentuan</th>
+											<th>Syarat</th>
+											<th>No Telp</th>
                                             <th>Pembukaan Pendaftaraan</th>
                                             <th>Penutupan Pendaftaraan</th>
                                             <th>Aksi</th>
@@ -161,6 +165,10 @@
                                         <tr>
                                             <td><?= $dt['nama']; ?></td>
 											<td><?= $dt['username']; ?></td>
+											<td><?= $dt['deskripsi']; ?></td>
+											<td><?= $dt['ketentuan']; ?></td>
+											<td><?= $dt['syarat']; ?></td>
+											<td><?= $dt['no_telp']; ?></td>
                                             <td><?= $dt['tgl_buka']; ?></td>
                                             <td><?= $dt['tgl_tutup']; ?></td>
                                             <td class="btn-ed">
