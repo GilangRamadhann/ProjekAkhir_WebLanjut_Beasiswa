@@ -30,6 +30,7 @@ $routes->get('/penerima', 'Home::penerima');
 $routes->get('/daftarpengeluaran', 'Home::daftarpengeluaran');
 $routes->get('/editprofile', 'Home::editprofile');
 $routes->get('/tambahdata', 'Home::tambahdata');
+$routes->post('/tambahdata', 'Home::tambahdata');
 $routes->get('/editprogbes', 'Home::editprogbes');
 
 

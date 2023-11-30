@@ -149,32 +149,30 @@
             <div class="card mb-4">
                 <div class="card-header">Detail Data</div>
                 <div class="card-body">
-                    <form>
+                    <form action="tambahdata" method="post">
                         <!-- Form Group (username)-->
+						<input type="hidden" name="add" value="1">
                         <div class="mb-3">
                             <label class="small mb-1" for="inputUsername">Nama Beasiswa</label>
-                            <input class="form-control" id="inputUsername" type="text" placeholder="Masukan Nama Beasiswa" value="">
+                            <input class="form-control" id="inputUsername" type="text" placeholder="Masukan Nama Beasiswa" value="" name="nama">
                         </div>
                         <!-- Form Row-->
                             <!-- Form Group (first name)-->
-                            <div class="mb-3">
-                                <label class="small mb-1" for="inputFirstName">Nama Donatur</label>
-                                <input class="form-control" id="inputFirstName" type="text" placeholder="Masukan Nama Donatur" value="">
-                            </div>
+
 
                              <!-- Form Group (first name)-->
                             <div class="mb-3">
                                 <label class="small mb-1" for="inputDate">Pembukaan Pendaftaran</label>
-                                <input class="form-control" id="inputDate" type="date" placeholder="" value="2023/1/25">
+                                <input class="form-control" id="inputDate" type="date" placeholder="" value="2023/1/25" name="tgl_buka">
                             </div>
 
                             <div class="mb-3">
                                 <label class="small mb-1" for="inputTanggal">Penutupan Pendaftaran</label>
-                                <input class="form-control" id="inputTanggal" type="date" placeholder="" value="2023/1/25">
+                                <input class="form-control" id="inputTanggal" type="date" placeholder="" value="2023/1/25" name="tgl_tutup">
                             </div>
                             
                         <!-- Save changes button-->
-                        <button class="btn btn-primary" type="button">Simpan</button>
+                        <button class="btn btn-primary" type="submit">Simpan</button>
                     </form>
                 </div>
             </div>

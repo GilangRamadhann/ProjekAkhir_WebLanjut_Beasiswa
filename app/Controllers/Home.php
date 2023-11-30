@@ -1,11 +1,13 @@
 <?php
 
 namespace App\Controllers;
+use App\Models\ProgramModel;
 
 class Home extends BaseController
 {
     public function index()
     {   
+       
         if (in_groups("Admin")){
             return redirect()->route("dashboard"); 
         }else if(in_groups("Donatur")){
@@ -87,11 +89,15 @@ class Home extends BaseController
     }
 
     public function beadonatur()
-    {
-        return view('donatur/bea_donatur');
+    {    
+        $models = new ProgramModel();
+        $data = $models->getProgram();
+        //dd($data);
+        return view('donatur/bea_donatur',["data" => $data]);
     }
 
     public function pendaftarbeasiswa(){
+
         return view('donatur/donatur_pendaftarbeasiswa');
     
         }
@@ -109,7 +115,21 @@ class Home extends BaseController
     }
 
     public function tambahdata(){
+        
+        if(is_null($this->request->getVar("add"))){
         return view('donatur/donatur_tambahdatadonatur');
+        }else{
+            $data=[
+                "nama" => $this->request->getVar("nama"),
+                "id_user" => session("id"),
+                "tgl_buka" => $this->request->getVar("tgl_buka"),
+                "tgl_tutup" => $this->request->getVar("tgl_tutup"),
+            ];
+            //dd($data);
+           $models = new ProgramModel();
+           $models->createProgram($data);
+           return redirect()->route('beadonatur');
+        }
     }
 
     public function editprogbes(){

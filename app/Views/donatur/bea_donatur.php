@@ -157,17 +157,19 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+										<?php foreach ($data as $dt):?>
                                         <tr>
-                                            <td>Beasiswa Djarum</td>
-											<td>Djarum Foundation</td>
-                                            <td>25/01/2022</td>
-                                            <td>20/02/2022</td>
+                                            <td><?= $dt['nama']; ?></td>
+											<td><?= $dt['username']; ?></td>
+                                            <td><?= $dt['tgl_buka']; ?></td>
+                                            <td><?= $dt['tgl_tutup']; ?></td>
                                             <td class="btn-ed">
 												
                                                 <button type="button" class="btn btn-warning"><a class= "text-white" href="<?= base_url('/editprogbes') ?>">Edit</a></button>
 												<button type="button" class="btn btn-danger">Hapus</button>
                                             </td>
                                         </tr>
+										<?php endforeach; ?>
                                     </tbody>
                                 </table>
 								<!-- Pagination-->
