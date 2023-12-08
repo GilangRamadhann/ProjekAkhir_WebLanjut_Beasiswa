@@ -51,6 +51,29 @@
 
             <!-- Heading -->
             <div class="sidebar-heading">
+                Kelola
+            </div>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Kelola Data</span>
+                </a>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="#">Data Lokasi</a>
+                        <a class="collapse-item" href="#">Data Universitas</a>
+                        <a class="collapse-item" href="#">Data Fakultas</a>
+                        <a class="collapse-item" href="#">Data Jurusan</a>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Heading -->
+            <div class="sidebar-heading">
                 Donatur
             </div>
 
@@ -153,14 +176,14 @@
                                         <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;" src="<?= base_url('assets/img/genbi.png') ?>" alt="...">
                                     </div>
                                     <p>
-                                        Program Beasiswa Bank Indonesia (BI) merupakan beasiswa yang diberikan oleh Bank Indonesia bagi para mahasiswa jenjang sarjana (S1). 
+                                        Program Beasiswa Bank Indonesia (BI) merupakan beasiswa yang diberikan oleh Bank Indonesia bagi para mahasiswa jenjang sarjana (S1).
                                         Universitas Islam Bandung (Unisba) terpilih sebagai salah satu perguruan tinggi penyelenggara program beasiswa ini. Program Beasiswa Bank Indonesia bertujuan untuk:
-                                        <ul>
-                                            <li>Meningkatkan angka partisipasi pendidikan tinggi, indeks pembangunan manusia (Human Development Index), dan daya saing bangsa;</li>
-                                            <li>Meningkatkan motivasi belajar serta menjamin keberlangsungan studi mahasiswa dan menghidupkan harapan bagi mahasiswa yang mempunyai prestasi (potensi) akademik untuk dapat menempuh serta menyelesaikan pendidikan tinggi; dan</li>
-                                            <li>Meningkatkan prestasi mahasiswa baik dalam bidang akademik dan non akademik sehingga mampu menghasilkan SDM yang kreatif, mandiri, produktif, dan memiliki kepedulian sosial yang tinggi serta mampu berperan dalam pemberdayaan masyarakat.</li>
-                                        </ul>
-                                        Program beasiswa ini diperuntukkan bagi para mahasiswa program studi terpilih, yaitu Program Studi: Hukum Ekonomi Syari’ah, Perbankan Syari’ah, Ilmu Hukum, Statistika, Matematika, Ilmu Komunikasi, Akuntansi, Ekonomi Pembangunan, dan Manajemen (Prioritas) ; Ahwal Al‑Syakhshiyah, Komunikasi dan Penyiaran Islam, dan Teknik Industri (Non-Prioritas). Pemberian beasiswa Bank Indonesia tanpa ikatan dinas dan tidak dikaitkan dengan pelaksanaan seleksi penerimaan calon pegawai Bank Indonesia. Program Beasiswa BI tidak terbatas pada pembiayaan untuk mendukung biaya pendidikan, tunjangan studi, maupun biaya hidup, selain itu para mahasiswa penerima Beasiswa BI juga difasilitasi untuk tergabung dalam komunitas penerima Beasiswa BI. Dalam komunitas tersebut, para penerima Beasiswa BI mendapatkan berbagai pelatihan secara berkala, terencana, dan terarah guna meningkatkan kompetensi individu serta mengembangkan karakter dan jiwa kepemimpinan agar mampu menjadi insan unggul dan berdaya saing.
+                                    <ul>
+                                        <li>Meningkatkan angka partisipasi pendidikan tinggi, indeks pembangunan manusia (Human Development Index), dan daya saing bangsa;</li>
+                                        <li>Meningkatkan motivasi belajar serta menjamin keberlangsungan studi mahasiswa dan menghidupkan harapan bagi mahasiswa yang mempunyai prestasi (potensi) akademik untuk dapat menempuh serta menyelesaikan pendidikan tinggi; dan</li>
+                                        <li>Meningkatkan prestasi mahasiswa baik dalam bidang akademik dan non akademik sehingga mampu menghasilkan SDM yang kreatif, mandiri, produktif, dan memiliki kepedulian sosial yang tinggi serta mampu berperan dalam pemberdayaan masyarakat.</li>
+                                    </ul>
+                                    Program beasiswa ini diperuntukkan bagi para mahasiswa program studi terpilih, yaitu Program Studi: Hukum Ekonomi Syari’ah, Perbankan Syari’ah, Ilmu Hukum, Statistika, Matematika, Ilmu Komunikasi, Akuntansi, Ekonomi Pembangunan, dan Manajemen (Prioritas) ; Ahwal Al‑Syakhshiyah, Komunikasi dan Penyiaran Islam, dan Teknik Industri (Non-Prioritas). Pemberian beasiswa Bank Indonesia tanpa ikatan dinas dan tidak dikaitkan dengan pelaksanaan seleksi penerimaan calon pegawai Bank Indonesia. Program Beasiswa BI tidak terbatas pada pembiayaan untuk mendukung biaya pendidikan, tunjangan studi, maupun biaya hidup, selain itu para mahasiswa penerima Beasiswa BI juga difasilitasi untuk tergabung dalam komunitas penerima Beasiswa BI. Dalam komunitas tersebut, para penerima Beasiswa BI mendapatkan berbagai pelatihan secara berkala, terencana, dan terarah guna meningkatkan kompetensi individu serta mengembangkan karakter dan jiwa kepemimpinan agar mampu menjadi insan unggul dan berdaya saing.
                                     </p>
                                 </div>
                             </div>
@@ -176,35 +199,35 @@
                                 <div class="card-body">
                                     <h4>Ketentuan</h4>
                                     <p>
-                                        <ul>
-                                            <li>Mahasiswa aktif program sarjana (S1) semester 3 (tiga) Universitas Islam Bandung.</li>
-                                            <li>Memiliki IPK minimal 3.25 (skala 4).</li>
-                                            <li>Setiap mahasiswa, menerima beasiswa paling lama hanya 4 (empat) semester sepanjang memenuhi kriteria yang telah ditentukan.</li>
-                                            <li>Maksimal berusia 23 tahun atau belum berusia 24 tahun pada saat ditetapkan sebagai penerima beasiswa.</li>
-                                            <li>Tidak sedang menerima beasiswa dari lembaga lain dan/atau berada dalam status ikatan dinas dari lembaga/instansi lain.</li>
-                                            <li>Mempunyai pengalaman menjalankan aktivitas sosial yang memiliki dampak kebermanfaatan bagi masyarakat.</li>
-                                            <li>Diutamakan bagi mahasiswa yang berasal dari latar belakang ekonomi keluarga kurang mampu (pra sejahtera). Dalam hal tidak terdapat calon penerima beasiswa yang berasal dari kalangan keluarga kurang mampu, maka dibuka kesempatan kepada calon penerima beasiswa lainnya sepanjang memenuhi persyaratan lainnya.</li>
-                                            <li>Bersedia untuk berperan aktif, mengelola dan mengembangkan Generasi Baru Indonesia (GenBI) serta berpartisipasi dalam kegiatan yang diselenggarakan oleh Bank Indonesia.</li>
-                                        </ul>
+                                    <ul>
+                                        <li>Mahasiswa aktif program sarjana (S1) semester 3 (tiga) Universitas Islam Bandung.</li>
+                                        <li>Memiliki IPK minimal 3.25 (skala 4).</li>
+                                        <li>Setiap mahasiswa, menerima beasiswa paling lama hanya 4 (empat) semester sepanjang memenuhi kriteria yang telah ditentukan.</li>
+                                        <li>Maksimal berusia 23 tahun atau belum berusia 24 tahun pada saat ditetapkan sebagai penerima beasiswa.</li>
+                                        <li>Tidak sedang menerima beasiswa dari lembaga lain dan/atau berada dalam status ikatan dinas dari lembaga/instansi lain.</li>
+                                        <li>Mempunyai pengalaman menjalankan aktivitas sosial yang memiliki dampak kebermanfaatan bagi masyarakat.</li>
+                                        <li>Diutamakan bagi mahasiswa yang berasal dari latar belakang ekonomi keluarga kurang mampu (pra sejahtera). Dalam hal tidak terdapat calon penerima beasiswa yang berasal dari kalangan keluarga kurang mampu, maka dibuka kesempatan kepada calon penerima beasiswa lainnya sepanjang memenuhi persyaratan lainnya.</li>
+                                        <li>Bersedia untuk berperan aktif, mengelola dan mengembangkan Generasi Baru Indonesia (GenBI) serta berpartisipasi dalam kegiatan yang diselenggarakan oleh Bank Indonesia.</li>
+                                    </ul>
                                     </p>
                                     <h4>Persyaratan</h4>
                                     <p>
-                                        <ul>
-                                            <li>Fotokopi Kartu Tanda Penduduk (KTP)</li>
-                                            <li>Fotokopi Kartu Tanda Mahasiswa (KTM)</li>
-                                            <li>Fotokopi Kartu Keluarga (KK)</li>
-                                            <li>Fotokopi sertifikat organisasi</li>
-                                            <li>Fotokopi sertifikat/SK/Surat tugas kegiatan sosial atau pengabdian kepada masyarakat</li>
-                                            <li>Fotokopi sertifikat prestasi</li>
-                                            <li>Transkrip Nilai terbaru (format Per Semester)</li>
-                                            <li>Surat Keterangan Tidak sedang Menerima Beasiswa, hubungi Bagian Kemahasiswaan Fakultas</li>
-                                            <li>Surat Keterangan Tidak Mampu (SKTM) dari kelurahan/desa setempat, Surat Keterangan Penghasilan Orang Tua dari kelurahan/desa, atau Struk Gaji/Bukti Penghasilan Orang Tua</li>
-                                            <li>Resume pribadi dalam Bahasa Indonesia</li>
-                                            <li>Motivation letter dalam Bahasa Indonesia</li>
-                                            <li>Surat Rekomendasi dari 1 orang tokoh (akademik atau non – akademik)</li>
-                                            <li>Surat kesanggupan untuk aktif dalam komunitas GenBI dapat diunduh pada https://bit.ly/draftBRBIUnisba</li>
-                                            <li>Form A.1, Biodata dari Bank Indonesia dapat diunduh pada https://bit.ly/draftBRBIUnisba</li>
-                                        </ul>
+                                    <ul>
+                                        <li>Fotokopi Kartu Tanda Penduduk (KTP)</li>
+                                        <li>Fotokopi Kartu Tanda Mahasiswa (KTM)</li>
+                                        <li>Fotokopi Kartu Keluarga (KK)</li>
+                                        <li>Fotokopi sertifikat organisasi</li>
+                                        <li>Fotokopi sertifikat/SK/Surat tugas kegiatan sosial atau pengabdian kepada masyarakat</li>
+                                        <li>Fotokopi sertifikat prestasi</li>
+                                        <li>Transkrip Nilai terbaru (format Per Semester)</li>
+                                        <li>Surat Keterangan Tidak sedang Menerima Beasiswa, hubungi Bagian Kemahasiswaan Fakultas</li>
+                                        <li>Surat Keterangan Tidak Mampu (SKTM) dari kelurahan/desa setempat, Surat Keterangan Penghasilan Orang Tua dari kelurahan/desa, atau Struk Gaji/Bukti Penghasilan Orang Tua</li>
+                                        <li>Resume pribadi dalam Bahasa Indonesia</li>
+                                        <li>Motivation letter dalam Bahasa Indonesia</li>
+                                        <li>Surat Rekomendasi dari 1 orang tokoh (akademik atau non – akademik)</li>
+                                        <li>Surat kesanggupan untuk aktif dalam komunitas GenBI dapat diunduh pada https://bit.ly/draftBRBIUnisba</li>
+                                        <li>Form A.1, Biodata dari Bank Indonesia dapat diunduh pada https://bit.ly/draftBRBIUnisba</li>
+                                    </ul>
                                     </p>
                                 </div>
                             </div>

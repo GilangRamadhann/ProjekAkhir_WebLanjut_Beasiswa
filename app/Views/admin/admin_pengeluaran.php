@@ -9,7 +9,7 @@
 	<meta name="description" content="">
 	<meta name="author" content="">
 
-	<title>Data Akademik</title>
+	<title>Data Pengeluaran Beswan</title>
 
 	<!-- Custom fonts for this template-->
 	<link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -47,6 +47,29 @@
 				<a class="nav-link" href="<?= base_url('/dashboard') ?>">
 					<i class="fas fa-fw fa-tachometer-alt"></i>
 					<span>Beranda</span></a>
+			</li>
+
+			<!-- Divider -->
+			<hr class="sidebar-divider">
+
+			<!-- Heading -->
+			<div class="sidebar-heading">
+				Kelola
+			</div>
+
+			<li class="nav-item">
+				<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+					<i class="fas fa-fw fa-cog"></i>
+					<span>Kelola Data</span>
+				</a>
+				<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+					<div class="bg-white py-2 collapse-inner rounded">
+						<a class="collapse-item" href="#">Data Lokasi</a>
+						<a class="collapse-item" href="#">Data Universitas</a>
+						<a class="collapse-item" href="#">Data Fakultas</a>
+						<a class="collapse-item" href="#">Data Jurusan</a>
+					</div>
+				</div>
 			</li>
 
 			<!-- Divider -->
@@ -145,7 +168,7 @@
                 <!-- DataTales Example -->
                 <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-success">Data Akademik Beswan</h6>
+                            <h6 class="m-0 font-weight-bold text-success">Data Pengeluaran Beswan</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -153,32 +176,36 @@
                                     <thead>
                                         <tr>
                                             <th>Nama Beswan</th>
-                                            <th>Semester</th>
-                                            <th>SKS diambil</th>
-                                            <th>IP</th>
-                                            <th>IPK</th>
-											<th>Transkrip</th>
+                                            <th>Nama Beasiswa</th>
+                                            <th>Bulan</th>
+                                            <th>Pemasukan</th>
+                                            <th>Pengeluan</th>
+											<th>Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
                                             <td>Gilang Ramadhan</td>
-                                            <td>5</td>
-                                            <td>24</td>
-                                            <td>4.00</td>
-											<td>4.00</td>
+                                            <td>Beasiswa Bank Indonesia</td>
+                                            <td>November</td>
+                                            <td>1.000.000</td>
+											<td>700.000</td>
                                             <td>
-                                                
+												<a href="<?= base_url('/pengeluaran/detail') ?>" type="button" class="btn btn-warning btn-sm">
+                                                    Detail
+                                                </a>
                                             </td>
                                         </tr>
                                         <tr>
 											<td>Vidya Sinta Billkis</td>
-                                            <td>5</td>
-                                            <td>24</td>
-                                            <td>4.00</td>
-											<td>4.00</td>
+                                            <td>Beasiswa Yayasan KSE</td>
+                                            <td>November</td>
+                                            <td>750.000</td>
+											<td>600.000</td>
                                             <td>
-                                                
+												<a href="<?= base_url('/pengeluaran/detail') ?>" type="button" class="btn btn-warning btn-sm">
+                                                    Detail
+                                                </a>
                                             </td>
                                         </tr>
                                     </tbody>
