@@ -4,23 +4,55 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class ProgramModel extends Model
+class JurusanModel extends Model
 {
     protected $DBGroup          = 'default';
-    protected $table            = 'program';
+    protected $table            = 'jurusan';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
-    protected $useSoftDeletes   = true;
+    protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['nama', 'id_user', 'deskripsi', 'ketentuan', 'syarat', 'no_telp', 'tgl_buka', 'tgl_tutup'];
+    protected $allowedFields    = ['jurusan'];
 
     // Dates
-    protected $useTimestamps = true;
+    protected $useTimestamps = false;
     protected $dateFormat    = 'datetime';
     protected $createdField  = 'created_at';
     protected $updatedField  = 'updated_at';
     protected $deletedField  = 'deleted_at';
+
+    protected $validationRules  = [
+        'jurusan' => [
+            'rules' => 'required', 
+            'errors' => [
+                'required' => '{field} wajib diisi*'
+            ]
+        ],
+    ];
+
+    protected $skipValidation = true; 
+
+    public function saveJurusan($data){
+        // dd($this->insert($data));
+        $this->insert($data); 
+    }
+
+    public function getJurusan($id = null){
+        if($id != null){
+            return $this->select('jurusan.*')->find($id); 
+        }
+        
+        return $this->select('jurusan.*')->findAll();
+    }
+
+    public function updateJurusan($data, $id){
+        return $this->update($id, $data); 
+    }
+
+    public function deleteJurusan($id){
+        return $this->delete($id);
+    }
 
     // // Validation
     // protected $validationRules      = [];
@@ -38,27 +70,4 @@ class ProgramModel extends Model
     // protected $afterFind      = [];
     // protected $beforeDelete   = [];
     // protected $afterDelete    = [];
-
-    public function getProgram($id = null)
-    {
-        if ($id != null) {
-            return $this->select('program.*, users.usernam')
-                ->join('users', 'users.id = program.id_user')
-                ->find($id);
-        }
-    
-        return $this->select('program.*, users.username')
-            ->join('users', 'users.id = program.id_user')
-            ->findAll();
-    }
-
-    public function createProgram($data){
-        return $this->insert($data);
-    }
-    public function updateProgram($data, $id){
-        return $this->update($id, $data);
-    }
-    public function deleteProgram($id){
-        return $this->delete($id);
-    }
 }

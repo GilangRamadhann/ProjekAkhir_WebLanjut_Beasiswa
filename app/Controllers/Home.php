@@ -25,22 +25,22 @@ class Home extends BaseController
 
     public function dashboard()
     {
-        return view('admin_dashboard');
+        return view('admin/admin_dashboard');
     }
 
     public function programbeasiswa()
     {
-        return view('admin_programbeas');
+        return view('admin/admin_programbeas');
     }
 
     public function detail_programbeasiswa()
     {
-        return view('admin/detail_programbeasiswa');
+        return view('admin/admin/detail_programbeasiswa');
     }
 
     public function daftardonatur()
     {
-        return view('admin_daftardonatur'); 
+        return view('admin/admin_daftardonatur'); 
     }
 
     public function detail_daftardonatur()
@@ -50,7 +50,7 @@ class Home extends BaseController
 
     public function penerimabeasiswa()
     {
-        return view('admin_penerimabeas');
+        return view('admin/admin_penerimabeas');
     }
 
     public function detail_penerimabeasiswa()
@@ -60,12 +60,12 @@ class Home extends BaseController
 
     public function dataakademik()
     {
-        return view('admin_dataakademik');
+        return view('admin/admin_dataakademik');
     }
 
     public function pengeluaran()
     {
-        return view('admin_pengeluaran');
+        return view('admin/admin_pengeluaran');
     }
 
     public function detail_pengeluaran()

@@ -9,7 +9,7 @@
 	<meta name="description" content="">
 	<meta name="author" content="">
 
-	<title>Penerima Beasiswa</title>
+	<title>Data Akademik</title>
 
 	<!-- Custom fonts for this template-->
 	<link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -54,6 +54,29 @@
 
 			<!-- Heading -->
 			<div class="sidebar-heading">
+				Kelola
+			</div>
+
+			<li class="nav-item">
+				<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+					<i class="fas fa-fw fa-cog"></i>
+					<span>Kelola Data</span>
+				</a>
+				<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+					<div class="bg-white py-2 collapse-inner rounded">
+						<a class="collapse-item" href="#">Data Lokasi</a>
+						<a class="collapse-item" href="#">Data Universitas</a>
+						<a class="collapse-item" href="#">Data Fakultas</a>
+						<a class="collapse-item" href="#">Data Jurusan</a>
+					</div>
+				</div>
+			</li>
+
+			<!-- Divider -->
+			<hr class="sidebar-divider">
+
+			<!-- Heading -->
+			<div class="sidebar-heading">
 				Donatur
 			</div>
 
@@ -65,7 +88,7 @@
 					<span>Program Beasiswa</span></a>
 			</li>
 
-            <li class="nav-item">
+			<li class="nav-item">
 				<a class="nav-link" href="<?= base_url('/daftardonatur') ?>">
 					<i class="fas fa-fw fa-table"></i>
 					<span>Daftar Donatur</span></a>
@@ -145,41 +168,40 @@
                 <!-- DataTales Example -->
                 <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-success">Daftar Donatur</h6>
+                            <h6 class="m-0 font-weight-bold text-success">Data Akademik Beswan</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>Nama Donatur</th>
-                                            <th>Nama Beasiswa</th>
-                                            <th>Nomor Telepon</th>
-                                            <th>Alamat Donatur</th>
-                                            <th>Aksi</th>
+                                            <th>Nama Beswan</th>
+                                            <th>Semester</th>
+                                            <th>SKS diambil</th>
+                                            <th>IP</th>
+                                            <th>IPK</th>
+											<th>Transkrip</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td>Bank Indonesia</td>
-                                            <td>Beasiswa BI</td>
-                                            <td>12345678910</td>
-                                            <td>Jakarta</td>
+                                            <td>Gilang Ramadhan</td>
+                                            <td>5</td>
+                                            <td>24</td>
+                                            <td>4.00</td>
+											<td>4.00</td>
                                             <td>
-												<a href="<?= base_url('/daftardonatur/detail') ?>" type="button" class="btn btn-warning btn-sm">
-                                                    Detail
-                                                </a>
+                                                
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td>Yayasan KSE</td>
-                                            <td>Beasiswa KSE</td>
-                                            <td>12345678910</td>
-                                            <td>Jakarta</td>
+											<td>Vidya Sinta Billkis</td>
+                                            <td>5</td>
+                                            <td>24</td>
+                                            <td>4.00</td>
+											<td>4.00</td>
                                             <td>
-												<a href="<?= base_url('/daftardonatur/detail') ?>" type="button" class="btn btn-warning btn-sm">
-                                                    Detail
-                                                </a>
+                                                
                                             </td>
                                         </tr>
                                     </tbody>

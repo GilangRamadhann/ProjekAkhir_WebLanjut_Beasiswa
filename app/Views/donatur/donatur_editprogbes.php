@@ -57,7 +57,7 @@
 
 			<!-- Nav Item - Pages Collapse Menu -->
 			<!-- Nav Item - Tables -->
-            <li class="nav-item">
+			<li class="nav-item">
 				<a class="nav-link" href="<?= base_url('/profiledon') ?>">
 					<i class="fas fa-fw fa-table"></i>
 					<span>Data Diri</span></a>
@@ -77,7 +77,7 @@
 			</div>
 
 			<!-- Nav Item - Pages Collapse Menu -->
-            <!-- Nav Item - Charts -->
+			<!-- Nav Item - Charts -->
 			<li class="nav-item">
 				<a class="nav-link" href="<?= base_url('/pendaftar') ?>">
 					<i class="fas fa-fw fa-chart-area"></i>
@@ -138,51 +138,51 @@
 				<!-- Begin Page Content -->
 				<div class="container-fluid">
 
-                <!-- DataTales Example -->
-                <div class="container-xl px-4 mt-4">
-    <!-- Account page navigation-->
-    <h3>Edit Data Beasiswa</h3>
-    <hr class="mt-0 mb-4">
-    <div class="row">
-        <div class="col-xl-8">
-            <!-- Account details card-->
-            <div class="card mb-4">
-                <div class="card-header">Detail Data</div>
-                <div class="card-body">
-                    <form>
-                        <!-- Form Group (username)-->
-                        <div class="mb-3">
-                            <label class="small mb-1" for="inputBes">Nama Beasiswa</label>
-                            <input class="form-control" id="inputBes" type="text" placeholder="Masukan Nama Beasiswa" value="Beasiswa Djarum">
-                        </div>
-                        <!-- Form Row-->
-                            <!-- Form Group (first name)-->
-                            <div class="mb-3">
-                                <label class="small mb-1" for="inputDonatur">Nama Donatur</label>
-                                <input class="form-control" id="inputDonatur" type="text" placeholder="Masukan Nama Donatur" value="Djarum Foundation">
-                            </div>
+					<!-- DataTales Example -->
+					<div class="container-xl px-4 mt-4">
+						<!-- Account page navigation-->
+						<h3>Edit Data Beasiswa</h3>
+						<hr class="mt-0 mb-4">
+						<div class="row">
+							<div class="col-xl-8">
+								<!-- Account details card-->
+								<div class="card mb-4">
+									<div class="card-header">Detail Data</div>
+									<div class="card-body">
+										<form>
+											<!-- Form Group (username)-->
+											<div class="mb-3">
+												<label class="small mb-1" for="inputBes">Nama Beasiswa</label>
+												<input class="form-control" id="inputBes" type="text" placeholder="Masukan Nama Beasiswa" value="Beasiswa Djarum">
+											</div>
+											<!-- Form Row-->
+											<!-- Form Group (first name)-->
+											<div class="mb-3">
+												<label class="small mb-1" for="inputDonatur">Nama Donatur</label>
+												<input class="form-control" id="inputDonatur" type="text" placeholder="Masukan Nama Donatur" value="Djarum Foundation">
+											</div>
 
-                             <!-- Form Group (first name)-->
-                            <div class="mb-3">
-                                <label class="small mb-1" for="inputTgl">Pembukaan Pendaftaran</label>
-                                <input class="form-control" id="inputTgl" type="date" placeholder="" value="2023/1/25">
-                            </div>
+											<!-- Form Group (first name)-->
+											<div class="mb-3">
+												<label class="small mb-1" for="inputTgl">Pembukaan Pendaftaran</label>
+												<input class="form-control" id="inputTgl" type="date" placeholder="" value="2023/1/25">
+											</div>
 
-                            <div class="mb-3">
-                                <label class="small mb-1" for="inputTl">Penutupan Pendaftaran</label>
-                                <input class="form-control" id="inputTl" type="date" placeholder="" value="2023/1/25">
-                            </div>
-                            
-                        <!-- Save changes button-->
-                        <button class="btn btn-primary" type="button">Simpan Perubahan</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-					
-                </div>		
+											<div class="mb-3">
+												<label class="small mb-1" for="inputTl">Penutupan Pendaftaran</label>
+												<input class="form-control" id="inputTl" type="date" placeholder="" value="2023/1/25">
+											</div>
+
+											<!-- Save changes button-->
+											<button class="btn btn-primary" type="button">Simpan Perubahan</button>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
 				<!-- /.container-fluid -->
 
 			</div>
@@ -205,21 +205,21 @@
 	<!-- End of Page Wrapper -->
 
 	<!-- Bootstrap core JavaScript-->
-    <script src="<?= ('assets/vendor/jquery/jquery.min.js') ?>"></script>
-    <script src="<?= ('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
+	<script src="<?= ('assets/vendor/jquery/jquery.min.js') ?>"></script>
+	<script src="<?= ('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
 
-    <!-- Core plugin JavaScript-->
-    <script src="<?= ('assets/vendor/jquery-easing/jquery.easing.min.js') ?>"></script>
+	<!-- Core plugin JavaScript-->
+	<script src="<?= ('assets/vendor/jquery-easing/jquery.easing.min.js') ?>"></script>
 
-    <!-- Custom scripts for all pages-->
-    <script src="<?= ('assets/js/sb-admin-2.min.js') ?>"></script>
+	<!-- Custom scripts for all pages-->
+	<script src="<?= ('assets/js/sb-admin-2.min.js') ?>"></script>
 
-    <!-- Page level plugins -->
-    <script src="<?= ('assets/vendor/datatables/jquery.dataTables.min.js') ?>"></script>
-    <script src="<?= ('assets/vendor/datatables/dataTables.bootstrap4.min.js') ?>"></script>
+	<!-- Page level plugins -->
+	<script src="<?= ('assets/vendor/datatables/jquery.dataTables.min.js') ?>"></script>
+	<script src="<?= ('assets/vendor/datatables/dataTables.bootstrap4.min.js') ?>"></script>
 
-    <!-- Page level custom scripts -->
-    <script src="<?= ('assets/js/demo/datatables-demo.js') ?>"></script>
+	<!-- Page level custom scripts -->
+	<script src="<?= ('assets/js/demo/datatables-demo.js') ?>"></script>
 
 </body>
 
