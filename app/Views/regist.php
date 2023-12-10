@@ -10,8 +10,7 @@
                     <div class="col-md-3 register-left">
                         <img src="<?= base_url('assets/img/cap.png')?>" alt=""/>
                         <h3>BesCamp</h3>
-                        <p></p>
-                        <a href="loginpage"><input type="submit" name="" value="Masuk"/><br/></a>
+                        <a href="<?= base_url('/loginpage')?>"><input type="submit" name="" value="Masuk"/><br/></a>
                     </div>
                     <div class="col-md-9 register-right">
                         <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
