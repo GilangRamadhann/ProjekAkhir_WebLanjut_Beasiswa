@@ -57,7 +57,7 @@
 
 			<!-- Nav Item - Pages Collapse Menu -->
 			<!-- Nav Item - Tables -->
-            <li class="nav-item">
+			<li class="nav-item">
 				<a class="nav-link" href="<?= base_url('/profiledon') ?>">
 					<i class="fas fa-fw fa-table"></i>
 					<span>Data Diri</span></a>
@@ -77,7 +77,7 @@
 			</div>
 
 			<!-- Nav Item - Pages Collapse Menu -->
-            <!-- Nav Item - Charts -->
+			<!-- Nav Item - Charts -->
 			<li class="nav-item">
 				<a class="nav-link" href="<?= base_url('/pendaftar') ?>">
 					<i class="fas fa-fw fa-chart-area"></i>
@@ -138,83 +138,92 @@
 				<!-- Begin Page Content -->
 				<div class="container-fluid">
 
-                <!-- DataTales Example -->
-                <div class="container-xl px-4 mt-4">
-    <!-- Account page navigation-->
-    <h3>Data Diri Donatur</h3>
-    <hr class="mt-0 mb-4">
-    <div class="row">
-        <div class="col-xl-4">
-            <!-- Profile picture card-->
-            <div class="card mb-4 mb-xl-0 pict">
-                <div class="card-header">Gambar</div>
-                <div class="card-body text-center">
-                    <!-- Profile picture image-->
-                    <img class="img-account-profile rounded-circle mb-2" src="assets/img/djarum.jpg" width="250px" alt="">
-                    <!-- Profile picture help block-->
-                    <!-- Profile picture upload button-->
-                    <button class="btn btn-success" type="button">Ubah foto</button>
-                </div>
-            </div>
-        </div>
-        <div class="col-xl-8">
-            <!-- Account details card-->
-            
-            
-            <div class="card mb-4 acc">
-                <div class="card-header">Detail Akun</div>
-                <div class="card-body">
-                <div style="text-align: right;">
-                <button type="button" class="btn btn-warning edit"><a class="text-white" href="<?= base_url('/editprofile') ?>">Edit</a></button>
-                </div>
-                    <form>
-                        <!-- Form Group (username)-->
-                        <div class="mb-3">
-                            <label class="small mb-1">Nama Organisasi</label> 
-                            <p><b> PT. Djarum Foundation</b></p>
-                        </div>
+					<!-- DataTales Example -->
+					<div class="container-xl px-4 mt-4">
+						<!-- Account page navigation-->
+						<br>
+						<h3>Data Diri Donatur</h3>
+						<hr class="mt-0 mb-4">
+						<div class="row">
+							<div class="col-xl-4">
+								<!-- Profile picture card-->
+								<div class="card mb-4 mb-xl-0 pict">
+									<div class="card-header">Logo</div>
+									<div class="card-body text-center">
+										<!-- Profile picture image-->
+										<img class="img-account-profile rounded-circle mb-2" src="assets/img/djarum.jpg" width="250px" alt="">
+										<!-- Profile picture help block-->
+										<!-- Profile picture upload button-->
+										<!-- <button class="btn btn-warning" type="button">Ubah foto</button> -->
+									</div>
+								</div>
+							</div>
+							<div class="col-xl-8">
+								<!-- Account details card-->
 
-                        <div class="mb-3">
-                            <label class="small mb-1">Jobdesk</label> 
-                            <p><b> Donatur Beasiswa Djarum Plus</b></p>
-                        </div>
 
-                        <div class="mb-3">
-                            <label class="small mb-1">Tanggal Masuk</label> 
-                            <p><b> 30/12/2022</b></p>
-                        </div>
+								<div class="card mb-4 acc">
+									<div class="card-header">Detail Akun</div>
+									<div class="card-body">
+										<div style="text-align: right;">
+											<div>
+												<?php
+												if ($check == 0) {
+												?>
+													<a href="<?= base_url('/tambah_profile') ?>" class="btn btn-primary">Tambah</a>
+												<?php
+												} else if ($check == 1) {
+												?>
+													<a href="<?= base_url('/edit_profile') ?>" class="btn btn-primary">Ubah</a>
+												<?php
+												}
+												?>
+											</div>
+											<button type="button" class="btn btn-warning edit"><a class="text-white" href="<?= base_url('/editprofile') ?>">Ubah</a></button>
+										</div>
+										<form>
+											<!-- Form Group (username)-->
+											<div class="mb-3">
+												<label class="small mb-1"><b>Nama Organisasi</b></label>
+												<p>PT. Djarum Foundation</p>
+											</div>
 
-                        <div class="mb-3">
-                            <label class="small mb-1">Status</label> 
-                            <p><b> Aktif</b></p>
-                        </div>
+											<div class="mb-3">
+												<label class="small mb-1"><b>Deskripsi Organisasi</b></label>
+												<p>PT Djarum adalah salah satu perusahaan rokok di Indonesia. Perusahaanini mengolah dan menghasilkan jenis rokok kretek dan cerutu. Ada tiga jenis rokok yang kita kenal selama ini. Rokok Cerutu (Terbuat dari dauntembakau dan dibungkus dengan daun tembakau pula), rokok putih(Terbuat dari daun tembakau dan dibungkus dengan kertas sigaret), danrokok kretek (Terbuat dari tembakau ditambah daun cengkeh dandibungkus dengan kertas sigaret).PT Jarum adalah salah satu jenis perusahaan perseroan yang ada diIndonesia. Namun dahulu PT Jarum adalah sebuah perusahaanperseorangan karna didirikan oleh seorang Oei Wie Gwan. PT. Djarummemiliki, 5 nilai-nilai inti dalam pengembangan perusahan. Nilai-nilai ituadalah .Fokus pada pelanggan, Profesionlisme, Organisasi yang terusbelajar, Satu Keluarga, Tanggung Jawab Sosial.</p>
+											</div>
 
-                        <div class="mb-3">
-                            <label class="small mb-1">Deskripsi Organisasi</label> 
-                            <p><b> PT Djarum adalah salah satu perusahaan rokok di Indonesia. Perusahaanini mengolah dan menghasilkan jenis rokok kretek dan cerutu. Ada tiga jenis rokok yang kita kenal selama ini. Rokok Cerutu (Terbuat dari dauntembakau dan dibungkus dengan daun tembakau pula), rokok putih(Terbuat dari daun tembakau dan dibungkus dengan kertas sigaret), danrokok kretek (Terbuat dari tembakau ditambah daun cengkeh dandibungkus dengan kertas sigaret).PT Jarum adalah salah satu jenis perusahaan perseroan yang ada diIndonesia. Namun dahulu PT Jarum adalah sebuah perusahaanperseorangan karna didirikan oleh seorang Oei Wie Gwan. PT. Djarummemiliki, 5 nilai-nilai inti dalam pengembangan perusahan. Nilai-nilai ituadalah .Fokus pada pelanggan, Profesionlisme, Organisasi yang terusbelajar, Satu Keluarga, Tanggung Jawab Sosial.</b></p>
-                        </div>
+											<div class="mb-3">
+												<label class="small mb-1"><b>Nomor Telepon</b></label>
+												<p>#</p>
+											</div>
 
-                        <div class="mb-3">
-                            <label class="small mb-1">Alamat Lengkap</label> 
-                            <p><b> Jalan Pemuda No. 43, Kudus, Jawa Tengah 59351. </b></p>
-                        </div>
+											<div class="mb-3">
+												<label class="small mb-1"><b>Alamat</b></label>
+												<p>#$_POST</p>
+											</div>
 
-                        <div class="mb-3">
-                            <label class="small mb-1">Alamat Email</label> 
-                            <p><b> robert01@gmail.com </b></p>
-                        </div>
+											<div class="mb-3">
+												<label class="small mb-1"><b>Kota</b></label>
+												<p>#</p>
+											</div>
 
-                        <div class="mb-3">
-                            <label class="small mb-1">No.Telepon</label> 
-                            <p><b> +628967850091 </b></p>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-                </div>
-                </div>
+											<div class="mb-3">
+												<label class="small mb-1"><b>Instagram</b></label>
+												<p>#</p>
+											</div>
+
+											<div class="mb-3">
+												<label class="small mb-1"><b>Facebook</b></label>
+												<p>#</p>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 				<!-- /.container-fluid -->
 
 			</div>
@@ -237,21 +246,21 @@
 	<!-- End of Page Wrapper -->
 
 	<!-- Bootstrap core JavaScript-->
-    <script src="<?= ('assets/vendor/jquery/jquery.min.js') ?>"></script>
-    <script src="<?= ('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
+	<script src="<?= ('assets/vendor/jquery/jquery.min.js') ?>"></script>
+	<script src="<?= ('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
 
-    <!-- Core plugin JavaScript-->
-    <script src="<?= ('assets/vendor/jquery-easing/jquery.easing.min.js') ?>"></script>
+	<!-- Core plugin JavaScript-->
+	<script src="<?= ('assets/vendor/jquery-easing/jquery.easing.min.js') ?>"></script>
 
-    <!-- Custom scripts for all pages-->
-    <script src="<?= ('assets/js/sb-admin-2.min.js') ?>"></script>
+	<!-- Custom scripts for all pages-->
+	<script src="<?= ('assets/js/sb-admin-2.min.js') ?>"></script>
 
-    <!-- Page level plugins -->
-    <script src="<?= ('assets/vendor/datatables/jquery.dataTables.min.js') ?>"></script>
-    <script src="<?= ('assets/vendor/datatables/dataTables.bootstrap4.min.js') ?>"></script>
+	<!-- Page level plugins -->
+	<script src="<?= ('assets/vendor/datatables/jquery.dataTables.min.js') ?>"></script>
+	<script src="<?= ('assets/vendor/datatables/dataTables.bootstrap4.min.js') ?>"></script>
 
-    <!-- Page level custom scripts -->
-    <script src="<?= ('assets/js/demo/datatables-demo.js') ?>"></script>
+	<!-- Page level custom scripts -->
+	<script src="<?= ('assets/js/demo/datatables-demo.js') ?>"></script>
 
 </body>
 
