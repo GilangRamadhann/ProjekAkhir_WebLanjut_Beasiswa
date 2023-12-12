@@ -5,115 +5,57 @@ use App\Models\ProgramModel;
 
 class Home extends BaseController
 {
-    public function index()
-    {   
-       
+    public function index(){   
         if (in_groups("Admin")){
             return redirect()->route("dashboard"); 
-        }else if(in_groups("Donatur")){
+        } else if(in_groups("Donatur")){
             return redirect()->route("donatur"); 
-        }else if(in_groups("Beswan")){
+        } else if(in_groups("Beswan")){
             return redirect()->route("beswan"); 
         }   
-        return view('index');
+            return view('index');
     }
     
-    public function regist()
-    {
+    public function regist(){
         return view('regist');
     }
 
-    public function dashboard()
-    {
-        return view('admin/admin_dashboard');
-    }
-
-    public function programbeasiswa()
-    {
+    // METHOD ADMIN
+    public function programbeasiswa(){
         return view('admin/admin_programbeas');
     }
-
-    public function detail_programbeasiswa()
-    {
-        return view('admin/admin/detail_programbeasiswa');
+    public function detail_programbeasiswa(){
+        return view('admin/detail_programbeasiswa');
     }
 
-    public function daftardonatur()
-    {
-        return view('admin/admin_daftardonatur'); 
-    }
-
-    public function detail_daftardonatur()
-    {
-        return view('admin/detail_daftardonatur'); 
-    }
-
-    public function penerimabeasiswa()
-    {
-        return view('admin/admin_penerimabeas');
-    }
-
-    public function detail_penerimabeasiswa()
-    {
-        return view('admin/detail_penerimabeasiswa');
-    }
-
-    public function dataakademik()
-    {
-        return view('admin/admin_dataakademik');
-    }
-
-    public function pengeluaran()
-    {
-        return view('admin/admin_pengeluaran');
-    }
-
-    public function detail_pengeluaran()
-    {
-        return view('admin/detail_pengeluaran');
-    }
-
-    public function beswan()
-    {
-        return view('beswan/beswan');
-    }
-
-    public function dashboard_donatur()
-    {
+    // METHOD DONATUR
+    public function dashboard_donatur(){
         return view('donatur/dashboard_donatur');
     }
-
-    public function profiledon()
-    {
-        return view('donatur/profile_donatur');
+    public function pendaftar(){
+        return view('donatur/pendaftar');
     }
-
-    public function beadonatur()
-    {    
+    public function penerimaan(){
+        return view('donatur/penerimaan');
+    }
+    public function penerima(){
+        return view('donatur/penerima');
+    }
+    public function detail_penerima(){
+        return view('donatur/detail_penerima');
+    }
+    public function laporan2(){
+        return view('donatur/laporan_pengeluaran');
+    }
+    public function detail_laporan(){
+        return view('donatur/detail_laporan');
+    }
+    public function program(){    
         $models = new ProgramModel();
         $data = $models->getProgram();
         //dd($data);
         return view('donatur/bea_donatur',["data" => $data]);
     }
-
-    public function pendaftarbeasiswa(){
-
-        return view('donatur/donatur_pendaftarbeasiswa');
-    
-        }
-
-    public function penerima(){
-        return view('donatur/donatur_penerimabeasiswa');
-    }
-
-    public function daftarpengeluaran(){
-        return view('donatur/donatur_daftarpengeluaran');
-    }
-
-    public function editprofile(){
-        return view('donatur/donatur_editprofile');
-    }
-
     public function tambahdata(){
         
         if(is_null($this->request->getVar("add"))){
@@ -136,24 +78,35 @@ class Home extends BaseController
         }
     }
 
-    public function editprogbes(){
-        return view('donatur/donatur_editprogbes');
+    // METHOD BESWAN 
+    public function beswan(){
+        return view('beswan/dashboard');
     }
-
-    public function profil(){
-        return view('beswan/profil');
+    public function daftarprogram(){
+        return view('beswan/program');
     }
-
-    public function listbea(){
-        return view('beswan/listbea');
+    public function lihat_program(){
+        return view('beswan/detail_program');
     }
-
-    public function donbes(){
-        return view('beswan/donbes');
+    public function mendaftar(){
+        return view('beswan/form_daftar');
     }
-
-    public function penglu(){
-        return view('beswan/penglu');
+    public function pendaftaran(){
+        return view('beswan/statusdaftar');
     }
-
+    public function edit_pendaftaran(){
+        return view('beswan/edit_pendaftaran');
+    }
+    public function pengeluaran(){
+        return view('beswan/laporan');
+    }
+    public function tambah_laporan(){
+        return view('beswan/tambah_laporan');
+    }
+    public function edit_laporan(){
+        return view('beswan/edit_laporan');
+    }
+    public function lihat_laporan(){
+        return view('beswan/detail_laporan');
+    }
 }

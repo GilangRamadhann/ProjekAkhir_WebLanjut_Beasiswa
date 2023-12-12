@@ -2,23 +2,20 @@
 <html lang="en">
 
 <head>
-
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="description" content="">
 	<meta name="author" content="">
-
-	<title>Progbes Donatur</title>
-
+	<title><?= $title ?></title>
 	<!-- Custom fonts for this template-->
-	<link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+	<link href="<?= base_url('assets/vendor/fontawesome-free/css/all.min.css') ?>" rel="stylesheet" type="text/css">
+	<link href="<?= base_url('assets/vendor/fontawesome-free/css/fontawesome.min.css') ?>" rel="stylesheet" type="text/css">
 	<link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-
 	<!-- Custom styles for this template-->
+	<script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
 	<link href="<?= base_url('assets/css/sb-admin-2.min.css') ?>" rel="stylesheet">
 	<link href="<?= base_url('assets/css/sb-admin-2.css') ?>" rel="stylesheet">
-
 </head>
 
 <body id="page-top">
@@ -31,9 +28,9 @@
 
 			<!-- Sidebar - Brand -->
 			<a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
-				<div class="sidebar-brand-icon rotate-n-15">
+				<!-- <div class="sidebar-brand-icon rotate-n-15">
 					<i class="fas fa-laugh-wink"></i>
-				</div>
+				</div> -->
 				<div class="sidebar-brand-text mx-3">BesCamp 🎓<sup></sup></div>
 			</a>
 
@@ -52,20 +49,25 @@
 
 			<!-- Heading -->
 			<div class="sidebar-heading">
-				Donatur
+				Beasiswa
 			</div>
 
-			<!-- Nav Item - Pages Collapse Menu -->
-			<!-- Nav Item - Tables -->
 			<li class="nav-item">
-				<a class="nav-link" href="<?= base_url('/profiledon') ?>">
-					<i class="fas fa-fw fa-table"></i>
-					<span>Data Diri</span></a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="<?= base_url('/beadonatur') ?>">
+				<a class="nav-link" href="<?= base_url('/program') ?>">
 					<i class="fas fa-fw fa-table"></i>
 					<span>Program Beasiswa</span></a>
+			</li>
+
+			<li class="nav-item">
+				<a class="nav-link" href="<?= base_url('/penerima') ?>">
+					<i class="fa-solid fa-square-check"></i>
+					<span>Penerima Beasiswa</span></a>
+			</li>
+
+			<li class="nav-item">
+				<a class="nav-link" href="<?= base_url('/pendaftar') ?>">
+					<i class="fa-solid fa-address-card"></i>
+					<span>Pendaftar Beasiswa</span></a>
 			</li>
 
 			<!-- Divider -->
@@ -73,38 +75,13 @@
 
 			<!-- Heading -->
 			<div class="sidebar-heading">
-				Aktifitas
+				Monitoring
 			</div>
 
-			<!-- Nav Item - Pages Collapse Menu -->
-			<!-- Nav Item - Charts -->
 			<li class="nav-item">
-				<a class="nav-link" href="<?= base_url('/pendaftar') ?>">
-					<i class="fas fa-fw fa-chart-area"></i>
-					<span>Pendaftar Beasiswa</span></a>
-			</li>
-			<!-- Nav Item - Tables -->
-			<li class="nav-item">
-				<a class="nav-link" href="<?= base_url('/penerima') ?>">
-					<i class="fas fa-fw fa-table"></i>
-					<span>Penerima Beasiswa</span></a>
-			</li>
-
-			<!-- Nav Item - Charts -->
-			<li class="nav-item">
-				<a class="nav-link" href="<?= base_url('/daftarpengeluaran') ?>">
-					<i class="fas fa-fw fa-chart-area"></i>
-					<span>Pengeluaran Beswan</span></a>
-			</li>
-
-			<!-- Divider -->
-			<hr class="sidebar-divider my-0">
-
-			<!-- Nav Item - Logout -->
-			<li class="nav-item">
-				<a class="nav-link" href="#">
-					<i class="fas fa-fw fa-table"></i>
-					<span>Keluar</span></a>
+				<a class="nav-link" href="<?= base_url('/laporan2') ?>">
+					<i class="fas fa-fw fa-cog"></i>
+					<span>Laporan Pengeluaran</span></a>
 			</li>
 
 		</ul>
@@ -118,20 +95,27 @@
 
 				<!-- Topbar -->
 				<nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-
 					<!-- Topbar Navbar -->
 					<ul class="navbar-nav ml-auto">
-
 						<!-- Nav Item - User Information -->
 						<li class="nav-item dropdown no-arrow">
 							<a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 								<span class="mr-2 d-none d-lg-inline text-gray-600 small">Donatur</span>
 								<img class="img-profile rounded-circle" src="<?= base_url('assets/img/cap.png') ?>">
 							</a>
+							<div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+								<a class="dropdown-item" href="<?= base_url('/profile') ?>">
+									<i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+									Profil
+								</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="<?= base_url('logout') ?>">
+									<i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+									Keluar
+								</a>
+							</div>
 						</li>
-
 					</ul>
-
 				</nav>
 				<!-- End of Topbar -->
 
@@ -142,7 +126,7 @@
 					<div class="container-xl px-4 mt-4">
 						<!-- Account page navigation-->
 						<br>
-						<h3>Data Diri Donatur</h3>
+						<h3><?= $title ?></h3>
 						<hr class="mt-0 mb-4">
 						<div class="row">
 							<div class="col-xl-4">
@@ -151,10 +135,9 @@
 									<div class="card-header">Logo</div>
 									<div class="card-body text-center">
 										<!-- Profile picture image-->
-										<img class="img-account-profile rounded-circle mb-2" src="assets/img/djarum.jpg" width="250px" alt="">
-										<!-- Profile picture help block-->
-										<!-- Profile picture upload button-->
-										<!-- <button class="btn btn-warning" type="button">Ubah foto</button> -->
+										<img src="<?php foreach ($donatur as $item) : ?>
+                            				<?= $item->logo ?? base_url('assets/images/cap.png'); ?> 
+                            				<?php endforeach;  ?>" alt="Foto" class="img-account-profile rounded-circle mb-2" width="230px">
 									</div>
 								</div>
 							</div>
@@ -170,52 +153,81 @@
 												<?php
 												if ($check == 0) {
 												?>
-													<a href="<?= base_url('/tambah_profile') ?>" class="btn btn-primary">Tambah</a>
+													<a href="<?= base_url('/tambah_profile') ?>" class="btn btn-primary btn-sm">Tambah</a>
 												<?php
 												} else if ($check == 1) {
 												?>
-													<a href="<?= base_url('/edit_profile') ?>" class="btn btn-primary">Ubah</a>
+													<a href="<?= base_url('/edit_profile') ?>" class="btn btn-warning btn-sm">Ubah</a>
 												<?php
 												}
 												?>
 											</div>
-											<button type="button" class="btn btn-warning edit"><a class="text-white" href="<?= base_url('/editprofile') ?>">Ubah</a></button>
 										</div>
 										<form>
 											<!-- Form Group (username)-->
+											<?php
+											$current_user = user_id();
+											?>
 											<div class="mb-3">
 												<label class="small mb-1"><b>Nama Organisasi</b></label>
-												<p>PT. Djarum Foundation</p>
+												<p>
+													<?php foreach ($donatur as $item) { ?>
+														<?= $item->nama ?>
+													<?php } ?>
+												</p>
 											</div>
 
 											<div class="mb-3">
 												<label class="small mb-1"><b>Deskripsi Organisasi</b></label>
-												<p>PT Djarum adalah salah satu perusahaan rokok di Indonesia. Perusahaanini mengolah dan menghasilkan jenis rokok kretek dan cerutu. Ada tiga jenis rokok yang kita kenal selama ini. Rokok Cerutu (Terbuat dari dauntembakau dan dibungkus dengan daun tembakau pula), rokok putih(Terbuat dari daun tembakau dan dibungkus dengan kertas sigaret), danrokok kretek (Terbuat dari tembakau ditambah daun cengkeh dandibungkus dengan kertas sigaret).PT Jarum adalah salah satu jenis perusahaan perseroan yang ada diIndonesia. Namun dahulu PT Jarum adalah sebuah perusahaanperseorangan karna didirikan oleh seorang Oei Wie Gwan. PT. Djarummemiliki, 5 nilai-nilai inti dalam pengembangan perusahan. Nilai-nilai ituadalah .Fokus pada pelanggan, Profesionlisme, Organisasi yang terusbelajar, Satu Keluarga, Tanggung Jawab Sosial.</p>
+												<p>
+													<?php foreach ($donatur as $item) { ?>
+														<?= $item->deskripsi ?>
+													<?php } ?>
+												</p>
 											</div>
 
 											<div class="mb-3">
 												<label class="small mb-1"><b>Nomor Telepon</b></label>
-												<p>#</p>
+												<p><?php foreach ($donatur as $item) : ?>
+														<?= $item->no_telp ?>
+													<?php endforeach; ?></p>
 											</div>
 
 											<div class="mb-3">
 												<label class="small mb-1"><b>Alamat</b></label>
-												<p>#$_POST</p>
+												<p><?php foreach ($donatur as $item) : ?>
+														<?= $item->alamat ?>
+													<?php endforeach; ?></p>
 											</div>
 
 											<div class="mb-3">
 												<label class="small mb-1"><b>Kota</b></label>
-												<p>#</p>
+												<p><?php foreach ($donatur as $item) : ?>
+														<?= $item->kota ?>
+													<?php endforeach; ?></p>
+											</div>
+
+											<?php
+											$auth = service('authentication');
+											$current_user = $auth->user();
+											?>
+											<div class="mb-3">
+												<label class="small mb-1"><b>Email</b></label>
+												<p><?= $current_user->email ?></p>
 											</div>
 
 											<div class="mb-3">
 												<label class="small mb-1"><b>Instagram</b></label>
-												<p>#</p>
+												<p><?php foreach ($donatur as $item) : ?>
+														<?= $item->instagram ?>
+													<?php endforeach; ?></p>
 											</div>
 
 											<div class="mb-3">
 												<label class="small mb-1"><b>Facebook</b></label>
-												<p>#</p>
+												<p><?php foreach ($donatur as $item) : ?>
+														<?= $item->facebook ?>
+													<?php endforeach; ?></p>
 											</div>
 										</form>
 									</div>

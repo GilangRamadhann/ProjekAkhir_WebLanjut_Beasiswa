@@ -32,7 +32,7 @@
                     </ul>
                 </div>
 
-                <a href="<?= base_url('/register') ?>" class="button button__header">Mulai</a>
+                <a href="<?= base_url('/regist') ?>" class="button button__header">Mulai</a>
             </nav>
         </header>
 
@@ -92,23 +92,8 @@
                     </div>
 
                     <div class="services__data">
-                        <h3 class="services__subtitle">Pelaporan Pengeluaran</h3>
-                        <center><img src="<?= base_url('assets/images/uang.png')?>" alt=""></center>
-                    </div>
-
-                    <div class="services__data">
-                        <h3 class="services__subtitle">Pelaporan Akademik</h3>
-                        <center><img src="<?= base_url('assets/images/akan.png')?>" alt=""></center>
-                    </div>
-
-                    <div class="services__data">
-                        <h3 class="services__subtitle">Seleksi Beasiswa</h3>
+                        <h3 class="services__subtitle">Penerimaan Beasiswa</h3>
                         <center><img src="<?= base_url('assets/images/seleksi.png')?>" alt=""></center>
-                    </div>
-
-                    <div class="services__data">
-                        <h3 class="services__subtitle">Monitoring Beasiswa</h3>
-                        <center><img src="<?= base_url('assets/images/monitoring.png')?>" alt=""></center>
                     </div>
                 </div>
             </section><br><br><br>
