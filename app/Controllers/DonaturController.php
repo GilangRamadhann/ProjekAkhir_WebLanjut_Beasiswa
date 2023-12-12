@@ -28,11 +28,11 @@ class DonaturController extends BaseController
 
     public function profile()
     {
-        $auth = service('authentication');
-        $userId = $auth->id();
+        
+        $userId = user_id();
 
-        // Select company attributes
-        $this->builder->select('deskripsi', 'no_telp', 'status', 'logo', 'alamat', 'kota', 'instagram', 'facebook');
+        // Select donatur attributes
+        $this->builder->select('nama, deskripsi, no_telp, logo, alamat, kota, instagram, facebook');
         $this->builder->where('id_user', $userId);
         $this->builder->join('lokasi', 'lokasi.id = donatur.id_lokasi');
         $query = $this->builder->get();
@@ -47,6 +47,7 @@ class DonaturController extends BaseController
         }
 
         $data = [
+            'title'     => 'Profil Donatur', 
             'donatur'   => $query->getResult(),
             'check'     => $check
         ];
@@ -57,23 +58,30 @@ class DonaturController extends BaseController
     public function create(){
 
         $lokasiModel = new LokasiModel();
-        $userModel = new UserModel();
+        $userId = user_id();
 
         $this->donaturModel = new DonaturModel();
 
         $donatur = $this->donaturModel->getDonatur();
 
         $data = [
-            'title' => 'Tambah Data Profile Donatur',
+            'title' => 'Tambah Profil Donatur',
             'donatur' => $donatur,
             'lokasi' => $lokasiModel->orderby('kota')->findAll(),
-            'id_user' => $userModel,
+            'id_user' => $userId,
         ];
-        // dd($kategoriModel->findAll());
+
+        // dd($data);
         return view ('donatur/tambah_donatur', $data);
     }
 
     public function save(){
+
+        $lokasiModel = new LokasiModel();
+        if (!$this->validate($lokasiModel->getValidationRules())) {
+            session()->setFlashdata('errors', $this->validator->listErrors());
+            return redirect()->back()->withInput();
+        }
 
         $path = 'assets/uploads/img/';
         $foto = $this->request->getFile('logo');
@@ -84,11 +92,12 @@ class DonaturController extends BaseController
             $foto = base_url($path . $name);
         }
 
-        $this->donaturModel->save([
+        // dd($this->request->getVar());
+        $this->donaturModel->saveDonatur([
             'id_user' => $this->request->getVar('id_user'),
+            'nama' => $this->request->getVar('nama'),
             'deskripsi' => $this->request->getVar('deskripsi'),
             'no_telp' => $this->request->getVar('no_telp'),
-            'status' => $this->request->getVar('status'),
             'logo' => $foto,
             'alamat' => $this->request->getVar('alamat'),
             'id_lokasi' => $this->request->getVar('id_lokasi'),
@@ -96,40 +105,38 @@ class DonaturController extends BaseController
             'facebook' => $this->request->getVar('facebook'),
         ]);
 
-        return redirect()->to(base_url('donatur/profile_donatur'));
+        return redirect()->to(base_url('/profile'));
     }
 
     public function edit()
     {
         $lokasiModel = new LokasiModel();
-
-        $auth = service('authentication');
-        $userId = $auth->id();
+        $userId = user_id();
 
         // Select applicant attributes
-        $this->builder->select('id, deskripsi, no_telp, status, logo, alamat, instagram, facebook');
+        $this->builder->select('id, nama, deskripsi, no_telp, logo, alamat, instagram, facebook');
         $this->builder->where('id_user', $userId);
         $query = $this->builder->get();
 
         $data = [
-            'title' => 'Ubah Donatur',
+            'title' => 'Ubah Profile Donatur',
             'donatur_data' => $query->getResult(),
             'lokasi' => $lokasiModel->orderby('kota')->findAll(),
         ];
 
-        return view ('company/edit_profile', $data);
+        return view ('donatur/edit_donatur', $data);
     }
 
     public function update()
     {
         $path = 'assets/uploads/img/';
         $foto = $this->request->getFile('logo');
-
         $id = $this->request->getVar('id');
+
         $data = [
+            'nama' => $this->request->getVar('nama'),
             'deskripsi' => $this->request->getVar('deskripsi'),
             'no_telp' => $this->request->getVar('no_telp'),
-            'status' => $this->request->getVar('status'),
             'alamat' => $this->request->getVar('alamat'),
             'id_lokasi' => $this->request->getVar('id_lokasi'),
             'instagram' => $this->request->getVar('instagram'),
@@ -141,18 +148,17 @@ class DonaturController extends BaseController
 
             if($foto->move($path, $name)){
                 $foto_path = base_url($path . $name);
-
                 $data['logo'] = $foto_path;
             }
         }
 
-        $result = $this->donaturModel->updateApplicant($data, $id);
+        $result = $this->donaturModel->updateDonatur($data, $id);
 
         if(!$result){
             return redirect()->back()->withInput();
         }
 
-        return redirect()->to(base_url('donatur/profile_donatur'));
+        return redirect()->to(base_url('/profile'));
     }
 
 

@@ -9,15 +9,15 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Detail Program Beasiswa</title>
-
+    <title><?= $title ?></title>
     <!-- Custom fonts for this template-->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="<?= base_url('assets/vendor/fontawesome-free/css/all.min.css') ?>" rel="stylesheet" type="text/css">
+    <link href="<?= base_url('assets/vendor/fontawesome-free/css/fontawesome.min.css') ?>" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-
     <!-- Custom styles for this template-->
     <link href="<?= base_url('assets/css/sb-admin-2.min.css') ?>" rel="stylesheet">
-	<link href="<?= base_url('assets/css/sb-admin-2.css') ?>" rel="stylesheet">
+    <link href="<?= base_url('assets/css/sb-admin-2.css') ?>" rel="stylesheet">
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
 
 </head>
 
@@ -97,39 +97,15 @@
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                Beswan
+                Akun
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('/penerimabeasiswa') ?>">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Penerima Beasiswa</span></a>
-            </li>
-
-            <!-- Nav Item - Charts -->
-            <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('/dataakademik') ?>">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Data Akademik Beswan</span></a>
-            </li>
-
-            <!-- Nav Item - Tables -->
-            <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('/pengeluaran') ?>">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Pengeluaran Beswan</span></a>
-            </li>
-
-            <!-- Divider -->
-            <hr class="sidebar-divider my-0">
-
-            <!-- Nav Item - Logout -->
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Keluar</span></a>
+                <a class="nav-link" href="<?= base_url('/akun') ?>">
+                    <i class="fa-solid fa-user"></i>
+                    <span>Data Akun</span></a>
             </li>
 
         </ul>
@@ -153,6 +129,12 @@
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">Admin</span>
                                 <img class="img-profile rounded-circle" src="<?= base_url('assets/img/cap.png') ?>">
                             </a>
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                                <a class="dropdown-item" href="<?= base_url('logout') ?>">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Keluar
+                                </a>
+                            </div>
                         </li>
 
                     </ul>
@@ -163,61 +145,91 @@
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
-                    <h3>Profile Donatur</h3>
-                    <hr class="mt-0 mb-4">
-                    <div class="row">
-                        <div class="col-xl-4">
-                            <!-- Profile picture card-->
-                            <div class="card mb-4 mb-xl-0 pict">
-                                <div class="card-header">Gambar</div>
-                                <div class="card-body text-center">
-                                    <!-- Profile picture image-->
-                                    <img class="img-account-profile rounded-circle mb-2" src="http://bootdey.com/img/Content/avatar/avatar1.png" width="250px" alt="">
+                    <!-- DataTales Example -->
+                    <div class="container-xl px-4 mt-4">
+                        <!-- Account page navigation-->
+                        <br>
+                        <h3><?= $title ?></h3>
+                        <hr class="mt-0 mb-4">
+                        <div class="row">
+                            <div class="col-xl-4">
+                                <!-- Profile picture card-->
+                                <div class="card mb-4 mb-xl-0 pict">
+                                    <div class="card-header">Logo</div>
+                                    <div class="card-body text-center">
+                                        <!-- Profile picture image-->
+                                        <img src="<?php foreach ($donatur as $item) : ?>
+                                        <?= $item->logo ?? base_url('assets/images/cap.png'); ?> 
+                                        <?php endforeach;  ?>" alt="Foto" class="img-account-profile rounded-circle mb-2" width="230px">
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-xl-8">
-                            <!-- Account details card-->
+                            <div class="col-xl-8">
+                                <!-- Account details card-->
 
 
-                            <div class="card mb-4 acc">
-                                <div class="card-header">Detail Akun</div>
-                                <div class="card-body">
-                                    <!-- <div style="text-align: right;">
-                                        <button type="button" class="btn btn-warning edit">Edit</button>
-                                    </div> -->
-                                    <form>
-                                        <!-- Form Group (username)-->
-                                        <div class="mb-3">
-                                            <label class="small mb-1">Nama Donatur</label>
-                                            <p><b>Bank Indonesia</b></p>
-                                        </div>
+                                <div class="card mb-4 acc">
+                                    <div class="card-header">Detail Akun</div>
+                                    <div class="card-body">
+                                        <form>
+                                            <div class="mb-3">
+                                                <label class="small mb-1"><b>Nama Organisasi</b></label>
+                                                <p>
+                                                    <?php foreach ($donatur as $item) { ?>
+                                                        <?= $item->nama ?>
+                                                    <?php } ?>
+                                                </p>
+                                            </div>
 
-                                        <div class="mb-3">
-                                            <label class="small mb-1">Nama Program Beasiswa</label>
-                                            <p><b>Beasiswa Bank Indonesia</b></p>
-                                        </div>
+                                            <div class="mb-3">
+                                                <label class="small mb-1"><b>Deskripsi Organisasi</b></label>
+                                                <p>
+                                                    <?php foreach ($donatur as $item) { ?>
+                                                        <?= $item->deskripsi ?>
+                                                    <?php } ?>
+                                                </p>
+                                            </div>
 
-                                        <div class="mb-3">
-                                            <label class="small mb-1">Nomor Telepon</label>
-                                            <p><b>12345678910</b></p>
-                                        </div>
+                                            <div class="mb-3">
+                                                <label class="small mb-1"><b>Nomor Telepon</b></label>
+                                                <p><?php foreach ($donatur as $item) : ?>
+                                                        <?= $item->no_telp ?>
+                                                    <?php endforeach; ?></p>
+                                            </div>
 
-                                        <div class="mb-3">
-                                            <label class="small mb-1">Alamat Lengkap</label>
-                                            <p><b>Jakarta</b></p>
-                                        </div>
+                                            <div class="mb-3">
+                                                <label class="small mb-1"><b>Alamat</b></label>
+                                                <p><?php foreach ($donatur as $item) : ?>
+                                                        <?= $item->alamat ?>
+                                                    <?php endforeach; ?></p>
+                                            </div>
 
-                                        <div class="mb-3">
-                                            <label class="small mb-1">Alamat Email</label>
-                                            <p><b> robert01@gmail.com </b></p>
-                                        </div>
-                                    </form>
+                                            <div class="mb-3">
+                                                <label class="small mb-1"><b>Kota</b></label>
+                                                <p><?php foreach ($donatur as $item) : ?>
+                                                        <?= $item->kota ?>
+                                                    <?php endforeach; ?></p>
+                                            </div>
+
+                                            <div class="mb-3">
+                                                <label class="small mb-1"><b>Instagram</b></label>
+                                                <p><?php foreach ($donatur as $item) : ?>
+                                                        <?= $item->instagram ?>
+                                                    <?php endforeach; ?></p>
+                                            </div>
+
+                                            <div class="mb-3">
+                                                <label class="small mb-1"><b>Facebook</b></label>
+                                                <p><?php foreach ($donatur as $item) : ?>
+                                                        <?= $item->facebook ?>
+                                                    <?php endforeach; ?></p>
+                                            </div>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
                 </div>
                 <!-- /.container-fluid -->
 

@@ -13,11 +13,13 @@
 
 	<!-- Custom fonts for this template-->
 	<link href="<?= base_url('assets/vendor/fontawesome-free/css/all.min.css') ?>" rel="stylesheet" type="text/css">
-	<link href="<?= base_url('assets/vendor/fontawesome-free/css/fontawesome.min.css') ?>" rel="stylesheet" type="text/css">
 	<link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
 	<!-- Custom styles for this template-->
 	<link href="<?= base_url('assets/css/sb-admin-2.min.css') ?>" rel="stylesheet">
 	<link href="<?= base_url('assets/css/sb-admin-2.css') ?>" rel="stylesheet">
+	<!-- Custom styles for this page -->
+	<link href="<?= base_url('assets/css/dataTables.bootstrap4.min.css') ?>" rel="stylesheet">
 	<script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
 
 </head>
@@ -32,9 +34,9 @@
 
 			<!-- Sidebar - Brand -->
 			<a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
-				<div class="sidebar-brand-icon rotate-n-15">
-					<i class="fas fa-laugh-wink"></i>
-				</div>
+				<!-- <div class="sidebar-brand-icon rotate-n-15">
+			<i class="fas fa-laugh-wink"></i>
+		</div> -->
 				<div class="sidebar-brand-text mx-3">BesCamp 🎓<sup></sup></div>
 			</a>
 
@@ -53,20 +55,25 @@
 
 			<!-- Heading -->
 			<div class="sidebar-heading">
-				Donatur
+				Beasiswa
 			</div>
 
-			<!-- Nav Item - Pages Collapse Menu -->
-			<!-- Nav Item - Tables -->
 			<li class="nav-item">
-				<a class="nav-link" href="<?= base_url('/profiledon') ?>">
-					<i class="fas fa-fw fa-table"></i>
-					<span>Data Diri</span></a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="<?= base_url('/beadonatur') ?>">
+				<a class="nav-link" href="<?= base_url('/program') ?>">
 					<i class="fas fa-fw fa-table"></i>
 					<span>Program Beasiswa</span></a>
+			</li>
+
+			<li class="nav-item">
+				<a class="nav-link" href="<?= base_url('/penerima') ?>">
+					<i class="fa-solid fa-square-check"></i>
+					<span>Penerima Beasiswa</span></a>
+			</li>
+
+			<li class="nav-item">
+				<a class="nav-link" href="<?= base_url('/pendaftar') ?>">
+					<i class="fa-solid fa-address-card"></i>
+					<span>Pendaftar Beasiswa</span></a>
 			</li>
 
 			<!-- Divider -->
@@ -74,38 +81,13 @@
 
 			<!-- Heading -->
 			<div class="sidebar-heading">
-				Aktifitas
+				Monitoring
 			</div>
 
-			<!-- Nav Item - Pages Collapse Menu -->
-			<!-- Nav Item - Charts -->
 			<li class="nav-item">
-				<a class="nav-link" href="<?= base_url('/pendaftar') ?>">
-					<i class="fas fa-fw fa-chart-area"></i>
-					<span>Pendaftar Beasiswa</span></a>
-			</li>
-			<!-- Nav Item - Tables -->
-			<li class="nav-item">
-				<a class="nav-link" href="<?= base_url('/penerima') ?>">
-					<i class="fas fa-fw fa-table"></i>
-					<span>Penerima Beasiswa</span></a>
-			</li>
-
-			<!-- Nav Item - Charts -->
-			<li class="nav-item">
-				<a class="nav-link" href="<?= base_url('/daftarpengeluaran') ?>">
-					<i class="fas fa-fw fa-chart-area"></i>
-					<span>Pengeluaran Beswan</span></a>
-			</li>
-
-			<!-- Divider -->
-			<hr class="sidebar-divider my-0">
-
-			<!-- Nav Item - Logout -->
-			<li class="nav-item">
-				<a class="nav-link" href="#">
-					<i class="fas fa-fw fa-table"></i>
-					<span>Keluar</span></a>
+				<a class="nav-link" href="<?= base_url('/laporan2') ?>">
+					<i class="fas fa-fw fa-cog"></i>
+					<span>Laporan Pengeluaran</span></a>
 			</li>
 
 		</ul>
@@ -119,42 +101,52 @@
 
 				<!-- Topbar -->
 				<nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-
 					<!-- Topbar Navbar -->
 					<ul class="navbar-nav ml-auto">
-
 						<!-- Nav Item - User Information -->
 						<li class="nav-item dropdown no-arrow">
 							<a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 								<span class="mr-2 d-none d-lg-inline text-gray-600 small">Donatur</span>
 								<img class="img-profile rounded-circle" src="<?= base_url('assets/img/cap.png') ?>">
 							</a>
+							<div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+								<a class="dropdown-item" href="<?= base_url('/profile') ?>">
+									<i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+									Profil
+								</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="<?= base_url('logout') ?>">
+									<i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+									Keluar
+								</a>
+							</div>
 						</li>
-
 					</ul>
-
 				</nav>
 				<!-- End of Topbar -->
 
 				<!-- Begin Page Content -->
 				<div class="container-fluid">
 
+					<!-- Page Heading -->
+					<div class="d-sm-flex align-items-center justify-content-between mb-3">
+						<h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+					</div>
+
 					<!-- Content Row -->
 					<div class="row">
 
 						<!-- Earnings (Monthly) Card Example -->
-						<div class="col-xl-3 col-md-6 mb-4">
+						<div class="col-xl-4 col-md-6 mb-4">
 							<div class="card border-left-primary shadow h-100 py-2">
 								<div class="card-body">
 									<div class="row no-gutters align-items-center">
 										<div class="col mr-2">
-											<i class="fas fa-calendar fa-2x text-gray-300"></i>
-											<div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Jumlah Program Beasiswa</div>
-											<div class="h5 mb-0 font-weight-bold text-gray-800">1</div>
-											<div class="text-left">
-												<div class="underline"></div>
-												<br><a class="small text-black stretched-link" href="<?= base_url('/beadonatur') ?>">Lihat Selengkapnya<i class="fas fa-angle-right arrow"></i></a>
-											</div>
+											<div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Jumlah Program</div>
+											<div class="h5 mb-0 font-weight-bold text-gray-800">#</div>
+										</div>
+										<div class="col-auto">
+											<i class="fas fa-fw fa-table fa-2x text-gray-300"></i>
 										</div>
 									</div>
 								</div>
@@ -162,155 +154,76 @@
 						</div>
 
 						<!-- Earnings (Monthly) Card Example -->
-						<div class="col-xl-3 col-md-6 mb-4">
+						<div class="col-xl-4 col-md-6 mb-4">
 							<div class="card border-left-success shadow h-100 py-2">
 								<div class="card-body">
 									<div class="row no-gutters align-items-center">
 										<div class="col mr-2">
-											<i class="fa-solid fa-users fa-2x text-gray-300"></i>
-											<div class="text-xs font-weight-bold text-success text-uppercase mb-1">Pendaftar</div>
-											<div class="h5 mb-0 font-weight-bold text-gray-800">4 orang</div>
-											<div class="text-left">
-												<div class="underline"></div>
-												<br><a class="small text-black stretched-link" href="<?= base_url('/pendaftar') ?>">Lihat Selengkapnya<i class="fas fa-angle-right arrow"></i></a>
-											</div>
+											<div class="text-xs font-weight-bold text-success text-uppercase mb-1">Jumlah Penerima Beasiswa</div>
+											<div class="h5 mb-0 font-weight-bold text-gray-800">####</div>
 										</div>
-
+										<div class="col-auto">
+											<i class="fa-solid fa-square-check fa-2x text-gray-300"></i>
+										</div>
 									</div>
 								</div>
 							</div>
 						</div>
 
 						<!-- Earnings (Monthly) Card Example -->
-						<div class="col-xl-3 col-md-6 mb-4">
+						<div class="col-xl-4 col-md-6 mb-4">
 							<div class="card border-left-info shadow h-100 py-2">
 								<div class="card-body">
 									<div class="row no-gutters align-items-center">
 										<div class="col mr-2">
-											<i class="fa-solid fa-address-card fa-2x text-gray-300"></i>
-											<div class="text-xs font-weight-bold text-info text-uppercase mb-1">Penerima Beasiswa</div>
+											<div class="text-xs font-weight-bold text-info text-uppercase mb-1">Jumlah Pendaftar Beasiswa</div>
 											<div class="row no-gutters align-items-center">
 												<div class="col-auto">
-													<div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">2 orang</div>
+													<div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">####</div>
 												</div>
-												<div class="text-left">
-													<div class="underline"></div>
-													<br><a class="small text-black stretched-link" href="<?= base_url('/penerima') ?>">Lihat Selengkapnya<i class="fas fa-angle-right arrow"></i></a>
-												</div>
-												<!-- <div class="col">
-                                                    <div class="progress progress-sm mr-2">
-                                                        <div class="progress-bar bg-info" role="progressbar"
-                                                            style="width: 50%" aria-valuenow="50" aria-valuemin="0"
-                                                            aria-valuemax="100"></div>
-                                                    </div>
-                                                </div> -->
 											</div>
+										</div>
+										<div class="col-auto">
+											<i class="fa-solid fa-address-card fa-2x text-gray-300"></i>
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
-
-						<div class="col-xl-3 col-md-6 mb-4">
-							<div class="card border-left-warning shadow h-100 py-2">
-								<div class="card-body">
-									<div class="row no-gutters align-items-center">
-										<div class="col mr-2">
-											<i class="fa-solid fa-sack-dollar fa-2x text-gray-300"></i>
-											<div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Pengeluaran</div>
-											<div class="h5 mb-0 font-weight-bold text-gray-800">Rp. 100.000.000</div>
-											<div class="text-left">
-												<div class="underline"></div>
-												<br><a class="small text-black stretched-link" href="<?= base_url('/daftarpengeluaran') ?>">Lihat Selengkapnya<i class="fas fa-angle-right arrow"></i></a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-
-
-
 					</div>
-
-				</div>
-				<!-- Page content-->
-				<!-- <div class="container">
-					<div class="row">
-						<div class="col-lg-8">
-							<div class="card mb-4">
-								<center>
-									<a href="#!"><img src="assets/img/djarum.jpg" width="300px" height="300px" alt="..." /></a>
-								</center>
-								<div class="card-body">
-									<div class="small text-muted">25 Januari 2023</div>
-									<h2 class="card-title">Beasiswa Djarum Plus</h2>
-									<p class="card-text">Program Djarum Beasiswa Plus merupakan beasiswa prestasi yang memberikan kesempatan bagi mahasiswa dari berbagai jurusan yang tengah menempuh program studi Strata 1/ Diploma 4 di perguruan tinggi negeri maupun swasta yang memiliki kerja sama (bermitra) dengan Djarum Foundation.</p>
-									<a class="btn btn-success" href="#!">Lihat →</a>
-								</div>
-							</div>
-
-						</div>
-					</div>
-				</div> -->
-				<!-- Begin Page Content -->
-				<div class="container-fluid">
 
 					<!-- DataTales Example -->
 					<div class="card shadow mb-4">
 						<div class="card-header py-3">
-							<h6 class="m-0 font-weight-bold text-success">Daftar Pengeluaran Donatur</h6>
+							<h6 class="m-0 font-weight-bold text-success">Penerima Beasiswa</h6>
 						</div>
 						<div class="card-body">
 							<div class="table-responsive">
 								<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
 									<thead>
 										<tr>
-											<th>Nama Beasiswa</th>
+											<th>No</th>
+											<th>Nama Beswan</th>
+											<th>Nama Program</th>
 											<th>Universitas</th>
-											<th>Tanggal Mulai</th>
-											<th>Tanggal Akhir</th>
-											<th>Pengeluaran</th>
-											<th>Bukti Transaksi</th>
+											<th>Aksi</th>
 										</tr>
 									</thead>
 									<tbody>
 										<tr>
-											<td>Beasiswa Djarum Plus</td>
-											<td>Universitas Lampung</td>
-											<td>1/4/2023</td>
-											<td>1/11/2023</td>
-											<td>Rp. 100.000.000</td>
-											<td></td>
+											<td>q</td>
+											<td>q</td>
+											<td>q</td>
+											<td>q</td>
+											<td class="d-flex justify-content">
+												<a href="<?= base_url('/detail_penerima') ?>" type="button" class="btn btn-success mr-2">Lihat</a>
+											</td>
 										</tr>
-										<tr>
-											<td>Beasiswa Djarum Plus</td>
-											<td>Universitas Indonesia</td>
-											<td>1/4/2023</td>
-											<td>1/11/2023</td>
-											<td>Rp. 100.000.000</td>
-											<td></td>
-										</tr>
-
 									</tbody>
 								</table>
-								<!-- Pagination-->
-								<nav aria-label="Pagination">
-									<hr class="my-0" />
-									<ul class="pagination justify-content-center my-4">
-										<li class="page-item disabled"><a class="page-link" href="#" tabindex="-1" aria-disabled="true">Halaman</a></li>
-										<li class="page-item active" aria-current="page"><a class="page-link" href="#!">1</a></li>
-										<li class="page-item"><a class="page-link" href="#!">2</a></li>
-										<li class="page-item"><a class="page-link" href="#!">3</a></li>
-										<li class="page-item disabled"><a class="page-link" href="#!">...</a></li>
-										<li class="page-item"><a class="page-link" href="#!">15</a></li>
-										<li class="page-item"><a class="page-link" href="#!">Lainnya</a></li>
-									</ul>
-								</nav>
 							</div>
 						</div>
 					</div>
-
 				</div>
 				<!-- /.container-fluid -->
 			</div>
@@ -333,23 +246,21 @@
 	<!-- End of Page Wrapper -->
 
 	<!-- Bootstrap core JavaScript-->
-	<script src="<?= base_url('/assets/vendor/jquery/jquery.min.js') ?>"></script>
-	<script src="<?= base_url('/assets/vendor/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
+	<script src="<?= base_url('assets/vendor/jquery/jquery.min.js') ?>"></script>
+	<script src="<?= base_url('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
 
 	<!-- Core plugin JavaScript-->
-	<script src="<?= base_url('/assets/vendor/jquery-easing/jquery.easing.min.js') ?>"></script>
+	<script src="<?= base_url('assets/vendor/jquery-easing/jquery.easing.min.js') ?>"></script>
 
 	<!-- Custom scripts for all pages-->
-	<script src="<?= base_url('/assets/js/sb-admin-2.min.js') ?>"></script>
+	<script src="<?= base_url('assets/js/sb-admin-2.min.js') ?>"></script>
 
 	<!-- Page level plugins -->
-	<script src="<?= base_url('/assets/vendor/chart.js/Chart.min.js') ?>"></script>
+	<script src="<?= base_url('assets/vendor/datatables/jquery.dataTables.min.js') ?>"></script>
+	<script src="<?= base_url('assets/vendor/datatables/dataTables.bootstrap4.min.js') ?>"></script>
 
 	<!-- Page level custom scripts -->
-	<script src="<?= base_url('/assets/js/demo/chart-area-demo.js') ?>"></script>
-	<script src="<?= base_url('/assets/js/demo/chart-pie-demo.js') ?>"></script>
-
-
+	<script src="<?= base_url('assets/js/demo/datatables-demo.js') ?>"></script>
 </body>
 
 </html>

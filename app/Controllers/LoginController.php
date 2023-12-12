@@ -33,7 +33,7 @@ class LoginController extends BaseController
              'role' => $this->request->getVar('role'),     
          ]);
          
-         return redirect()->to(base_url('/regist'));
+         return redirect()->to(base_url('/register'));
      }
 
     public function checkLogin(){

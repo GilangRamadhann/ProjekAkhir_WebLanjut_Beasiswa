@@ -12,7 +12,7 @@ class DonaturModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['id_user', 'deskripsi', 'no_telp', 'status', 'logo', 'alamat', 'id_lokasi', 'instagram', 'facebook'];
+    protected $allowedFields    = ['id_user', 'nama', 'deskripsi', 'no_telp', 'logo', 'alamat', 'id_lokasi', 'instagram', 'facebook'];
 
     // Dates
     protected $useTimestamps = true;
@@ -45,7 +45,7 @@ class DonaturModel extends Model
         $this->insert($data);
     }
 
-    public function updateApplicant($data, $id){
+    public function updateDonatur($data, $id){
         return $this->update($id, $data);
     }
     

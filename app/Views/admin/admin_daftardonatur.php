@@ -16,10 +16,11 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
     <link href="<?= base_url('assets/css/sb-admin-2.min.css') ?>" rel="stylesheet">
-	<link href="<?= base_url('assets/css/sb-admin-2.css') ?>" rel="stylesheet">
+    <link href="<?= base_url('assets/css/sb-admin-2.css') ?>" rel="stylesheet">
 
     <!-- Custom styles for this page -->
     <link href="<?= base_url('assets/css/dataTables.bootstrap4.min.css') ?>" rel="stylesheet">
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
 
 </head>
 
@@ -99,29 +100,15 @@
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                Beswan
+                Akun
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('/penerimabeasiswa') ?>">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Penerima Beasiswa</span></a>
-            </li>
-
-            <!-- Nav Item - Charts -->
-            <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('/dataakademik') ?>">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Data Akademik Beswan</span></a>
-            </li>
-
-            <!-- Nav Item - Tables -->
-            <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('/pengeluaran') ?>">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Pengeluaran Beswan</span></a>
+                <a class="nav-link" href="<?= base_url('/akun') ?>">
+                    <i class="fa-solid fa-user"></i>
+                    <span>Data Akun</span></a>
             </li>
 
         </ul>
@@ -146,7 +133,7 @@
                                 <img class="img-profile rounded-circle" src="<?= base_url('assets/img/cap.png') ?>">
                             </a>
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                <a class="dropdown-item" href="<?= base_url('logout') ?>">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Keluar
                                 </a>
@@ -163,7 +150,7 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-3">
-                        <h1 class="h3 mb-0 text-gray-800"><?= $title ?></h1>
+                        <h1 class="h3 mb-0 text-gray-800">Data <?= $title ?></h1>
                     </div>
 
                     <!-- DataTales Example -->
@@ -177,19 +164,25 @@
                                     <thead>
                                         <tr>
                                             <th>No</th>
-                                            <th>Kota</th>
+                                            <th>Nama</th>
+                                            <th>Nomor Telepon</th>
+                                            <th>Alamat</th>
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <?php
                                         $i = 1;
-                                        foreach ($program as $program) {
+                                        foreach ($donatur as $donatur) {
                                         ?>
                                             <tr>
                                                 <td><?= $i++ ?></td>
-                                                <td><?= $program['nama'] ?></td>
-                                                
+                                                <td><?= $donatur['nama'] ?></td>
+                                                <td><?= $donatur['no_telp'] ?></td>
+                                                <td><?= $donatur['alamat'] ?></td>
+                                                <td class="d-flex justify-content">
+                                                    <a href="<?= base_url('/detail_daftardonatur') ?>" type="button" class="btn btn-success mr-2">Lihat</a>
+                                                </td>
                                             </tr>
                                         <?php
                                         }
@@ -223,11 +216,11 @@
     <!-- End of Page Wrapper -->
 
     <!-- Bootstrap core JavaScript-->
-    <script src="<?= base_url ('assets/vendor/jquery/jquery.min.js') ?>"></script>
-    <script src="<?= base_url ('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
+    <script src="<?= base_url('assets/vendor/jquery/jquery.min.js') ?>"></script>
+    <script src="<?= base_url('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
 
     <!-- Core plugin JavaScript-->
-    <script src="<?= base_url ('assets/vendor/jquery-easing/jquery.easing.min.js') ?>"></script>
+    <script src="<?= base_url('assets/vendor/jquery-easing/jquery.easing.min.js') ?>"></script>
 
     <!-- Custom scripts for all pages-->
     <script src="<?= base_url('assets/js/sb-admin-2.min.js') ?>"></script>
