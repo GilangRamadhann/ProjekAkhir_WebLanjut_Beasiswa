@@ -148,9 +148,10 @@
 								<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
 									<thead>
 										<tr>
-											<th>No</th>
 											<th>Nama Beasiswa</th>
-											<th>Nama Donatur</th>
+											<th>Deskripsi</th>
+											<th>Ketentuan</th>
+											<th>Persyaratan</th>
 											<th>Pembukaan Pendaftaran</th>
 											<th>Penutupan Pendaftaran</th>
 											<th>Aksi</th>
@@ -158,21 +159,22 @@
 									</thead>
 									<tbody>
 										<tr>
-											<td>q</td>
-											<td>q</td>
-											<td>q</td>
-											<td>q</td>
-											<td>q</td>
+										<?php foreach ($data as $dt):?>
+                                        <tr>
+                                            <td><?= $dt['nama']; ?></td>
+											<td><?= $dt['deskripsi']; ?></td>
+											<td><?= $dt['ketentuan']; ?></td>
+											<td><?= $dt['syarat']; ?></td>
+                                            <td><?= $dt['tgl_buka']; ?></td>
+                                            <td><?= $dt['tgl_tutup']; ?></td>
 											<td class="d-flex justify-content">
-											    <a href="<?= base_url('/detail_program') ?>" type="button" class="btn btn-success mr-2">Lihat</a>
-												<a href="<?= base_url('/edit_program')?>" type="button" class="btn btn-warning mr-2">Ubah</a>
-												<form action="#" method="POST">
-													<input type="hidden" name="_method" value="DELETE">
-													<?= csrf_field() ?>
-													<button type="submit" class="btn btn-danger">Hapus</button>
-												</form>
+											    <a href="<?= base_url('detail_program/'.$dt['id']) ?>" type="button" class="btn btn-success mr-2">Lihat</a>
+												<a href="<?= base_url('edit_program/'.$dt['id'])?>" type="button" class="btn btn-warning mr-2">Ubah</a>
+												<a href="<?= base_url('hapus_program/'.$dt['id'])?>" type="button" class="btn btn-danger mr-2">Delete</a>
+												
 											</td>
 										</tr>
+										<?php endforeach; ?>
 									</tbody>
 								</table>
 							</div>

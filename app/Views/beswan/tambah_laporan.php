@@ -140,7 +140,7 @@
                                             <form>
                                                 <div class="mb-3">
                                                     <label class="small mb-1"><b>Bulan</b></label>
-                                                    <input class="form-control" id="nama" type="text" name="#" placeholder="drop down ajah">
+                                                    <input class="form-control" id="Date" type="Date" name="#" placeholder="Masukkan Bulan">
                                                 </div>
                                             </form>
                                         </div>

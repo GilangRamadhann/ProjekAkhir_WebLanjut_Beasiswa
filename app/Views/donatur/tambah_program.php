@@ -137,7 +137,7 @@
                                 <div class="card mb-4">
                                     <div class="card-header">Detail Data</div>
                                     <div class="card-body">
-                                        <form method="POST" action="#" enctype="multipart/form-data">
+                                        <form method="POST" action="<?=base_url('simpan_program')?>" enctype="multipart/form-data">
                                             <?= csrf_field() ?>
                                             <!-- Form Group (username)-->
                                             <div class="mb-3">

@@ -32,12 +32,12 @@ class ProgramController extends BaseController
         return view('donatur/program', $data);
     }
 
-    public function detail()
+    public function detail($id)
     {
-        $data = [
-            'title' => 'Program Beasiswa',
-        ];
+        $model = new ProgramModel();
 
+        $data = $model->getProgram($id);
+       // dd($data);
         return view('donatur/detail_program', $data);
     }
 
@@ -52,6 +52,25 @@ class ProgramController extends BaseController
 
     public function save()
     {
+        $data=[
+            "nama" => $this->request->getVar("nama"),
+            "id_user" => session("id"),
+            "deskripsi" => $this->request->getVar("deskripsi"),
+            "ketentuan" => $this->request->getVar("ketentuan"),
+            "syarat" => $this->request->getVar("syarat"),
+            
+            "tgl_buka" => $this->request->getVar("tgl_buka"),
+            "tgl_tutup" => $this->request->getVar("tgl_tutup"),
+        ];
+      //  dd($data);
+        try {
+       $models = new ProgramModel();
+       $models->saveProgram($data);
+    } catch (\Exception $e) {
+        // Log or print the SQL error
+        echo 'Caught exception: ',  $e->getMessage(), "\n";
+    }
+       return redirect()->route('program');
         
     }
 
@@ -69,8 +88,11 @@ class ProgramController extends BaseController
         
     }
 
-    public function destroy()
+    public function destroy($id=null)
     {
-        
+        //dd($id);
+        $model = new ProgramModel();
+        $model->delete($id);
+        return redirect()->back();
     }
 }

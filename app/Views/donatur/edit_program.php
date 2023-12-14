@@ -137,37 +137,37 @@
                                 <div class="card mb-4">
                                     <div class="card-header">Detail Data</div>
                                     <div class="card-body">
-                                        <form method="POST" action="#" enctype="multipart/form-data">
+                                        <form method="POST" action="" enctype="multipart/form-data">
                                             <?= csrf_field() ?>
                                             <!-- Form Group (username)-->
                                             <div class="mb-3">
                                                 <label class="small mb-1" for="nama">Nama Beasiswa</label>
-                                                <input class="form-control" id="inputBes" type="text" name="nama" value="#">
+                                                <input class="form-control" id="inputBes" type="text" name="nama" value="<?= $data['nama'] ?>">
                                             </div>
 
                                             <div class="mb-3">
                                                 <label class="small mb-1" for="inputBes">Deskripsi</label>
-                                                <textarea class="form-control" name="deskripsi" id="deskripsi" cols="30" rows="10">#</textarea>
+                                                <textarea class="form-control" name="deskripsi" id="deskripsi" cols="30" rows="10"><?= $data['deskripsi']?></textarea>
                                             </div>
 
                                             <div class="mb-3">
                                                 <label class="small mb-1" for="inputBes">Ketentuan</label>
-                                                <textarea class="form-control" name="ketentuan" id="ketentuan" cols="30" rows="10">#</textarea>
+                                                <textarea class="form-control" name="ketentuan" id="ketentuan" cols="30" rows="10"><?= $data['ketentuan']?></textarea>
                                             </div>
 
                                             <div class="mb-3">
                                                 <label class="small mb-1" for="inputBes">Persyaratan</label>
-                                                <textarea class="form-control" name="syarat" id="syarat" cols="30" rows="10">#</textarea>
+                                                <textarea class="form-control" name="syarat" id="syarat" cols="30" rows="10"><?= $data['syarat']?></textarea>
                                             </div>
 
                                             <div class="mb-3">
                                                 <label class="small mb-1" for="nama">Pembukaan Pendaftaran</label>
-                                                <input class="form-control" id="tgl_buka" type="date" name="tgl_buka" value="#">
+                                                <input class="form-control" id="tgl_buka" type="date" name="tgl_buka" value="<?= $data['tgl_buka']?>">
                                             </div>
 
                                             <div class="mb-3">
                                                 <label class="small mb-1" for="nama">Penutupan Pendaftaran</label>
-                                                <input class="form-control" id="tgl_tutup" type="date" name="tgl_tutup" value="#">
+                                                <input class="form-control" id="tgl_tutup" type="date" name="tgl_tutup" value="<?= $data['tgl_tutup']?>">
                                             </div>
 
                                             <!-- Save changes button-->

@@ -13,7 +13,7 @@ class ProgramModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = true;
     protected $protectFields    = true;
-    protected $allowedFields    = ['nama', 'id_donatur', 'deskripsi', 'ketentuan', 'syarat', 'no_telp', 'tgl_buka', 'tgl_tutup'];
+    protected $allowedFields    = ['nama', 'id_user','id_donatur', 'deskripsi', 'ketentuan', 'syarat', 'no_telp', 'tgl_buka', 'tgl_tutup'];
 
     // Dates
     protected $useTimestamps = true;
@@ -42,17 +42,18 @@ class ProgramModel extends Model
     public function getProgram($id = null)
     {
         if ($id != null) {
-            return $this->select('program.*, donatur.nama')
-                ->join('donatur', 'donatur.id = program.id_donatur')
+            return $this->select('program.*, users.username')
+                ->join('users', 'users.id = program.id_user')
                 ->find($id);
         }
     
-        return $this->select('program.*, donatur.nama')
-            ->join('donatur', 'donatur.id = program.id_donatur')
+        return $this->select('program.*, users.username')
+            ->join('users', 'users.id = program.id_user')
             ->findAll();
     }
 
     public function saveProgram($data){
+        //dd($data);
         return $this->insert($data);
     }
     public function updateProgram($data, $id){

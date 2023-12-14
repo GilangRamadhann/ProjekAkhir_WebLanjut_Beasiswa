@@ -54,7 +54,7 @@ class Home extends BaseController
         $models = new ProgramModel();
         $data = $models->getProgram();
         //dd($data);
-        return view('donatur/bea_donatur',["data" => $data]);
+        return view('donatur/program',["data" => $data,'title' => "PROGRAM"]);
     }
     public function tambahdata(){
         
@@ -78,7 +78,44 @@ class Home extends BaseController
         }
     }
 
-    // METHOD BESWAN 
+    public function editprogbes($id=null){
+        $models = new ProgramModel();
+       // dd($this->request->getMethod());
+        if($this->request->getMethod()=="post"){
+            
+            $data=[
+                "nama" => $this->request->getVar("nama"),
+                
+                "deskripsi" => $this->request->getVar("deskripsi"),
+                "ketentuan" => $this->request->getVar("ketentuan"),
+                "syarat" => $this->request->getVar("syarat"),
+                
+                "tgl_buka" => $this->request->getVar("tgl_buka"),
+                "tgl_tutup" => $this->request->getVar("tgl_tutup"),
+
+            ];
+            $models->updateProgram($data,$id);
+            return redirect()->to(base_url('program'));
+        }
+        //dd($id);
+       
+        $data = $models->getProgram($id);
+        //dd($data);
+        
+        return view('donatur/edit_program',["data" => $data,"title"=>'EDIT']);
+    }
+    public function pengeluaran(){
+        return view('beswan/laporan');
+    }
+    public function tambah_laporan(){
+        return view('beswan/tambah_laporan');
+    }
+    public function edit_laporan(){
+        return view('beswan/edit_laporan');
+    }
+    public function lihat_laporan(){
+        return view('beswan/detail_laporan');
+    }
     public function beswan(){
         return view('beswan/dashboard');
     }
@@ -96,17 +133,5 @@ class Home extends BaseController
     }
     public function edit_pendaftaran(){
         return view('beswan/edit_pendaftaran');
-    }
-    public function pengeluaran(){
-        return view('beswan/laporan');
-    }
-    public function tambah_laporan(){
-        return view('beswan/tambah_laporan');
-    }
-    public function edit_laporan(){
-        return view('beswan/edit_laporan');
-    }
-    public function lihat_laporan(){
-        return view('beswan/detail_laporan');
     }
 }

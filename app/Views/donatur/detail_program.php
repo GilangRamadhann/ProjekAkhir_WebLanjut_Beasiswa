@@ -132,55 +132,56 @@
                             <div class="col-xl-12">
                                 <!-- Profile picture card-->
                                 <div class="card mb-4 acc">
-                                    <div class="card-header">Program Beasiswa</div>
+                                    <div class="card-header">Program Beasiswa<br><a href="<?=base_url('program')?>" class="btn btn-primary m-2">BACK</a></div>
+                                    
                                     <div class="card-body">
                                         <form>
                                             <div class="mb-3">
                                                 <label class="small mb-1"><b>Nama Beasiswa</b></label>
                                                 <p>
-                                                    #
+                                                    <?= $nama ?>
                                                 </p>
                                             </div>
 
                                             <div class="mb-3">
                                                 <label class="small mb-1"><b>Nama Donatur</b></label>
                                                 <p>
-                                                    #
+                                                    <?= $username ?>
                                                 </p>
                                             </div>
 
                                             <div class="mb-3">
                                                 <label class="small mb-1"><b>Deskripsi</b></label>
                                                 <p>
-                                                    #
+                                                <?= $deskripsi ?>
                                                 </p>
                                             </div>
 
                                             <div class="mb-3">
                                                 <label class="small mb-1"><b>Ketentuan</b></label>
                                                 <p>
-                                                    #
+                                                <?= $ketentuan ?>
                                                 </p>
                                             </div>
 
                                             <div class="mb-3">
                                                 <label class="small mb-1"><b>Persyaratan</b></label>
                                                 <p>
-                                                    #
+                                                <?= $syarat ?>
                                                 </p>
                                             </div>
 
                                             <div class="mb-3">
                                                 <label class="small mb-1"><b>Pembukaan Pendaftaran</b></label>
                                                 <p>
-                                                    #
+                                                <?= $tgl_buka ?>
                                                 </p>
                                             </div>
 
                                             <div class="mb-3">
                                                 <label class="small mb-1"><b>Penutupan Pendaftaran</b></label>
                                                 <p>
-                                                    #
+                                                <?= $tgl_tutup ?>
                                                 </p>
                                             </div>
                                         </form>

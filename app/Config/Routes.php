@@ -26,13 +26,15 @@ $routes->post('/simpan_profile', 'DonaturController::save');
 $routes->get('/edit_profile', 'DonaturController::edit');
 $routes->post('/perbaru_profile', 'DonaturController::update');
 // CRUD PROGRAM BEASISWA
-$routes->get('/program', 'ProgramController::index');
-$routes->get('/detail_program', 'ProgramController::detail');
+$routes->get('/program', 'Home::program');
+
+$routes->get('/detail_program/(:any)', 'ProgramController::detail/$1');
 $routes->get('/tambah_program', 'ProgramController::create');
 $routes->post('/simpan_program', 'ProgramController::save');
-$routes->get('/edit_program', 'ProgramController::edit');
-$routes->post('/perbaru_program', 'ProgramController::update');
-$routes->delete('/hapus_program', 'ProgramController::destroy');
+$routes->get('/edit_program/(:any)', 'Home::editprogbes/$1');
+$routes->post('/edit_program/(:any)', 'Home::editprogbes/$1');
+$routes->post('/perbaru_program', 'Home::editprogbes/$1');
+$routes->get('/hapus_program/(:any)', 'ProgramController::destroy/$1');
 // PENDAFTAR
 $routes->get('/pendaftar', 'Home::pendaftar');
 $routes->get('/penerimaan', 'Home::penerimaan');

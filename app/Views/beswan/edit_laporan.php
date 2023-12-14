@@ -126,7 +126,7 @@
                     <div class="container-xl px-4 mt-4">
                         <!-- Account page navigation-->
                         <br>
-                        <h3>Tambah Laporan Pengeluaran</h3>
+                        <h3>Edit Laporan Pengeluaran</h3>
                         <hr class="mt-0 mb-4">
                         <form method="POST" action="#" enctype="multipart/form-data">
                             <?= csrf_field() ?>
@@ -139,7 +139,7 @@
                                             <form>
                                                 <div class="mb-3">
                                                     <label class="small mb-1"><b>Bulan</b></label>
-                                                    <input class="form-control" id="nama" type="text" name="#" value="#">
+                                                    <input class="form-control" id="nama" type="Date" name="#" value="#">
                                                 </div>
                                             </form>
                                         </div>
