@@ -56,7 +56,7 @@ class DonaturController extends BaseController
     }
 
     public function create(){
-
+        
         $lokasiModel = new LokasiModel();
         $userId = user_id();
 
@@ -78,10 +78,7 @@ class DonaturController extends BaseController
     public function save(){
 
         $lokasiModel = new LokasiModel();
-        if (!$this->validate($lokasiModel->getValidationRules())) {
-            session()->setFlashdata('errors', $this->validator->listErrors());
-            return redirect()->back()->withInput();
-        }
+        
 
         $path = 'assets/uploads/img/';
         $foto = $this->request->getFile('logo');
@@ -91,7 +88,6 @@ class DonaturController extends BaseController
         {
             $foto = base_url($path . $name);
         }
-
         // dd($this->request->getVar());
         $this->donaturModel->saveDonatur([
             'id_user' => $this->request->getVar('id_user'),

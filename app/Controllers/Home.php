@@ -2,6 +2,10 @@
 
 namespace App\Controllers;
 use App\Models\ProgramModel;
+use App\Models\UniversitasModel;
+use App\Models\DaftarModel;
+use App\Models\BeswanModel;
+
 
 class Home extends BaseController
 {
@@ -22,27 +26,97 @@ class Home extends BaseController
 
     // METHOD ADMIN
     public function programbeasiswa(){
-        return view('admin/admin_programbeas');
+        $models = new ProgramModel();
+        $data = $models->getProgram();
+        
+        return view('admin/admin_programbeas',["program"=>$data]);
     }
-    public function detail_programbeasiswa(){
-        return view('admin/detail_programbeasiswa');
+    public function detail_programbeasiswa($id){
+        $models = new ProgramModel();
+        $data = $models->getProgram($id);
+        
+        return view('admin/detail_programbeasiswa',$data);
     }
 
     // METHOD DONATUR
     public function dashboard_donatur(){
-        return view('donatur/dashboard_donatur');
+        $daftarModel = new DaftarModel();
+        $user_id = user_id(); // Replace with the actual way you get the user ID
+
+        $daftar = $daftarModel
+        ->select('daftar_terima.*, program.*, beswan.*,universitas.*, beswan.nama as namabeswan, program.nama as namaprogram') // Include all columns from both tables
+        ->join('program', 'program.id = daftar_terima.id_program')
+        ->join('universitas', 'universitas.id = daftar_terima.id_univ')
+        ->join('donatur', 'donatur.id = program.id_donatur')
+        ->join('beswan', 'daftar_terima.id_beswan = beswan.id')
+        ->where('donatur.id_user', $user_id)
+        ->where('status', 'Di Terima')
+        ->findAll();
+        return view('donatur/dashboard_donatur',["data"=>$daftar]);
     }
     public function pendaftar(){
-        return view('donatur/pendaftar');
+        
+       //dd($beswan);
+
+
+        $daftarModel = new DaftarModel();
+        $daftar = $daftarModel
+        ->select('daftar_terima.*, program.*,daftar_terima.id as daftarTerimaId, universitas.universitas as universitas_nama, program.nama as program_nama, beswan.nama as beswan_nama,daftar_terima.id as dataId')
+        ->join('universitas', 'universitas.id = daftar_terima.id_univ')
+        ->join('program', 'program.id = daftar_terima.id_program')
+        ->join('beswan', 'beswan.id = daftar_terima.id_beswan')
+        ->join('donatur', 'donatur.id = program.id_donatur')
+        ->where('donatur.id_user', user_id())
+        ->findAll();
+       // dd($daftar);
+        $data = [
+            "daftar" => $daftar,
+        ];
+        return view('donatur/pendaftar',$data);
     }
-    public function penerimaan(){
-        return view('donatur/penerimaan');
+    public function penerimaan($id){
+        $daftarModel = new DaftarModel();
+        if($this->request->getMethod()=="post"){
+            $data = $this->request->getVar(['status']);
+            $daftarModel->update($id,$data);
+            return redirect()->to(base_url('pendaftar'));
+        }
+       
+        $data = $daftarModel->find($id);
+        //dd($data);
+        return view('donatur/penerimaan',["data"=>$data]);
     }
     public function penerima(){
-        return view('donatur/penerima');
+        $daftarModel = new DaftarModel();
+        $user_id = user_id(); // Replace with the actual way you get the user ID
+
+        $daftar = $daftarModel
+        ->select('daftar_terima.*, program.*, beswan.*,universitas.*, beswan.nama as namabeswan, program.nama as namaprogram') // Include all columns from both tables
+        ->join('program', 'program.id = daftar_terima.id_program')
+        ->join('universitas', 'universitas.id = daftar_terima.id_univ')
+        ->join('donatur', 'donatur.id = program.id_donatur')
+        ->join('beswan', 'daftar_terima.id_beswan = beswan.id')
+        ->where('donatur.id_user', $user_id)
+        ->where('status', 'Di Terima')
+        ->findAll();
+    
+
+        //dd($daftar);
+        return view('donatur/penerima',['data'=>$daftar]);
     }
-    public function detail_penerima(){
-        return view('donatur/detail_penerima');
+    public function detail_penerima($id){
+        //dd($id);
+        $beswanModel = new BeswanModel();
+        $data = $beswanModel
+        ->select('beswan.*, jurusan.jurusan, fakultas.fakultas, universitas.universitas, lokasi.kota')
+        ->join('jurusan', 'jurusan.id = beswan.id_jurusan')
+        ->join('fakultas', 'fakultas.id = beswan.id_fakultas')
+        ->join('universitas', 'universitas.id = beswan.id_univ')
+        ->join('lokasi', 'lokasi.id = beswan.id_lokasi')
+        ->find($id);
+    
+        //dd($data);
+        return view('donatur/detail_penerima',$data);
     }
     public function laporan2(){
         return view('donatur/laporan_pengeluaran');
@@ -52,8 +126,9 @@ class Home extends BaseController
     }
     public function program(){    
         $models = new ProgramModel();
-        $data = $models->getProgram();
+        $data = $models->findAll();
         //dd($data);
+      
         return view('donatur/program',["data" => $data,'title' => "PROGRAM"]);
     }
     public function tambahdata(){
@@ -94,12 +169,13 @@ class Home extends BaseController
                 "tgl_tutup" => $this->request->getVar("tgl_tutup"),
 
             ];
+            //dd($data);
             $models->updateProgram($data,$id);
             return redirect()->to(base_url('program'));
         }
         //dd($id);
        
-        $data = $models->getProgram($id);
+        $data = $models->find   ($id);
         //dd($data);
         
         return view('donatur/edit_program',["data" => $data,"title"=>'EDIT']);
@@ -117,21 +193,137 @@ class Home extends BaseController
         return view('beswan/detail_laporan');
     }
     public function beswan(){
-        return view('beswan/dashboard');
+        $daftarModel = new DaftarModel();
+        
+        $beswanModel = new BeswanModel();
+        
+        $beswan = $beswanModel->where('id_user', user_id())->first();
+       //dd($beswan);
+        $daftar = $daftarModel
+                ->select('daftar_terima.*, program.*,daftar_terima.id as daftarTerimaId, universitas.universitas as universitas_nama, program.nama as program_nama, beswan.nama as beswan_nama,daftar_terima.id as dataId')
+                ->join('universitas', 'universitas.id = daftar_terima.id_univ')
+                ->join('program', 'program.id = daftar_terima.id_program')
+                ->join('beswan', 'beswan.id = daftar_terima.id_beswan')
+                ->where('daftar_terima.id_beswan', $beswan['id'])
+                ->findAll();
+        return view('beswan/dashboard',["data"=>$daftar]);
     }
     public function daftarprogram(){
-        return view('beswan/program');
+        $programModel = new ProgramModel();
+        
+        $programs = $programModel
+    ->select('donatur.*,program.*,  donatur.nama as donatur_nama, program.nama as program_nama') // Use aliases to distinguish columns
+    ->join('donatur', 'program.id_donatur = donatur.id')
+    ->findAll();
+
+      
+        //dd($programs);
+        return view('beswan/program',["program"=> $programs]);
     }
-    public function lihat_program(){
-        return view('beswan/detail_program');
+    public function lihat_program($id){
+        $programModel = new ProgramModel();
+        //dd($id);
+        $programs = $programModel
+    ->select('donatur.*,program.*,  donatur.nama as donatur_nama, program.nama as program_nama') // Use aliases to distinguish columns
+    ->join('donatur', 'program.id_donatur = donatur.id')
+    ->find($id);
+    //dd($programs); 
+        return view('beswan/detail_program',['program'=>$programs]);
     }
-    public function mendaftar(){
-        return view('beswan/form_daftar');
+    public function mendaftar($id){
+        $programModel = new ProgramModel();
+        $univModel = new UniversitasModel();
+        $daftarModel = new DaftarModel();
+        if($this->request->getVar("page")=="edit"){
+           
+            
+            if ($this->request->getFile('berkas') !== null && $this->request->getFile('berkas')->isValid()) {
+
+                $file = $this->request->getFile('berkas');
+            $newName = $file->getRandomName();
+            $path = 'assets/uploads/berkas/'.$newName;
+            $file->move('assets/uploads/berkas/', $newName);
+            $data = [
+               
+                'berkas'=> $path,
+                "id_univ" => $this->request->getVar("univ"),
+            ];
+            // dd($data);
+            $daftarModel->update($id,$data);
+            return redirect()->to('pendaftaran');
+            
+            }
+
+            $data = [
+               
+                'berkas'=>$this->request->getVar("path"),
+                "id_univ" => $this->request->getVar("univ"),
+            ];
+            //dd($data);
+            $daftarModel->update($id,$data);
+            return redirect()->to('pendaftaran');
+        }else if ($this->request->getMethod() === 'post' && $this->validate(['berkas' => 'uploaded[berkas]|ext_in[berkas,zip]'])) {
+            $daftarModel = new  DaftarModel();
+            $beswanModel = new BeswanModel();
+            $file = $this->request->getFile('berkas');
+            $newName = $file->getRandomName();
+            $path = 'assets/uploads/berkas/'.$newName;
+            $file->move('assets/uploads/berkas/', $newName);
+            $beswan = $beswanModel->where('id_user', user_id())->first();
+            $data = [
+                "id_univ" => $this->request->getVar("univ"),
+                "id_program" => $id,
+                "id_beswan" => $beswan['id'],
+                "berkas" => $path,
+
+             ];
+             
+             //dd($beswan);
+             $daftarModel->save($data);
+            //dd($data);
+            return redirect()->to(base_url('daftarprogram'))->with('success', 'File uploaded successfully!');
+            
+        }
+
+        $programs = $programModel
+        ->select('donatur.*,program.*,  donatur.nama as donatur_nama, program.nama as program_nama') // Use aliases to distinguish columns
+        ->join('donatur', 'program.id_donatur = donatur.id')
+        ->find($id);
+        $data = ['program'=>$programs,'universitas' => $univModel->orderby('universitas')->findAll(),];
+        return view('beswan/form_daftar',$data);
     }
     public function pendaftaran(){
-        return view('beswan/statusdaftar');
+        $daftarModel = new DaftarModel();
+        
+        $beswanModel = new BeswanModel();
+        
+        $beswan = $beswanModel->where('id_user', user_id())->first();
+       //dd($beswan);
+        $daftar = $daftarModel
+                ->select('daftar_terima.*, program.*,daftar_terima.id as daftarTerimaId, universitas.universitas as universitas_nama, program.nama as program_nama, beswan.nama as beswan_nama,daftar_terima.id as dataId')
+                ->join('universitas', 'universitas.id = daftar_terima.id_univ')
+                ->join('program', 'program.id = daftar_terima.id_program')
+                ->join('beswan', 'beswan.id = daftar_terima.id_beswan')
+                ->where('daftar_terima.id_beswan', $beswan['id'])
+                ->findAll();
+        
+        //dd($daftar);
+        return view('beswan/statusdaftar',["data"=>$daftar]);
     }
-    public function edit_pendaftaran(){
-        return view('beswan/edit_pendaftaran');
+    public function edit_pendaftaran($id){
+        $daftarModel = new DaftarModel();
+        $univModel = new UniversitasModel();
+        $beswanModel = new BeswanModel();
+        $beswan = $beswanModel->where('id_user', user_id())->first();
+       // dd($beswan);
+        $daftar = $daftarModel
+        ->select('daftar_terima.*, program.*, daftar_terima.id as daftarTerimaId, universitas.universitas as universitas_nama, program.nama as program_nama, beswan.nama as beswan_nama')
+        ->join('universitas', 'universitas.id = daftar_terima.id_univ')
+        ->join('program', 'program.id = daftar_terima.id_program')
+        ->join('beswan', 'beswan.id = daftar_terima.id_beswan')
+        ->where('daftar_terima.id_beswan', $beswan['id'])
+        ->find($id);
+        //dd($daftar);
+        return view('beswan/edit_pendaftaran',["data"=>$daftar,'universitas' => $univModel->orderby('universitas')->findAll(),]);
     }
 }

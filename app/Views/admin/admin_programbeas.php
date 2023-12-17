@@ -167,22 +167,26 @@
                                             <th>No</th>
                                             <th>Nama Beasiswa</th>
                                             <th>Nama Donatur</th>
+                                            <th>Persyaratan</th>
                                             <th>Pembukaan Pendaftaran</th>
                                             <th>Penutupan Pendaftaran</th>
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        <?php $row=1; foreach($program as $p):?>
                                         <tr>
-                                            <td>q</td>
-                                            <td>q</td>
-                                            <td>q</td>
-                                            <td>q</td>
-                                            <td>q</td>
+                                            <td><?= $row++;?></td>
+                                            <td><?= $p['nama'];?></td>
+                                            <td><?= $p['username'];?></td>
+                                            <td><?= $p['syarat'];?></td>
+                                            <td><?= $p['tgl_buka'];?></td>
+                                            <td><?= $p['tgl_tutup'];?></td>
                                             <td class="d-flex justify-content">
-                                                <a href="<?= base_url('/detail_programbeasiswa') ?>" type="button" class="btn btn-success mr-2">Lihat</a>
+                                                <a href="<?= base_url('programbeasiswa/detail/'.$p['id']) ?>" type="button" class="btn btn-success mr-2">Lihat</a>
                                             </td>
                                         </tr>
+                                        <?php endforeach; ?>
                                     </tbody>
                                 </table>
                             </div>

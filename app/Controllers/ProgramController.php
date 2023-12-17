@@ -35,9 +35,12 @@ class ProgramController extends BaseController
     public function detail($id)
     {
         $model = new ProgramModel();
-
-        $data = $model->getProgram($id);
-       // dd($data);
+        $donaturModel = new DonaturModel();
+        $ids = session("id");
+        $donatur = $donaturModel->where('id_user', $ids)->first();
+        $data = $model->find($id);
+        $data['username']= $donatur['nama'];
+        //dd($data);
         return view('donatur/detail_program', $data);
     }
 
@@ -52,9 +55,13 @@ class ProgramController extends BaseController
 
     public function save()
     {
+        $donaturModel = new DonaturModel();
+        $id = session("id");
+        $donatur = $donaturModel->where('id_user', $id)->first();
+       
         $data=[
             "nama" => $this->request->getVar("nama"),
-            "id_user" => session("id"),
+            "id_donatur" => $donatur['id'],
             "deskripsi" => $this->request->getVar("deskripsi"),
             "ketentuan" => $this->request->getVar("ketentuan"),
             "syarat" => $this->request->getVar("syarat"),
@@ -85,6 +92,7 @@ class ProgramController extends BaseController
 
     public function update()
     {
+        dd($this->request->getVar());
         
     }
 

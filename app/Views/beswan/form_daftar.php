@@ -131,15 +131,22 @@
                                 <div class="card mb-4">
                                     <div class="card-header">Detail Data</div>
                                     <div class="card-body">
-                                        <form method="POST" action="<?= base_url('#') ?>" enctype="multipart/form-data">
+                                        <form method="POST" action="<?= base_url('mendaftar/'.$program['id']) ?>" enctype="multipart/form-data">
                                             <!-- Form Group (username)-->
                                             <div class="mb-3">
-                                                <label class="small mb-1" for="inputBes"><b>Universitas</b></label>
-                                                <input class="form-control" id="inputBes" type="text" placeholder="Masukan Nama Universitas" name="#">
-                                            </div>
+                                                    <label class="small mb-1" for="kota">Universitas</label>
+                                                    <select class="form-control" name="univ" value="">
+                                                        <option selected value="">Pilih Universitas</option>
+                                                        <?php foreach ($universitas as $value) : ?>
+                                                            <option value="<?= $value['id'] ?>">
+                                                                <?= $value['universitas'] ?>
+                                                            </option>
+                                                        <?php endforeach; ?>
+                                                    </select>
+                                                </div>
                                             <div class="mb-3">
                                                 <label class="small mb-1" for="inputBes"><b>Berkas (unggah dengan ekstensi .zip)</b></label>
-                                                <input class="form-control" id="inputBes" type="file" placeholder="Berkas Persyaratan" name="#">
+                                                <input class="form-control" id="inputBes" type="file" placeholder="Berkas Persyaratan" name="berkas">
                                             </div>
                                             <!-- Save changes button-->
                                             <div class="text-right">

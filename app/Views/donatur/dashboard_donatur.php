@@ -86,7 +86,7 @@
 
 			<li class="nav-item">
 				<a class="nav-link" href="<?= base_url('/laporan2') ?>">
-					<i class="fas fa-fw fa-cog"></i>
+					<i class="fas fa-fw fa-money-bill"></i>
 					<span>Laporan Pengeluaran</span></a>
 			</li>
 
@@ -200,6 +200,7 @@
 						<div class="card-body">
 							<div class="table-responsive">
 								<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+								
 									<thead>
 										<tr>
 											<th>No</th>
@@ -210,15 +211,17 @@
 										</tr>
 									</thead>
 									<tbody>
+										<?php $row=1; foreach ($data as $d):?>
 										<tr>
-											<td>q</td>
-											<td>q</td>
-											<td>q</td>
-											<td>q</td>
+											<td><?= $row++;?></td>
+											<td><?= $d['namabeswan']?></td>
+											<td><?= $d['namaprogram']?></td>
+											<td><?= $d['universitas']?></td>
 											<td class="d-flex justify-content">
-												<a href="<?= base_url('/detail_penerima') ?>" type="button" class="btn btn-success mr-2">Lihat</a>
+											    <a href="<?= base_url('detail_penerima/'.$d['id_beswan'])?>" type="button" class="btn btn-success mr-2">Lihat</a>
 											</td>
 										</tr>
+										<?php endforeach;?>
 									</tbody>
 								</table>
 							</div>

@@ -147,17 +147,19 @@
 										</tr>
 									</thead>
 									<tbody>
+										<?php $no=1; foreach ($data as $row):?>
 										<tr>
-											<td>q</td>
-											<td>q</td>
-											<td>q</td>
-											<td>q</td>
-											<td>nanti ini bentuknya zip/link aja bebas</td>
-											<td>q</td>
+											<td><?= $no++?></td>
+											<td><?= user()->username ?></td>
+											<td><?= $row['program_nama'];?></td>
+											<td><?= $row['universitas_nama'];?></td>
+											<td><a href="<?= $row['berkas'];?>">Berkas</a></td>
+											<td><?= $row['status'];?></td>
 											<td class="d-flex justify-content">
-												<a href="<?= base_url('/edit_pendaftaran')?>" type="button" class="btn btn-warning mr-2">Ubah</a>
+												<a href="<?= base_url('edit_pendaftaran/'.$row['daftarTerimaId'])?>" type="button" class="btn btn-warning mr-2">Ubah</a>
 											</td>
 										</tr>
+										<?php endforeach; ?>
 									</tbody>
 								</table>
 							</div>

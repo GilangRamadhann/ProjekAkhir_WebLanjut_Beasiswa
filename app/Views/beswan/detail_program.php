@@ -138,55 +138,55 @@
                                             <div class="mb-3">
                                                 <label class="small mb-1"><b>Nama Beasiswa</b></label>
                                                 <p>
-                                                    #
+                                                <?= $program['nama'];?>
                                                 </p>
                                             </div>
 
                                             <div class="mb-3">
                                                 <label class="small mb-1"><b>Nama Donatur</b></label>
                                                 <p>
-                                                    #
+                                                <?= $program['donatur_nama'];?>
                                                 </p>
                                             </div>
 
                                             <div class="mb-3">
                                                 <label class="small mb-1"><b>Deskripsi</b></label>
                                                 <p>
-                                                    #
+                                                <?= $program['deskripsi'];?>
                                                 </p>
                                             </div>
 
                                             <div class="mb-3">
                                                 <label class="small mb-1"><b>Ketentuan</b></label>
                                                 <p>
-                                                    #
+                                                <?= $program['ketentuan'];?>
                                                 </p>
                                             </div>
 
                                             <div class="mb-3">
                                                 <label class="small mb-1"><b>Persyaratan</b></label>
                                                 <p>
-                                                    #
+                                                <?= $program['syarat'];?>
                                                 </p>
                                             </div>
 
                                             <div class="mb-3">
                                                 <label class="small mb-1"><b>Pembukaan Pendaftaran</b></label>
                                                 <p>
-                                                    #
+                                                <?= $program['tgl_buka'];?>
                                                 </p>
                                             </div>
 
                                             <div class="mb-3">
                                                 <label class="small mb-1"><b>Penutupan Pendaftaran</b></label>
                                                 <p>
-                                                    #
+                                                <?= $program['tgl_tutup'];?>
                                                 </p>
                                             </div>
 
                                             <div class="mt-4 text-right">
                                                     <a href="<?= base_url('/daftarprogram') ?>" type="button" class="btn btn-warning">Kembali</a>
-                                                    <a href="<?= base_url('/mendaftar') ?>" type="button" class="btn btn-primary">Daftar</a>
+                                                    <a href="<?= base_url('mendaftar/'.$program['id']) ?>" type="button" class="btn btn-primary">Daftar</a>
                                             </div>
                                         </form>
                                     </div>

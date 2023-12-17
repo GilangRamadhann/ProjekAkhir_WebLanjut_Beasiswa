@@ -37,10 +37,11 @@ $routes->post('/perbaru_program', 'Home::editprogbes/$1');
 $routes->get('/hapus_program/(:any)', 'ProgramController::destroy/$1');
 // PENDAFTAR
 $routes->get('/pendaftar', 'Home::pendaftar');
-$routes->get('/penerimaan', 'Home::penerimaan');
+$routes->get('/penerimaan/(:any)', 'Home::penerimaan/$1');
+$routes->post('/penerimaan/(:any)', 'Home::penerimaan/$1');
 // PENERIMA
 $routes->get('/penerima', 'Home::penerima');
-$routes->get('/detail_penerima', 'Home::detail_penerima');
+$routes->get('/detail_penerima/(:any)', 'Home::detail_penerima/$1');
 // LAPORAN
 $routes->get('/laporan2', 'Home::laporan2');
 $routes->get('/detail_laporan', 'Home::detail_laporan');
@@ -77,7 +78,7 @@ $routes->put('datajur/(:any)', [JurusanController::class, 'update']);
 $routes->delete('datajur/(:any)', [JurusanController::class, 'hapus']);
 // PROGRAM 
 $routes->get('/programbeasiswa', 'Home::programbeasiswa');
-$routes->get('/detail_programbeasiswa', '::detail_programbeasiswa');
+$routes->get('/programbeasiswa/detail/(:any)', 'Home::detail_programbeasiswa/$1');
 // DONATUR
 $routes->get('/daftardonatur', 'AdminController::index');
 $routes->get('/detail_daftardonatur', 'AdminController::lihat');
@@ -86,7 +87,7 @@ $routes->get('/akun', 'AkunController::akun');
 
 // BESWAN
 $routes->get('/beswan', 'Home::beswan');
-// PROFILE DONATUR
+// PROFILE BESWAN
 $routes->get('/profil', 'BeswanController::profile');
 $routes->get('/tambah_profil', 'BeswanController::create');
 $routes->post('/simpan_profil', 'BeswanController::save');
@@ -94,11 +95,12 @@ $routes->get('/edit_profil', 'BeswanController::edit');
 $routes->post('/perbaru_profil', 'BeswanController::update');
 // PROGRAM
 $routes->get('/daftarprogram', 'Home::daftarprogram');
-$routes->get('/lihat_program', 'Home::lihat_program');
-$routes->get('/mendaftar', 'Home::mendaftar');
+$routes->get('/lihat_program/(:any)', 'Home::lihat_program/$1');
+$routes->get('/mendaftar/(:any)', 'Home::mendaftar/$1');
+$routes->post('/mendaftar/(:any)', 'Home::mendaftar/$1');
 // STATUS PENDAFTARAN
 $routes->get('/pendaftaran', 'Home::pendaftaran');
-$routes->get('/edit_pendaftaran', 'Home::edit_pendaftaran');
+$routes->get('/edit_pendaftaran/(:any)', 'Home::edit_pendaftaran/$1');
 // LAPORAN PENGELUARAN
 $routes->get('/laporan_pengeluaran', 'Home::pengeluaran');
 $routes->get('/tambah_laporan', 'Home::tambah_laporan');

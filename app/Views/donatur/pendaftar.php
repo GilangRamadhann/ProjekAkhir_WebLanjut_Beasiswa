@@ -153,17 +153,19 @@
 										</tr>
 									</thead>
 									<tbody>
+										<?php $row=1; foreach ($daftar as $d):?>
 										<tr>
-											<td>q</td>
-											<td>q</td>
-											<td>q</td>
-											<td>q</td>
-											<td>nanti ini bentuknya zip/link aja bebas</td>
-											<td>q</td>
+											<td><?= $row++;?></td>
+											<td><?= $d['beswan_nama'] ?></td>
+											<td><?= $d['program_nama'] ?></td>
+											<td><?= $d['universitas_nama'] ?></td>
+											<td><a href="<?= $d['berkas'] ?>" >BERKAS</a></td>
+											<td><?= $d['status'] ?></td>
 											<td class="d-flex justify-content">
-												<a href="<?= base_url('/penerimaan')?>" type="button" class="btn btn-warning mr-2">Terima</a>
+												<a href="<?= base_url('penerimaan/'.$d['dataId'])?>" type="button" class="btn btn-warning mr-2">AKSI</a>
 											</td>
 										</tr>
+										<?php endforeach; ?>
 									</tbody>
 								</table>
 							</div>

@@ -151,15 +151,17 @@
 										</tr>
 									</thead>
 									<tbody>
+										<?php $row=1; foreach ($data as $d):?>
 										<tr>
-											<td>q</td>
-											<td>q</td>
-											<td>q</td>
-											<td>q</td>
+											<td><?= $row++;?></td>
+											<td><?= $d['namabeswan']?></td>
+											<td><?= $d['namaprogram']?></td>
+											<td><?= $d['universitas']?></td>
 											<td class="d-flex justify-content">
-											    <a href="<?= base_url('/detail_penerima')?>" type="button" class="btn btn-success mr-2">Lihat</a>
+											    <a href="<?= base_url('detail_penerima/'.$d['id_beswan'])?>" type="button" class="btn btn-success mr-2">Lihat</a>
 											</td>
 										</tr>
+										<?php endforeach;?>
 									</tbody>
 								</table>
 							</div>

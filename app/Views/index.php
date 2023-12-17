@@ -43,7 +43,7 @@
                     <div class="home__data">
                         <h1 class="home__title">Raih Impianmu<br>Bersama Bescamp</h1>
                         <p class="home__description">Bersama Bescamp temukan beasiswa menarik yang akan bantu wujudkan impianmu 🎓</p>
-                        <a href="#" class="button">Mulai Sekarang</a>
+                        <a href="<?= base_url('/regist') ?>" class="button button">Mulai Sekarang</a>
                     </div>   
                     <img src="<?= base_url('assets/images/wisuda.png')?>" alt="">
                 </div>

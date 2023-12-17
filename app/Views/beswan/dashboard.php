@@ -80,7 +80,7 @@
 
 			<li class="nav-item">
 				<a class="nav-link" href="<?= base_url('/laporan_pengeluaran') ?>">
-					<i class="fas fa-fw fa-cog"></i>
+					<i class="fas fa-fw fa-money-bill"></i>
 					<span>Laporan Pengeluaran</span></a>
 			</li>
 
@@ -155,7 +155,7 @@
 						</div>
 						<div class="card-body">
 							<div class="table-responsive">
-								<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+							<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
 									<thead>
 										<tr>
 											<th>No</th>
@@ -168,18 +168,19 @@
 										</tr>
 									</thead>
 									<tbody>
+										<?php $no=1; foreach ($data as $row):?>
 										<tr>
-											<td>q</td>
-											<td>q</td>
-											<td>q</td>
-											<td>q</td>
-											<td>nanti ini bentuknya zip/link aja bebas</td>
-											<td>q</td>
+											<td><?= $no++?></td>
+											<td><?= user()->username ?></td>
+											<td><?= $row['program_nama'];?></td>
+											<td><?= $row['universitas_nama'];?></td>
+											<td><a href="<?= $row['berkas'];?>">Berkas</a></td>
+											<td><?= $row['status'];?></td>
 											<td class="d-flex justify-content">
-												<a href="<?= base_url('#') ?>" type="button" class="btn btn-success mr-2">Lihat</a>
-												<a href="<?= base_url('#')?>" type="button" class="btn btn-warning mr-2">Ubah</a>
+												<a href="<?= base_url('edit_pendaftaran/'.$row['daftarTerimaId'])?>" type="button" class="btn btn-warning mr-2">Ubah</a>
 											</td>
 										</tr>
+										<?php endforeach; ?>
 									</tbody>
 								</table>
 							</div>

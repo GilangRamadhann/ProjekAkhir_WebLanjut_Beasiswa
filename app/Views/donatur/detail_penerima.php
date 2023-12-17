@@ -135,7 +135,7 @@
 									<div class="card-header">Foto</div>
 									<div class="card-body text-center">
 										<!-- Profile picture image-->
-										<img src="#" alt="#">
+										<img src="<?= $foto ?>" alt="#">
 									</div>
 								</div>
 							</div>
@@ -150,64 +150,59 @@
 											<div class="mb-3">
 												<label class="small mb-1"><b>Nama</b></label>
 												<p>
-                                                    #
+												<?= $nama ?>
 												</p>
 											</div>
 
                                             <div class="mb-3">
 												<label class="small mb-1"><b>NPM</b></label>
 												<p>
-                                                    #
+												<?= $npm ?>
 												</p>
 											</div>
 
                                             <div class="mb-3">
 												<label class="small mb-1"><b>Jurusan</b></label>
 												<p>
-                                                    #
+												<?= $jurusan ?>
 												</p>
 											</div>
 
                                             <div class="mb-3">
 												<label class="small mb-1"><b>Fakultas</b></label>
 												<p>
-                                                    #
+												<?= $fakultas ?>
 												</p>
 											</div>
 
                                             <div class="mb-3">
 												<label class="small mb-1"><b>Universitas</b></label>
 												<p>
-                                                    #
+                                                <?= $universitas ?>
 												</p>
 											</div>
 
 
-                                            <div class="mb-3">
-												<label class="small mb-1"><b>Jenis Kelamin</b></label>
-												<p>
-                                                    #
-												</p>
-											</div>
+                                            
 
                                             <div class="mb-3">
 												<label class="small mb-1"><b>Nomor Telepon</b></label>
 												<p>
-                                                    #
+												<?= $no_telp ?>
 												</p>
 											</div>
 
                                             <div class="mb-3">
 												<label class="small mb-1"><b>Alamat</b></label>
 												<p>
-                                                    #
+												<?= $alamat ?>
 												</p>
 											</div>
 
                                             <div class="mb-3">
 												<label class="small mb-1"><b>Kota</b></label>
 												<p>
-                                                    #
+												<?= $kota ?>
 												</p>
 											</div>
 

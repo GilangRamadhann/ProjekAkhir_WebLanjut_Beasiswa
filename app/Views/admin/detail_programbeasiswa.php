@@ -152,6 +152,7 @@
                         <!-- Account page navigation-->
                         <br>
                         <h3>Detail Program Beasiswa</h3>
+                        <a class="btn btn-primary" href="<?=base_url('programbeasiswa')?>">BACK</a>
                         <hr class="mt-0 mb-4">
                         <div class="row">
                             <div class="col-xl-12">
@@ -163,49 +164,49 @@
                                             <div class="mb-3">
                                                 <label class="small mb-1"><b>Nama Beasiswa</b></label>
                                                 <p>
-                                                    #
+                                                    <?=$nama?>
                                                 </p>
                                             </div>
 
                                             <div class="mb-3">
                                                 <label class="small mb-1"><b>Nama Donatur</b></label>
                                                 <p>
-                                                    #
+                                                <?=$username?>
                                                 </p>
                                             </div>
 
                                             <div class="mb-3">
                                                 <label class="small mb-1"><b>Deskripsi</b></label>
                                                 <p>
-                                                    #
+                                                <?=$deskripsi?>
                                                 </p>
                                             </div>
 
                                             <div class="mb-3">
                                                 <label class="small mb-1"><b>Ketentuan</b></label>
                                                 <p>
-                                                    #
+                                                <?=$ketentuan?>
                                                 </p>
                                             </div>
 
                                             <div class="mb-3">
                                                 <label class="small mb-1"><b>Persyaratan</b></label>
                                                 <p>
-                                                    #
+                                                <?=$syarat?>
                                                 </p>
                                             </div>
 
                                             <div class="mb-3">
                                                 <label class="small mb-1"><b>Pembukaan Pendaftaran</b></label>
                                                 <p>
-                                                    #
+                                                <?=$tgl_buka?>
                                                 </p>
                                             </div>
 
                                             <div class="mb-3">
                                                 <label class="small mb-1"><b>Penutupan Pendaftaran</b></label>
                                                 <p>
-                                                    #
+                                                <?=$tgl_tutup?>
                                                 </p>
                                             </div>
                                         </form>

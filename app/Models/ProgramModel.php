@@ -42,13 +42,13 @@ class ProgramModel extends Model
     public function getProgram($id = null)
     {
         if ($id != null) {
-            return $this->select('program.*, users.username')
-                ->join('users', 'users.id = program.id_user')
+            return $this->select('program.*, donatur.nama')
+                ->join('donatur', 'donatur.id = program.id_donatur')
                 ->find($id);
         }
     
-        return $this->select('program.*, users.username')
-            ->join('users', 'users.id = program.id_user')
+        return $this->select('program.*, donatur.nama')
+            ->join('donatur', 'donatur.id = program.id_donatur')
             ->findAll();
     }
 

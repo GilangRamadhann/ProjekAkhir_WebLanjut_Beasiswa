@@ -137,15 +137,15 @@
                                 <div class="card mb-4">
                                     <div class="card-header">Detail Data</div>
                                     <div class="card-body">
-                                        <form method="POST" action="#" enctype="multipart/form-data">
+                                        <form method="POST" action="<?= base_url('penerimaan/'.$data['id'])?>" enctype="multipart/form-data">
                                             <?= csrf_field() ?>
                                             <!-- Form Group (username)-->
                                             <div class="mb-3">
                                                 <label class="small mb-1" for="nama">Status Penerimaan</label>
-                                                <select class="form-control" name="staus" value="">
+                                                <select class="form-control" name="status" value="">
                                                     <option selected disabled>Pilih Status Penerimaan</option>
-                                                    <option value="1">Terima</option>
-                                                    <option value="2">Tolak</option>
+                                                    <option value="Di Terima" <?= ($data['status']=="Di Terima")? "selected" : "" ?> >Terima</option>
+                                                    <option value="Tidak Di Terima" <?= ($data['status']=="Tidak Di Terima")? "selected" : "" ?>>Tolak</option>
                                                 </select>
                                             </div>
 

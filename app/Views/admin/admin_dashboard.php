@@ -91,7 +91,7 @@
 
 			<li class="nav-item">
 				<a class="nav-link" href="<?= base_url('/daftardonatur') ?>">
-					<i class="fas fa-fw fa-table"></i>
+					<i class="fas fa-fw fa-list-ol"></i>
 					<span>Daftar Donatur</span></a>
 			</li>
 
