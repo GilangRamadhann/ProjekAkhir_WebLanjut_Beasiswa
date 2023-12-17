@@ -21,6 +21,7 @@
     <!-- Custom styles for this page -->
     <link href="<?= base_url('assets/css/dataTables.bootstrap4.min.css') ?>" rel="stylesheet">
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    
 
 </head>
 
@@ -128,7 +129,7 @@
                         <br>
                         <h3>Tambah Laporan Pengeluaran</h3>
                         <hr class="mt-0 mb-4">
-                        <form method="POST" action="#" enctype="multipart/form-data">
+                        <form method="POST" action="<?= base_url('tambah_laporan');?>" enctype="multipart/form-data">
                             <?= csrf_field() ?>
                             <div class="row">
                                 <div class="col-xl-6">
@@ -137,12 +138,12 @@
                                     <div class="card mb-4 acc">
                                         <div class="card-header">Bulan</div>
                                         <div class="card-body">
-                                            <form>
-                                                <div class="mb-3">
-                                                    <label class="small mb-1"><b>Bulan</b></label>
-                                                    <input class="form-control" id="Date" type="Date" name="#" placeholder="Masukkan Bulan">
-                                                </div>
-                                            </form>
+                                         
+                                            <div class="mb-3">
+                                                <label class="small mb-1"><b>Bulan</b></label>
+                                                <input class="form-control" id="Date" type="month" name="bulan" placeholder="Masukkan Bulan">
+                                            </div>
+                                            
                                         </div>
                                     </div>
 
@@ -150,22 +151,22 @@
                                     <div class="card mb-4 acc">
                                         <div class="card-header">Pemasukan</div>
                                         <div class="card-body">
-                                            <form>
+                                           
                                                 <div class="mb-3">
                                                     <label class="small mb-1"><b>Beasiswa</b></label>
-                                                    <input class="form-control" id="nama" type="text" name="#" placeholder="ex. 500000">
+                                                    <input class="form-control" id="nama" type="text" name="beasiswa" placeholder="ex. 500000">
                                                 </div>
 
                                                 <div class="mb-3">
                                                     <label class="small mb-1"><b>Orang Tua</b></label>
-                                                    <input class="form-control" id="nama" type="text" name="#" placeholder="ex. 500000">
+                                                    <input class="form-control" id="nama" type="text" name="orangtua" placeholder="ex. 500000">
                                                 </div>
 
                                                 <div class="mb-3">
                                                     <label class="small mb-1"><b>Upah (ex. Kerja)</b></label>
-                                                    <input class="form-control" id="nama" type="text" name="#" placeholder="ex. 500000">
+                                                    <input class="form-control" id="nama" type="text" name="upah" placeholder="ex. 500000">
                                                 </div>
-                                            </form>
+                                            
                                         </div>
                                     </div>
                                 </div>
@@ -173,47 +174,47 @@
                                     <div class="card mb-4 acc">
                                         <div class="card-header">Pengeluaran</div>
                                         <div class="card-body">
-                                            <form>
+                                            
                                                 <div class="mb-3">
                                                     <label class="small mb-1"><b>Makan</b></label>
-                                                    <input class="form-control" id="nama" type="text" name="#" placeholder="ex. 500000">
+                                                    <input class="form-control" id="nama" type="text" name="makan" placeholder="ex. 500000">
                                                 </div>
 
                                                 <div class="mb-3">
                                                     <label class="small mb-1"><b>Transportasi</b></label>
-                                                    <input class="form-control" id="nama" type="text" name="#" placeholder="ex. 500000">
+                                                    <input class="form-control" id="nama" type="text" name="transportasi" placeholder="ex. 500000">
                                                 </div>
 
                                                 <div class="mb-3">
                                                     <label class="small mb-1"><b>Kos</b></label>
-                                                    <input class="form-control" id="nama" type="text" name="#" placeholder="ex. 500000">
+                                                    <input class="form-control" id="nama" type="text" name="kos" placeholder="ex. 500000">
                                                 </div>
 
                                                 <div class="mb-3">
                                                     <label class="small mb-1"><b>Internet</b></label>
-                                                    <input class="form-control" id="nama" type="text" name="#" placeholder="ex. 500000">
+                                                    <input class="form-control" id="nama" type="text" name="internet" placeholder="ex. 500000">
                                                 </div>
 
                                                 <div class="mb-3">
                                                     <label class="small mb-1"><b>Buku</b></label>
-                                                    <input class="form-control" id="nama" type="text" name="#" placeholder="ex. 500000">
+                                                    <input class="form-control" id="nama" type="text" name="buku" placeholder="ex. 500000">
                                                 </div>
 
                                                 <div class="mb-3">
                                                     <label class="small mb-1"><b>Kursus</b></label>
-                                                    <input class="form-control" id="nama" type="text" name="#" placeholder="ex. 500000">
+                                                    <input class="form-control" id="nama" type="text" name="kursus" placeholder="ex. 500000">
                                                 </div>
 
                                                 <div class="mb-3">
                                                     <label class="small mb-1"><b>Lain-Lain</b></label>
-                                                    <input class="form-control" id="nama" type="text" name="#" placeholder="ex. 500000">
+                                                    <input class="form-control" id="nama" type="text" name="lainlain" placeholder="ex. 500000">
                                                 </div>
 
                                                 <div class="mt-4 text-right">
                                                     <a href="<?= base_url('/laporan_pengeluaran') ?>" type="button" class="btn btn-warning btn-sm">Kembali</a>
                                                     <button type="submit" name="submit" value="submit" id="submit" class="btn btn-primary btn-sm">Simpan</button>
                                                 </div>
-                                            </form>
+                                           
                                         </div>
                                     </div>
                                 </div>

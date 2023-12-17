@@ -140,32 +140,32 @@
 						</div>
 						<div class="card-body">
 							<div class="table-responsive">
-								<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-									<thead>
-										<tr>
-											<th>No</th>
-											<th>Nama Beswan</th>
-											<th>Nama Program</th>
-											<th>Bulan</th>
-											<th>Pemasukan</th>
+							<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>No</th>
+                                            <th>Bulan</th>
+                                            <th>Pemasukan</th>
                                             <th>Pengeluaran</th>
-											<th>Aksi</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>q</td>
-											<td>q</td>
-											<td>q</td>
-											<td>q</td>
-											<td>q</td>
-                                            <td>q</td>
-											<td class="d-flex justify-content">
-											    <a href="<?= base_url('/detail_laporan') ?>" type="button" class="btn btn-success mr-2">Lihat</a>
-											</td>
-										</tr>
-									</tbody>
-								</table>
+                                            <th>Aksi</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php $row=1; foreach($data as $d):?>
+                                        <tr>
+                                            <td><?= $row++;?></td>
+                                            <td><?= $d['bulan']?></td>
+                                            <td><?= $d['pemasukan']?></td>
+                                            <td><?= $d['pengeluaran']?></td>
+                                            <td class="d-flex justify-content">
+                                                <a href="<?= base_url('lihat_laporan/'.$d['id']) ?>" type="button" class="btn btn-success mr-2">Lihat</a>
+                                               
+                                               
+                                            </td>
+                                        </tr>
+                                        <?php endforeach; ?>
+                                    </tbody>
+                                </table>
 							</div>
 						</div>
 					</div>

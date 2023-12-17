@@ -128,7 +128,7 @@
                         <br>
                         <h3>Edit Laporan Pengeluaran</h3>
                         <hr class="mt-0 mb-4">
-                        <form method="POST" action="#" enctype="multipart/form-data">
+                        <form method="POST" action="<?= base_url('edit_laporan/'.$id)?>" enctype="multipart/form-data">
                             <?= csrf_field() ?>
                             <div class="row">
                                 <div class="col-xl-6">
@@ -139,7 +139,7 @@
                                             <form>
                                                 <div class="mb-3">
                                                     <label class="small mb-1"><b>Bulan</b></label>
-                                                    <input class="form-control" id="nama" type="Date" name="#" value="#">
+                                                    <input class="form-control" id="nama" type="month" name="bulan" value="<?= $bulan?>">
                                                 </div>
                                             </form>
                                         </div>
@@ -151,17 +151,17 @@
                                             <form>
                                                 <div class="mb-3">
                                                     <label class="small mb-1"><b>Beasiswa</b></label>
-                                                    <input class="form-control" id="nama" type="text" name="#" value="#">
+                                                    <input class="form-control" id="nama" type="text" name="beasiswa" value="<?= $beasiswa?>">
                                                 </div>
 
                                                 <div class="mb-3">
                                                     <label class="small mb-1"><b>Orang Tua</b></label>
-                                                    <input class="form-control" id="nama" type="text" name="#" value="#">
+                                                    <input class="form-control" id="nama" type="text" name="orangtua" value="<?= $orang_tua?>">
                                                 </div>
 
                                                 <div class="mb-3">
                                                     <label class="small mb-1"><b>Upah (ex. Kerja)</b></label>
-                                                    <input class="form-control" id="nama" type="text" name="#" value="#">
+                                                    <input class="form-control" id="nama" type="text" name="upah" value="<?= $upah?>">
                                                 </div>
                                             </form>
                                         </div>
@@ -174,37 +174,37 @@
                                             <form>
                                                 <div class="mb-3">
                                                     <label class="small mb-1"><b>Makan</b></label>
-                                                    <input class="form-control" id="nama" type="text" name="#" value="#">
+                                                    <input class="form-control" id="nama" type="text" name="makan" value="<?= $makan?>">
                                                 </div>
 
                                                 <div class="mb-3">
                                                     <label class="small mb-1"><b>Transportasi</b></label>
-                                                    <input class="form-control" id="nama" type="text" name="#" value="#">
+                                                    <input class="form-control" id="nama" type="text" name="transportasi" value="<?= $transportasi?>">
                                                 </div>
 
                                                 <div class="mb-3">
                                                     <label class="small mb-1"><b>Kos</b></label>
-                                                    <input class="form-control" id="nama" type="text" name="#" value="#">
+                                                    <input class="form-control" id="nama" type="text" name="kos" value="<?= $kos?>">
                                                 </div>
 
                                                 <div class="mb-3">
                                                     <label class="small mb-1"><b>Internet</b></label>
-                                                    <input class="form-control" id="nama" type="text" name="#" value="#">
+                                                    <input class="form-control" id="nama" type="text" name="internet" value="<?= $internet?>">
                                                 </div>
 
                                                 <div class="mb-3">
                                                     <label class="small mb-1"><b>Buku</b></label>
-                                                    <input class="form-control" id="nama" type="text" name="#" value="#">
+                                                    <input class="form-control" id="nama" type="text" name="buku" value="<?= $buku?>">
                                                 </div>
 
                                                 <div class="mb-3">
                                                     <label class="small mb-1"><b>Kursus</b></label>
-                                                    <input class="form-control" id="nama" type="text" name="#" value="#">
+                                                    <input class="form-control" id="nama" type="text" name="kursus" value="<?= $kursus?>">
                                                 </div>
 
                                                 <div class="mb-3">
                                                     <label class="small mb-1"><b>Lain-Lain</b></label>
-                                                    <input class="form-control" id="nama" type="text" name="#" value="#">
+                                                    <input class="form-control" id="nama" type="text" name="lainlain" value="<?= $lainlain?>">
                                                 </div>
 
                                                 <div class="mt-4 text-right">

@@ -126,7 +126,13 @@
                     <div class="container-xl px-4 mt-4">
                         <!-- Account page navigation-->
                         <br>
-                        <h3>Detail Laporan Pengeluaran (nama bulan)</h3>
+                        <?php
+                        $date = DateTime::createFromFormat('Y-m', $bulan);
+
+                        // Format the date
+                        $formattedDate = $date->format('M Y');
+                        ?>
+                        <h3>Detail Laporan Pengeluaran <?= $formattedDate?></h3>
                         <hr class="mt-0 mb-4">
                         <div class="row">
                             <div class="col-xl-6">
@@ -138,28 +144,28 @@
                                             <div class="mb-3">
                                                 <label class="small mb-1"><b>Beasiswa</b></label>
                                                 <p>
-                                                    #
+                                                    <?= $beasiswa?>
                                                 </p>
                                             </div>
 
                                             <div class="mb-3">
                                                 <label class="small mb-1"><b>Orang Tua</b></label>
                                                 <p>
-                                                    #
+                                                <?= $orang_tua?>
                                                 </p>
                                             </div>
 
                                             <div class="mb-3">
                                                 <label class="small mb-1"><b>Upah (ex. Kerja)</b></label>
                                                 <p>
-                                                    #
+                                                <?= $upah?>
                                                 </p>
                                             </div>
 
                                             <div class="mb-3">
                                                 <label class="small mb-1"><b>Total Pemasukan</b></label>
                                                 <p>
-                                                    #
+                                                <?= $pemasukan?>
                                                 </p>
                                             </div>
                                         </form>
@@ -174,56 +180,56 @@
                                             <div class="mb-3">
                                                 <label class="small mb-1"><b>Makan</b></label>
                                                 <p>
-                                                    #
+                                                <?= $makan?>
                                                 </p>
                                             </div>
 
                                             <div class="mb-3">
                                                 <label class="small mb-1"><b>Transportasi</b></label>
                                                 <p>
-                                                    #
+                                                <?= $transportasi?>
                                                 </p>
                                             </div>
 
                                             <div class="mb-3">
                                                 <label class="small mb-1"><b>Kos</b></label>
                                                 <p>
-                                                    #
+                                                <?= $kos?>
                                                 </p>
                                             </div>
 
                                             <div class="mb-3">
                                                 <label class="small mb-1"><b>Internet</b></label>
                                                 <p>
-                                                    #
+                                                <?= $internet?>
                                                 </p>
                                             </div>
 
                                             <div class="mb-3">
                                                 <label class="small mb-1"><b>Buku</b></label>
                                                 <p>
-                                                    #
+                                                <?= $buku?>
                                                 </p>
                                             </div>
 
                                             <div class="mb-3">
                                                 <label class="small mb-1"><b>Kursus</b></label>
                                                 <p>
-                                                    #
+                                                <?= $kursus?>
                                                 </p>
                                             </div>
 
                                             <div class="mb-3">
                                                 <label class="small mb-1"><b>Lain-Lain</b></label>
                                                 <p>
-                                                    #
+                                                <?= $lainlain?>
                                                 </p>
                                             </div>
 
                                             <div class="mb-3">
                                                 <label class="small mb-1"><b>Total Pengeluaran</b></label>
                                                 <p>
-                                                    #
+                                                <?= $pengeluaran?>
                                                 </p>
                                             </div>
                                         </form>

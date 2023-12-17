@@ -150,21 +150,21 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        <?php $row=1; foreach($data as $d):?>
                                         <tr>
-                                            <td>q</td>
-                                            <td>q</td>
-                                            <td>q</td>
-                                            <td>q</td>
+                                            <td><?= $row++;?></td>
+                                            <td><?= $d['bulan']?></td>
+                                            <td><?= $d['pemasukan']?></td>
+                                            <td><?= $d['pengeluaran']?></td>
                                             <td class="d-flex justify-content">
-                                                <a href="<?= base_url('/lihat_laporan') ?>" type="button" class="btn btn-success mr-2">Lihat</a>
-                                                <a href="<?= base_url('/edit_laporan') ?>" type="button" class="btn btn-warning mr-2">Ubah</a>
-                                                <form action="<?= base_url('#') ?>" method="POST">
-                                                    <input type="hidden" name="_method" value="DELETE">
-                                                    <?= csrf_field() ?>
-                                                    <button type="submit" class="btn btn-danger">Hapus</button>
-                                                </form>
+                                                <a href="<?= base_url('lihat_laporan/'.$d['id']) ?>" type="button" class="btn btn-success mr-2">Lihat</a>
+                                                <a href="<?= base_url('edit_laporan/'.$d['id']) ?>" type="button" class="btn btn-warning mr-2">Ubah</a>
+                                                
+                                                    <a href="<?= base_url('delete_laporan/'.$d['id'])?>" class="btn btn-danger">Hapus</a>
+                                               
                                             </td>
                                         </tr>
+                                        <?php endforeach; ?>
                                     </tbody>
                                 </table>
                             </div>

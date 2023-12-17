@@ -104,5 +104,7 @@ $routes->get('/edit_pendaftaran/(:any)', 'Home::edit_pendaftaran/$1');
 // LAPORAN PENGELUARAN
 $routes->get('/laporan_pengeluaran', 'Home::pengeluaran');
 $routes->get('/tambah_laporan', 'Home::tambah_laporan');
-$routes->get('/edit_laporan', 'Home::edit_laporan');
-$routes->get('/lihat_laporan', 'Home::lihat_laporan');
+$routes->post('/tambah_laporan', 'Home::tambah_laporan');
+$routes->get('edit_laporan/(:any)', 'Home::edit_laporan/$1');
+$routes->get('delete_laporan/(:any)', 'Home::delete_laporan/$1');
+$routes->get('/lihat_laporan/(:any)', 'Home::lihat_laporan/$1');

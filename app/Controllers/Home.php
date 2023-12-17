@@ -5,7 +5,7 @@ use App\Models\ProgramModel;
 use App\Models\UniversitasModel;
 use App\Models\DaftarModel;
 use App\Models\BeswanModel;
-
+use App\Models\PengeluaranModel;
 
 class Home extends BaseController
 {
@@ -42,7 +42,17 @@ class Home extends BaseController
     public function dashboard_donatur(){
         $daftarModel = new DaftarModel();
         $user_id = user_id(); // Replace with the actual way you get the user ID
+        $models = new ProgramModel();
+        $program = count($models->findAll());
 
+        $pendaftar = $daftarModel
+        ->select('daftar_terima.*, program.*,daftar_terima.id as daftarTerimaId, universitas.universitas as universitas_nama, program.nama as program_nama, beswan.nama as beswan_nama,daftar_terima.id as dataId')
+        ->join('universitas', 'universitas.id = daftar_terima.id_univ')
+        ->join('program', 'program.id = daftar_terima.id_program')
+        ->join('beswan', 'beswan.id = daftar_terima.id_beswan')
+        ->join('donatur', 'donatur.id = program.id_donatur')
+        ->where('donatur.id_user', user_id())
+        ->findAll();
         $daftar = $daftarModel
         ->select('daftar_terima.*, program.*, beswan.*,universitas.*, beswan.nama as namabeswan, program.nama as namaprogram') // Include all columns from both tables
         ->join('program', 'program.id = daftar_terima.id_program')
@@ -52,7 +62,7 @@ class Home extends BaseController
         ->where('donatur.id_user', $user_id)
         ->where('status', 'Di Terima')
         ->findAll();
-        return view('donatur/dashboard_donatur',["data"=>$daftar]);
+        return view('donatur/dashboard_donatur',["data"=>$daftar,"program"=>$program,"penerima"=>count($daftar),"pendaftar"=>count($pendaftar)]);
     }
     public function pendaftar(){
         
@@ -119,7 +129,18 @@ class Home extends BaseController
         return view('donatur/detail_penerima',$data);
     }
     public function laporan2(){
-        return view('donatur/laporan_pengeluaran');
+        $pengeluaranModel = new PengeluaranModel();
+        $beswanModel = new BeswanModel();
+        $beswan = $beswanModel->where('id_user', user_id())->first();
+        $data = $pengeluaranModel->findAll();
+        
+        foreach ($data as &$row) {
+            // Calculate totals for each row
+            $row['pemasukan'] = $row['beasiswa'] + $row['orang_tua'] + $row['upah'];
+            $row['pengeluaran'] = $row['makan'] + $row['kos'] + $row['internet'] + $row['buku'] + $row['kursus'] + $row['lainlain']+$row['transportasi'];
+        }
+        
+        return view('donatur/laporan_pengeluaran',["data"=>$data]);
     }
     public function detail_laporan(){
         return view('donatur/detail_laporan');
@@ -155,7 +176,7 @@ class Home extends BaseController
 
     public function editprogbes($id=null){
         $models = new ProgramModel();
-       // dd($this->request->getMethod());
+      
         if($this->request->getMethod()=="post"){
             
             $data=[
@@ -181,16 +202,90 @@ class Home extends BaseController
         return view('donatur/edit_program',["data" => $data,"title"=>'EDIT']);
     }
     public function pengeluaran(){
-        return view('beswan/laporan');
+        $pengeluaranModel = new PengeluaranModel();
+        $beswanModel = new BeswanModel();
+        $beswan = $beswanModel->where('id_user', user_id())->first();
+        $data = $pengeluaranModel->where('id_beswan',$beswan['id'])->findAll();
+        
+        foreach ($data as &$row) {
+            // Calculate totals for each row
+            $row['pemasukan'] = $row['beasiswa'] + $row['orang_tua'] + $row['upah'];
+            $row['pengeluaran'] = $row['makan'] + $row['kos'] + $row['internet'] + $row['buku'] + $row['kursus'] + $row['lainlain']+$row['transportasi'];
+        }
+        
+        // dd($data);
+        return view('beswan/laporan',["data"=>$data]);
     }
     public function tambah_laporan(){
+        if($this->request->getMethod()=="post"){
+        $beswanModel = new BeswanModel();
+        $daftarModel = new DaftarModel();
+        $programModel = new ProgramModel();
+        $beswan = $beswanModel->where('id_user', user_id())->first();
+        $daftar = $daftarModel->where('id_beswan',$beswan['id'])->first();
+        $program = $programModel->where('id',$daftar['id_program'])->first();
+      
+        $data = [
+            'id_beswan' => $beswan['id'],
+            'id_program' => $daftar['id_program'],
+            'beasiswa' => $this->request->getPost('beasiswa'),
+            'orang_tua'  => $this->request->getPost('orangtua'), 
+            'upah'       => $this->request->getPost('upah'),
+            'bulan'      => $this->request->getPost('bulan'),
+            'makan'      => $this->request->getPost('makan'),
+            'transportasi'      => $this->request->getPost('transportasi'),
+            'kos'        => $this->request->getPost('kos'),
+            'internet'   => $this->request->getPost('internet'),
+            'buku'       => $this->request->getPost('buku'),
+            'kursus'     => $this->request->getPost('kursus'),
+            'lainlain'   => $this->request->getPost('lainlain'),
+        ];
+        $pengeluaranModel = new PengeluaranModel();
+        //dd($data);
+        $pengeluaranModel->save($data);
+        return redirect()->to(base_url('laporan_pengeluaran'));
+        }
+        
         return view('beswan/tambah_laporan');
     }
-    public function edit_laporan(){
-        return view('beswan/edit_laporan');
+    public function edit_laporan($id){
+        $pengeluaranModel = new PengeluaranModel();
+       
+        if($this->request->getMethod()=="post"){
+            $data = [
+                'beasiswa' => $this->request->getPost('beasiswa'),
+                'orang_tua'  => $this->request->getPost('orangtua'), 
+                'upah'       => $this->request->getPost('upah'),
+                'bulan'      => $this->request->getPost('bulan'),
+                'makan'      => $this->request->getPost('makan'),
+                'transportasi' => $this->request->getPost('transportasi'),
+                'kos'        => $this->request->getPost('kos'),
+                'internet'   => $this->request->getPost('internet'),
+                'buku'       => $this->request->getPost('buku'),
+                'kursus'     => $this->request->getPost('kursus'),
+                'lainlain'   => $this->request->getPost('lainlain'),
+            ];
+            $pengeluaranModel->update($id,$data);
+            return redirect()->to(base_url('laporan_pengeluaran'));
+        }
+        $data = $pengeluaranModel->find($id);
+
+        return view('beswan/edit_laporan',$data);
+        
     }
-    public function lihat_laporan(){
-        return view('beswan/detail_laporan');
+    public function delete_laporan($id){
+        $pengeluaranModel = new PengeluaranModel();
+        $data = $pengeluaranModel->delete($id);
+        return redirect()->back();
+    }
+    public function lihat_laporan($id){
+        $pengeluaranModel = new PengeluaranModel();
+        $data = $pengeluaranModel->find($id);
+        //dd($data);
+            $data['pemasukan'] = $data['beasiswa'] + $data['orang_tua'] + $data['upah'];
+            $data['pengeluaran'] = $data['makan'] + $data['kos'] + $data['internet'] + $data['buku'] + $data['kursus'] + $data['lainlain']+$data['transportasi'];
+        
+        return view('beswan/detail_laporan',$data);
     }
     public function beswan(){
         $daftarModel = new DaftarModel();
