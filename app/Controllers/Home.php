@@ -301,6 +301,7 @@ class Home extends BaseController
         $beswanModel = new BeswanModel();
         
         $beswan = $beswanModel->where('id_user', user_id())->first();
+        if($beswan==null)
        //dd($beswan);
         $daftar = $daftarModel
                 ->select('daftar_terima.*, program.*,daftar_terima.id as daftarTerimaId, universitas.universitas as universitas_nama, program.nama as program_nama, beswan.nama as beswan_nama,daftar_terima.id as dataId')
