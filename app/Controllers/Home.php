@@ -27,13 +27,20 @@ class Home extends BaseController
     // METHOD ADMIN
     public function programbeasiswa(){
         $models = new ProgramModel();
-        $data = $models->getProgram();
+        $data = $models->select('program.*,users.username')
+        ->join('donatur','donatur.id=program.id_donatur')
+        ->join('users','users.id=donatur.id_user')
+        ->findAll();
+        //dd($data);
         
         return view('admin/admin_programbeas',["program"=>$data]);
     }
     public function detail_programbeasiswa($id){
         $models = new ProgramModel();
-        $data = $models->getProgram($id);
+        $data = $models->select('program.*,users.username')
+        ->join('donatur','donatur.id=program.id_donatur')
+        ->join('users','users.id=donatur.id_user')
+        ->find($id);
         
         return view('admin/detail_programbeasiswa',$data);
     }
@@ -250,7 +257,7 @@ class Home extends BaseController
     }
     public function edit_laporan($id){
         $pengeluaranModel = new PengeluaranModel();
-       
+       //dd($this->request->getMethod());
         if($this->request->getMethod()=="post"){
             $data = [
                 'beasiswa' => $this->request->getPost('beasiswa'),
@@ -265,6 +272,7 @@ class Home extends BaseController
                 'kursus'     => $this->request->getPost('kursus'),
                 'lainlain'   => $this->request->getPost('lainlain'),
             ];
+            //dd($data);
             $pengeluaranModel->update($id,$data);
             return redirect()->to(base_url('laporan_pengeluaran'));
         }
@@ -326,11 +334,13 @@ class Home extends BaseController
         return view('beswan/detail_program',['program'=>$programs]);
     }
     public function mendaftar($id){
+        //dd($this->request->getMethod());
+
         $programModel = new ProgramModel();
         $univModel = new UniversitasModel();
         $daftarModel = new DaftarModel();
         if($this->request->getVar("page")=="edit"){
-           
+          
             
             if ($this->request->getFile('berkas') !== null && $this->request->getFile('berkas')->isValid()) {
 
@@ -358,6 +368,7 @@ class Home extends BaseController
             $daftarModel->update($id,$data);
             return redirect()->to('pendaftaran');
         }else if ($this->request->getMethod() === 'post' && $this->validate(['berkas' => 'uploaded[berkas]|ext_in[berkas,zip]'])) {
+            
             $daftarModel = new  DaftarModel();
             $beswanModel = new BeswanModel();
             $file = $this->request->getFile('berkas');
@@ -374,7 +385,7 @@ class Home extends BaseController
              ];
              
              //dd($beswan);
-             $daftarModel->save($data);
+             $daftarModel->insert($data);
             //dd($data);
             return redirect()->to(base_url('daftarprogram'))->with('success', 'File uploaded successfully!');
             

@@ -136,19 +136,19 @@
                                     <div class="card mb-4 acc">
                                         <div class="card-header">Bulan</div>
                                         <div class="card-body">
-                                            <form>
+                                           
                                                 <div class="mb-3">
                                                     <label class="small mb-1"><b>Bulan</b></label>
                                                     <input class="form-control" id="nama" type="month" name="bulan" value="<?= $bulan?>">
                                                 </div>
-                                            </form>
+                                            
                                         </div>
                                     </div>
                                     <!-- Profile picture card-->
                                     <div class="card mb-4 acc">
                                         <div class="card-header">Pemasukan</div>
                                         <div class="card-body">
-                                            <form>
+                                           
                                                 <div class="mb-3">
                                                     <label class="small mb-1"><b>Beasiswa</b></label>
                                                     <input class="form-control" id="nama" type="text" name="beasiswa" value="<?= $beasiswa?>">
@@ -163,7 +163,7 @@
                                                     <label class="small mb-1"><b>Upah (ex. Kerja)</b></label>
                                                     <input class="form-control" id="nama" type="text" name="upah" value="<?= $upah?>">
                                                 </div>
-                                            </form>
+                                         
                                         </div>
                                     </div>
                                 </div>
@@ -171,7 +171,7 @@
                                     <div class="card mb-4 acc">
                                         <div class="card-header">Pengeluaran</div>
                                         <div class="card-body">
-                                            <form>
+                                          
                                                 <div class="mb-3">
                                                     <label class="small mb-1"><b>Makan</b></label>
                                                     <input class="form-control" id="nama" type="text" name="makan" value="<?= $makan?>">
@@ -211,7 +211,7 @@
                                                     <a href="<?= base_url('/laporan_pengeluaran') ?>" type="button" class="btn btn-warning btn-sm">Kembali</a>
                                                     <button type="submit" name="submit" value="submit" id="submit" class="btn btn-primary btn-sm">Simpan</button>
                                                 </div>
-                                            </form>
+                                            
                                         </div>
                                     </div>
                                 </div>

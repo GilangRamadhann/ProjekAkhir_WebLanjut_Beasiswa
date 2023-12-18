@@ -106,5 +106,6 @@ $routes->get('/laporan_pengeluaran', 'Home::pengeluaran');
 $routes->get('/tambah_laporan', 'Home::tambah_laporan');
 $routes->post('/tambah_laporan', 'Home::tambah_laporan');
 $routes->get('edit_laporan/(:any)', 'Home::edit_laporan/$1');
+$routes->post('edit_laporan/(:any)', 'Home::edit_laporan/$1');
 $routes->get('delete_laporan/(:any)', 'Home::delete_laporan/$1');
 $routes->get('/lihat_laporan/(:any)', 'Home::lihat_laporan/$1');
