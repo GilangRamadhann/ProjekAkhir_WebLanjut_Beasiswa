@@ -10,13 +10,13 @@
         <!--=============== CSS ===============-->
         <link rel="stylesheet" href="<?= base_url('assets/css/landingpage.css') ?>">
 
-        <title>Responsive website delivery</title>
+        <title>BesCamp</title>
     </head>
     <body>
         <!--=============== HEADER ===============-->
         <header class="header" id="header">
             <nav class="nav container">
-                <a href="#" class="nav__logo">Bescamp🎓</a>
+                <a href="#" class="nav__logo">BesCamp🎓</a>
 
                 <div class="nav__menu" id="nav-menu">
                     <ul class="nav__list">
@@ -42,7 +42,7 @@
                 <div class="home__container container grid">
                     <div class="home__data">
                         <h1 class="home__title">Raih Impianmu<br>Bersama Bescamp</h1>
-                        <p class="home__description">Bersama Bescamp temukan beasiswa menarik yang akan bantu wujudkan impianmu 🎓</p>
+                        <p class="home__description">Bersama BesCamp temukan beasiswa menarik yang akan bantu wujudkan impianmu 🎓</p>
                         <a href="<?= base_url('/regist') ?>" class="button button">Mulai Sekarang</a>
                     </div>   
                     <img src="<?= base_url('assets/images/wisuda.png')?>" alt="">
